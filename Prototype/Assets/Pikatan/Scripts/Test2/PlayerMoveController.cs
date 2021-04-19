@@ -39,7 +39,7 @@ public class PlayerMoveController : MonoBehaviour
     #region PrivateMethod
     private void Move()
     {
-        transform.position = Vec3Lerp(targetPoint, transform.position, 0.0001f * speed);
+        transform.position = Vector3.MoveTowards(transform.position, targetPoint, 0.1f * speed);
     }
 
     private void SearchMovePoint()
@@ -77,7 +77,8 @@ public class PlayerMoveController : MonoBehaviour
 
     private Vector3 Vec3Lerp(Vector3 a, Vector3 b, float t)
     {
-        return new Vector3(Mathf.Lerp(a.x, b.x, t), Mathf.Lerp(a.y, b.y, t), Mathf.Lerp(a.z, b.z, t));
+        Vector3 tmp = new Vector3(Mathf.Lerp(a.x, b.x, t), Mathf.Lerp(a.y, b.y, t), Mathf.Lerp(a.z, b.z, t));
+        return tmp;
     }
     #endregion
 }
