@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RotatePoint : MonoBehaviour
+public class Rotate_A : MonoBehaviour
 {
-    public enum RotateState 
-    { 
+    public enum RotateState
+    {
         NoRotate,
         Rotated
     }
@@ -21,7 +21,7 @@ public class RotatePoint : MonoBehaviour
     [SerializeField]
     private float rotateSpeed;
     [SerializeField]
-    private RotateAxis rotateAxis = RotateAxis.Z; 
+    private RotateAxis rotateAxis = RotateAxis.Z;
     private RotateState rotateState = RotateState.NoRotate;
     private bool isRotate = false;
     //private Vector3 rotateValue = Vector3.zero;
@@ -35,7 +35,7 @@ public class RotatePoint : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Keyboard.current.qKey.isPressed)
         {
@@ -89,10 +89,10 @@ public class RotatePoint : MonoBehaviour
 
     private bool IsRotateComplete(float angle, float deg)
     {
-        if(rotateState == RotateState.NoRotate)
+        if (rotateState == RotateState.NoRotate)
         {
             //回転していない状態（デフォルトの状態）なので指定された角度以上ｔるえ
-            if(angle >= deg)
+            if (angle >= deg)
             {
                 return true;
             }
@@ -100,11 +100,11 @@ public class RotatePoint : MonoBehaviour
         }
         else
         {
-            if(angle >= 180)
+            if (angle >= 180)
             {
                 angle -= 360;
             }
-            if(angle <= deg)
+            if (angle <= deg)
             {
                 return true;
             }
@@ -145,43 +145,5 @@ public class RotatePoint : MonoBehaviour
                 break;
         }
         return Vector3.zero;
-    }
-
-    private void StopRotationSet(float deg)
-    {
-        switch (rotateAxis)
-        {
-            case RotateAxis.X:
-                {
-                    Vector3 rot = transform.rotation.eulerAngles;
-                    rot.x = deg;
-                    Quaternion q = Quaternion.identity;
-                    q.eulerAngles = rot;
-                    transform.rotation = q;
-                    break;
-                }
-                
-            case RotateAxis.Y:
-                {
-                    Vector3 rot = transform.rotation.eulerAngles;
-                    rot.x = deg;
-                    Quaternion q = Quaternion.identity;
-                    q.eulerAngles = rot;
-                    transform.rotation = q;
-                    break;
-                }
-            case RotateAxis.Z:
-                {
-                    Vector3 rot = transform.rotation.eulerAngles;
-                    rot.x = deg;
-                    Quaternion q = Quaternion.identity;
-                    q.eulerAngles = rot;
-                    transform.rotation = q;
-                    break;
-                }
-            default:
-                Debug.LogError("回転軸おかしくてワロタ");
-                break;
-        }
     }
 }
