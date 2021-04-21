@@ -146,4 +146,42 @@ public class RotatePoint : MonoBehaviour
         }
         return Vector3.zero;
     }
+
+    private void StopRotationSet(float deg)
+    {
+        switch (rotateAxis)
+        {
+            case RotateAxis.X:
+                {
+                    Vector3 rot = transform.rotation.eulerAngles;
+                    rot.x = deg;
+                    Quaternion q = Quaternion.identity;
+                    q.eulerAngles = rot;
+                    transform.rotation = q;
+                    break;
+                }
+                
+            case RotateAxis.Y:
+                {
+                    Vector3 rot = transform.rotation.eulerAngles;
+                    rot.x = deg;
+                    Quaternion q = Quaternion.identity;
+                    q.eulerAngles = rot;
+                    transform.rotation = q;
+                    break;
+                }
+            case RotateAxis.Z:
+                {
+                    Vector3 rot = transform.rotation.eulerAngles;
+                    rot.x = deg;
+                    Quaternion q = Quaternion.identity;
+                    q.eulerAngles = rot;
+                    transform.rotation = q;
+                    break;
+                }
+            default:
+                Debug.LogError("回転軸おかしくてワロタ");
+                break;
+        }
+    }
 }
