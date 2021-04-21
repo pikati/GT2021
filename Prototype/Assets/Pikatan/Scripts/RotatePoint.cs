@@ -61,6 +61,7 @@ public class RotatePoint : MonoBehaviour
                 {
                     rotateState = RotateState.NoRotate;
                 }
+                Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
     }
