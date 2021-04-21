@@ -46,9 +46,9 @@ public class RotatePoint : MonoBehaviour
         {
             float deg = rotateState == RotateState.NoRotate ? 180.0f : 0;
             //transform.Rotate(rotateValue * rotateSpeed * Time.deltaTime);
-            Debug.Log(rotateValue);
-            angles[(int)rotateAxis] += rotateValue * rotateSpeed * Time.deltaTime;
-            transform.rotation = Quaternion.AngleAxis(angles[(int)rotateAxis], GetAxis());
+            float angleSpeed = rotateValue * rotateSpeed * Time.deltaTime;
+            angles[(int)rotateAxis] += angleSpeed;
+            transform.rotation = transform.rotation * Quaternion.AngleAxis(angleSpeed, GetAxis());
             if (IsRotateComplete(angles[(int)rotateAxis], deg))
             {
                 angles[(int)rotateAxis] = deg;
