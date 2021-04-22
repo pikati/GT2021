@@ -17,6 +17,9 @@ public class RotatePoint : MonoBehaviour
         Y,
         Z
     }
+    [SerializeField]
+    private bool isActive = false;
+    public bool IsActive { get; set; }
 
     [SerializeField]
     private float rotateSpeed;
@@ -24,12 +27,12 @@ public class RotatePoint : MonoBehaviour
     private RotateAxis rotateAxis = RotateAxis.Z; 
     private RotateState rotateState = RotateState.NoRotate;
     private bool isRotate = false;
-    //private Vector3 rotateValue = Vector3.zero;
     private float rotateValue;
     private float[] angles = new float[3];
 
     private void Start()
     {
+        IsActive = isActive;
         SetRotateValue();
     }
 
@@ -37,11 +40,6 @@ public class RotatePoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.qKey.isPressed)
-        {
-            isRotate = true;
-            SetRotateValue();
-        }
         if (isRotate)
         {
             float deg = rotateState == RotateState.NoRotate ? 180.0f : 0;
@@ -64,6 +62,13 @@ public class RotatePoint : MonoBehaviour
                 Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
+    }
+
+    public void BeginRotate()
+    {
+        if (!IsActive) return;
+        isRotate = true;
+        SetRotateValue();
     }
 
     //初期化と回転フラグ立った時に呼べ
