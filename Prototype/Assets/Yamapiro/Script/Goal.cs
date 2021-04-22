@@ -12,6 +12,13 @@ public class Goal : MonoBehaviour
         {
             isReach = true;
             Singleton<ClearChecker>.Instance.ReachChechkPoint();
+            Destroy(gameObject);
+            
         }
+    }
+
+    private void OnDestroy()
+    {
+        Singleton<NavMeshBaker>.Instance.Bake();
     }
 }
