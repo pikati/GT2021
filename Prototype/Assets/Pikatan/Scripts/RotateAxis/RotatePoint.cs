@@ -30,12 +30,15 @@ public class RotatePoint : MonoBehaviour
     private float rotateValue;
     private float[] angles = new float[3];
     private ChangeColor changeColor;
+    private AreaChilder[] areaChilders = new AreaChilder[2];
 
     private void Start()
     {
         IsActive = isActive;
         SetRotateValue();
         changeColor =GetComponentInChildren<ChangeColor>();
+        areaChilders[0] = transform.GetChild(0).gameObject.GetComponent<AreaChilder>();
+        areaChilders[1] = transform.GetChild(1).gameObject.GetComponent<AreaChilder>();
     }
 
 
@@ -75,6 +78,8 @@ public class RotatePoint : MonoBehaviour
         if (!IsActive) return;
         isRotate = true;
         SetRotateValue();
+        areaChilders[0].IsActive = true;
+        areaChilders[1].IsActive = true;
     }
 
     //初期化と回転フラグ立った時に呼べ
@@ -100,7 +105,9 @@ public class RotatePoint : MonoBehaviour
 
     private bool IsRotateComplete(float angle, float deg)
     {
-        if(rotateState == RotateState.NoRotate)
+        areaChilders[0].IsActive = false;
+        areaChilders[1].IsActive = false;
+        if (rotateState == RotateState.NoRotate)
         {
             //回転していない状態（デフォルトの状態）なので指定された角度以上ｔるえ
             if(angle >= deg)

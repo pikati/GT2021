@@ -22,7 +22,7 @@ public class ChangeColor : MonoBehaviour
         else if (GetFlag == false)
         {
             //色を白に変更
-            GetComponent<Renderer>().material.color = Color.white;
+            GetComponent<Renderer>().material.color = Color.black;
 
         }
     }
