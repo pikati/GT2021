@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
+    private bool isReach = false;
     private void OnTriggerEnter(Collider other)
     {
+        if (isReach) return;
         if(other.CompareTag("Player"))
         {
-            Debug.Log("ゴールしたよ");
+            isReach = true;
+            Singleton<ClearChecker>.Instance.ReachChechkPoint();
         }
     }
 }
