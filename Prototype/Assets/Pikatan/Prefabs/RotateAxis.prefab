@@ -45,7 +45,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6.7570486, y: 0.98466814, z: 4.383174}
-  m_Center: {x: -5.601711, y: -0.2574318, z: -0.054438483}
+  m_Center: {x: -5.601711, y: -0.2574318, z: -2}
 --- !u!54 &3127001996989107501
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6.0137863, y: 0.98466814, z: 4.491211}
-  m_Center: {x: 4.213063, y: -0.2574318, z: -0.3453066}
+  m_Center: {x: 4.213063, y: -0.2574318, z: -2}
 --- !u!54 &2265468384172217925
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 8931637711512705933}
   - component: {fileID: 6703558965011126713}
   - component: {fileID: 2547537811267678030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RotateAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,5 +271,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  rotateSpeed: 0
-  rotateAxis: 2
+  rotateSpeed: 180
+  rotateAxis: 1
