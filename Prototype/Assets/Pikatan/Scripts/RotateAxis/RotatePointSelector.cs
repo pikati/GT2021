@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 //選択できるもの探索する処理で位置によって複数の方向に同じオブジェクトが設定されるバグがある（予想）
 public class RotatePointSelector : Singleton<RotatePointSelector>
@@ -19,10 +18,12 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
     private GameObject defaultSelectObject;
     private List<GameObject> rotateObjects = new List<GameObject>();
     private GameObject[] selectableObjects = new GameObject[5];
+    private InputController ic;
     // Start is called before the first frame update
     void Start()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("RotatePoint");
+        ic = Singleton<InputController>.Instance;
         foreach(GameObject obj in objs)
         {
             rotateObjects.Add(obj);
@@ -38,7 +39,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         {
             SelectObject();
             
-            if (Keyboard.current.qKey.isPressed)
+            if (ic.A)
             {
                 selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>().BeginRotate();
             }
@@ -48,20 +49,20 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
                 Debug.Log("Front" + selectableObjects[(int)SelectDirection.Front].name);
 
             }
-            if (selectableObjects[(int)SelectDirection.Front] != null)
+            if (selectableObjects[(int)SelectDirection.Back] != null)
             {
                 Debug.Log("back " + selectableObjects[(int)SelectDirection.Back].name);
             }
-            if (selectableObjects[(int)SelectDirection.Front] != null)
+            if (selectableObjects[(int)SelectDirection.Left] != null)
             {
                 Debug.Log("Left" + selectableObjects[(int)SelectDirection.Left].name);
 
             }
-            if (selectableObjects[(int)SelectDirection.Front] != null)
+            if (selectableObjects[(int)SelectDirection.Right] != null)
             {
                 Debug.Log("Right" + selectableObjects[(int)SelectDirection.Right].name);
             }
-            if (selectableObjects[(int)SelectDirection.Front] != null)
+            if (selectableObjects[(int)SelectDirection.Own] != null)
             {
                 Debug.Log("Own  " + selectableObjects[(int)SelectDirection.Own].name);
             }
@@ -75,22 +76,21 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         {
             selectableObjects[i] = null;
         }
-        Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        SetForntObject(playerPosition);
-        SetBackObject(playerPosition);
-        SetLeftObject(playerPosition);
-        SetRightObject(playerPosition);
+        SetForntObject();
+        SetBackObject();
+        SetLeftObject();
+        SetRightObject();
     }
 
-    private void SetForntObject(Vector3 playerPosition)
+    private void SetForntObject()
     {
         Vector3 selectPoint = new Vector3(0, 0, 10000);
         foreach(GameObject pointObj in rotateObjects)
         {
-            float length = pointObj.transform.position.z - playerPosition.z;
+            float length = pointObj.transform.position.z - selectableObjects[(int)SelectDirection.Own].transform.position.z;
             if (length > 0)
             {
-                if(length < selectPoint.x - playerPosition.z)
+                if(length < selectPoint.z - selectableObjects[(int)SelectDirection.Own].transform.position.z)
                 {
                     selectPoint = pointObj.transform.position;
                     selectableObjects[0] = pointObj;
@@ -99,15 +99,15 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         }
     }
 
-    private void SetBackObject(Vector3 playerPosition)
+    private void SetBackObject()
     {
         Vector3 selectPoint = new Vector3(0, 0, -10000);
         foreach (GameObject pointObj in rotateObjects)
         {
-            float length = pointObj.transform.position.z - playerPosition.z;
+            float length = pointObj.transform.position.z - selectableObjects[(int)SelectDirection.Own].transform.position.z;
             if (length < 0)
             {
-                if (length > selectPoint.x - playerPosition.z)
+                if (length > selectPoint.x - selectableObjects[(int)SelectDirection.Own].transform.position.z)
                 {
                     selectPoint = pointObj.transform.position;
                     selectableObjects[1] = pointObj;
@@ -115,15 +115,15 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
             }
         }
     }
-    private void SetLeftObject(Vector3 playerPosition)
+    private void SetLeftObject()
     {
         Vector3 selectPoint = new Vector3(-10000, 0, 0);
         foreach (GameObject pointObj in rotateObjects)
         {
-            float length = pointObj.transform.position.x - playerPosition.x;
+            float length = pointObj.transform.position.x - selectableObjects[(int)SelectDirection.Own].transform.position.x;
             if (length < 0)
             {
-                if (length > selectPoint.x - playerPosition.x)
+                if (length > selectPoint.x - selectableObjects[(int)SelectDirection.Own].transform.position.x)
                 {
                     selectPoint = pointObj.transform.position;
                     selectableObjects[2] = pointObj;
@@ -131,15 +131,15 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
             }
         }
     }
-    private void SetRightObject(Vector3 playerPosition)
+    private void SetRightObject()
     {
         Vector3 selectPoint = new Vector3(10000, 0, 0);
         foreach (GameObject pointObj in rotateObjects)
         {
-            float length = pointObj.transform.position.x - playerPosition.x;
+            float length = pointObj.transform.position.x - selectableObjects[(int)SelectDirection.Own].transform.position.x;
             if (length > 0)
             {
-                if (length < selectPoint.x - playerPosition.x)
+                if (length < selectPoint.x - selectableObjects[(int)SelectDirection.Own].transform.position.x)
                 {
                     selectPoint = pointObj.transform.position;
                     selectableObjects[3] = pointObj;
@@ -150,7 +150,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
 
     private void SelectObject()
     {
-        if (Keyboard.current.upArrowKey.isPressed)
+        if (ic.Up)
         {
             if (selectableObjects[(int)SelectDirection.Front] != null)
             {
@@ -159,7 +159,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
                 selectableObjects[(int)SelectDirection.Own] = selectableObjects[(int)SelectDirection.Front];
             }
         }
-        if (Keyboard.current.downArrowKey.isPressed)
+        if (ic.Down)
         {
             if (selectableObjects[(int)SelectDirection.Back] != null)
             {
@@ -168,7 +168,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
                 selectableObjects[(int)SelectDirection.Own] = selectableObjects[(int)SelectDirection.Back];
             }
         }
-        if (Keyboard.current.leftArrowKey.isPressed)
+        if (ic.Left)
         {
             if (selectableObjects[(int)SelectDirection.Left] != null)
             {
@@ -177,7 +177,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
                 selectableObjects[(int)SelectDirection.Own] = selectableObjects[(int)SelectDirection.Left];
             }
         }
-        if (Keyboard.current.rightArrowKey.isPressed)
+        if (ic.Right)
         {
             if (selectableObjects[(int)SelectDirection.Right] != null)
             {

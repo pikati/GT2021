@@ -37,8 +37,8 @@ public class RotatePoint : MonoBehaviour
         IsActive = isActive;
         SetRotateValue();
         changeColor =GetComponentInChildren<ChangeColor>();
-        areaChilders[0] = transform.GetChild(0).gameObject.GetComponent<AreaChilder>();
-        areaChilders[1] = transform.GetChild(1).gameObject.GetComponent<AreaChilder>();
+        areaChilders[0] = transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<AreaChilder>();
+        areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
     }
 
 
@@ -48,6 +48,10 @@ public class RotatePoint : MonoBehaviour
         if(Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
         {
             changeColor.GetFlag = IsActive;
+        }
+        else
+        {
+            changeColor.GetFlag = false;
         }
         if (isRotate)
         {
@@ -59,7 +63,6 @@ public class RotatePoint : MonoBehaviour
             if (IsRotateComplete(angles[(int)rotateAxis], deg))
             {
                 angles[(int)rotateAxis] = deg;
-                isRotate = false;
                 if (rotateState == RotateState.NoRotate)
                 {
                     rotateState = RotateState.Rotated;
@@ -105,13 +108,15 @@ public class RotatePoint : MonoBehaviour
 
     private bool IsRotateComplete(float angle, float deg)
     {
-        areaChilders[0].IsActive = false;
-        areaChilders[1].IsActive = false;
+        
         if (rotateState == RotateState.NoRotate)
         {
             //回転していない状態（デフォルトの状態）なので指定された角度以上ｔるえ
             if(angle >= deg)
             {
+                isRotate = false;
+                areaChilders[0].IsActive = false;
+                areaChilders[1].IsActive = false;
                 return true;
             }
             return false;
@@ -124,6 +129,9 @@ public class RotatePoint : MonoBehaviour
             }
             if(angle <= deg)
             {
+                isRotate = false;
+                areaChilders[0].IsActive = false;
+                areaChilders[1].IsActive = false;
                 return true;
             }
             return false;
