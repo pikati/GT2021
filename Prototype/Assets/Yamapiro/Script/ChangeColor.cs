@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour
 {
-    bool GetFlag { get; set; }
+    public bool GetFlag { get; set; }
     
     // Start is called before the first frame update
     void Start()
@@ -18,11 +18,9 @@ public class ChangeColor : MonoBehaviour
         {
             //色を赤に変更
             GetComponent<Renderer>().material.color = Color.red;
-            Debug.Log("選択されているよ");
         }
         else if (GetFlag == false)
         {
-            Debug.Log("選択されてないよ");
             //色を白に変更
             GetComponent<Renderer>().material.color = Color.white;
 

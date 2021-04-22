@@ -29,17 +29,23 @@ public class RotatePoint : MonoBehaviour
     private bool isRotate = false;
     private float rotateValue;
     private float[] angles = new float[3];
+    private ChangeColor changeColor;
 
     private void Start()
     {
         IsActive = isActive;
         SetRotateValue();
+        changeColor =GetComponentInChildren<ChangeColor>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        if(Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
+        {
+            changeColor.GetFlag = IsActive;
+        }
         if (isRotate)
         {
             float deg = rotateState == RotateState.NoRotate ? 180.0f : 0;
