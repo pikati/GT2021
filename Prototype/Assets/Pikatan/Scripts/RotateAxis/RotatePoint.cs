@@ -33,7 +33,7 @@ public class RotatePoint : MonoBehaviour
     private GameObject leftObj = null;
     [SerializeField]
     private GameObject rightObj = null;
-    public GameObject[] selectableObjs = new GameObject[4];
+    public GameObject[] selectableObjs { get; private set; }
     private RotateState rotateState = RotateState.NoRotate;
     private bool isRotate = false;
     private float rotateValue;
@@ -48,6 +48,7 @@ public class RotatePoint : MonoBehaviour
         changeColor =GetComponentInChildren<ChangeColor>();
         areaChilders[0] = transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<AreaChilder>();
         areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
+        selectableObjs = new GameObject[4];
         selectableObjs[0] = upObj;
         selectableObjs[1] = downObj;
         selectableObjs[2] = leftObj;
