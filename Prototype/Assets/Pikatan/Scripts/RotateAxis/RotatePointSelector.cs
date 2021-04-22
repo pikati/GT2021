@@ -71,15 +71,20 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
 
     public void SetSelectableObjects()
     {
-
         for(int i = 0; i < 4; i++)
         {
             selectableObjects[i] = null;
         }
-        SetForntObject();
-        SetBackObject();
-        SetLeftObject();
-        SetRightObject();
+        RotatePoint rotatePoint = selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>();
+        selectableObjects[0] = rotatePoint.selectableObjs[0];
+        selectableObjects[1] = rotatePoint.selectableObjs[1];
+        selectableObjects[2] = rotatePoint.selectableObjs[2];
+        selectableObjects[3] = rotatePoint.selectableObjs[3];
+        
+        //SetForntObject();
+        //SetBackObject();
+        //SetLeftObject();
+        //SetRightObject();
     }
 
     private void SetForntObject()
@@ -186,5 +191,6 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
                 selectableObjects[(int)SelectDirection.Own] = selectableObjects[(int)SelectDirection.Right];
             }
         }
+        SetSelectableObjects();
     }
 }
