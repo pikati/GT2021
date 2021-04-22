@@ -85,6 +85,9 @@ public class RotatePoint : MonoBehaviour
                 {
                     rotateState = RotateState.NoRotate;
                 }
+                Vector3 ang = transform.rotation.eulerAngles;
+                ang.z = deg;
+                transform.rotation = Quaternion.Euler(ang);
                 Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
@@ -93,7 +96,7 @@ public class RotatePoint : MonoBehaviour
     public void BeginRotate()
     {
         if (!IsActive) return;
-        isRotate = true;
+        Invoke("IsRotateTure", 0.05f);
         SetRotateValue();
         areaChilders[0].IsActive = true;
         areaChilders[1].IsActive = true;
@@ -223,5 +226,10 @@ public class RotatePoint : MonoBehaviour
                 Debug.LogError("回転軸おかしくてワロタ");
                 break;
         }
+    }
+
+    private void IsRotateTure()
+    {
+        isRotate = true;
     }
 }

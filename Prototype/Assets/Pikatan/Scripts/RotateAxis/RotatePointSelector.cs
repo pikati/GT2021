@@ -43,29 +43,6 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
             {
                 selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>().BeginRotate();
             }
-
-            if(selectableObjects[(int)SelectDirection.Front] != null)
-            {
-                Debug.Log("Front" + selectableObjects[(int)SelectDirection.Front].name);
-
-            }
-            if (selectableObjects[(int)SelectDirection.Back] != null)
-            {
-                Debug.Log("back " + selectableObjects[(int)SelectDirection.Back].name);
-            }
-            if (selectableObjects[(int)SelectDirection.Left] != null)
-            {
-                Debug.Log("Left" + selectableObjects[(int)SelectDirection.Left].name);
-
-            }
-            if (selectableObjects[(int)SelectDirection.Right] != null)
-            {
-                Debug.Log("Right" + selectableObjects[(int)SelectDirection.Right].name);
-            }
-            if (selectableObjects[(int)SelectDirection.Own] != null)
-            {
-                Debug.Log("Own  " + selectableObjects[(int)SelectDirection.Own].name);
-            }
         }
     }
 
