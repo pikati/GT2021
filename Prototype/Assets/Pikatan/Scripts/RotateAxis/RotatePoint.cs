@@ -24,7 +24,16 @@ public class RotatePoint : MonoBehaviour
     [SerializeField]
     private float rotateSpeed;
     [SerializeField]
-    private RotateAxis rotateAxis = RotateAxis.Z; 
+    private RotateAxis rotateAxis = RotateAxis.Z;
+    [SerializeField]
+    private GameObject upObj = null;
+    [SerializeField]
+    private GameObject downObj = null;
+    [SerializeField]
+    private GameObject leftObj = null;
+    [SerializeField]
+    private GameObject rightObj = null;
+    public GameObject[] selectableObjs = new GameObject[4];
     private RotateState rotateState = RotateState.NoRotate;
     private bool isRotate = false;
     private float rotateValue;
@@ -39,6 +48,11 @@ public class RotatePoint : MonoBehaviour
         changeColor =GetComponentInChildren<ChangeColor>();
         areaChilders[0] = transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<AreaChilder>();
         areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
+        selectableObjs[0] = upObj;
+        selectableObjs[1] = downObj;
+        selectableObjs[2] = leftObj;
+        selectableObjs[3] = rightObj;
+
     }
 
 
