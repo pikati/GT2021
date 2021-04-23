@@ -6,13 +6,12 @@ public class ClearChecker : Singleton<ClearChecker>
 {
     [SerializeField]
     private int checkPointCount = 1;
-    public bool IsClear { get; private set; } = false;
-    private GameObject clearText;
+    public bool IsClear { get; private set; } = false; 
+    
     // Start is called before the first frame update
     void Start()
     {
-        clearText = GameObject.Find("ClearText");
-        clearText.SetActive(false);
+        
     }
 
     public void ReachChechkPoint()
@@ -20,8 +19,8 @@ public class ClearChecker : Singleton<ClearChecker>
         checkPointCount--;
         if(checkPointCount <= 0)
         {
+            Singleton<GameManager>.Instance.StageClear();
             IsClear = true;
-            clearText.SetActive(true);
         }
     }
 }
