@@ -17,6 +17,9 @@ public class RotatePoint : MonoBehaviour
         Y,
         Z
     }
+    [SerializeField]
+    private bool isActive = false;
+    public bool IsActive { get; set; }
 
     [SerializeField]
     private float rotateSpeed;
@@ -24,23 +27,27 @@ public class RotatePoint : MonoBehaviour
     private RotateAxis rotateAxis = RotateAxis.Z; 
     private RotateState rotateState = RotateState.NoRotate;
     private bool isRotate = false;
-    //private Vector3 rotateValue = Vector3.zero;
     private float rotateValue;
     private float[] angles = new float[3];
+    private ChangeColor changeColor;
+    private AreaChilder[] areaChilders = new AreaChilder[2];
 
     private void Start()
     {
+        IsActive = isActive;
         SetRotateValue();
+        changeColor =GetComponentInChildren<ChangeColor>();
+        areaChilders[0] = transform.GetChild(0).gameObject.GetComponent<AreaChilder>();
+        areaChilders[1] = transform.GetChild(1).gameObject.GetComponent<AreaChilder>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.qKey.isPressed)
+        if(Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
         {
-            isRotate = true;
-            SetRotateValue();
+            changeColor.GetFlag = IsActive;
         }
         if (isRotate)
         {
@@ -66,6 +73,15 @@ public class RotatePoint : MonoBehaviour
         }
     }
 
+    public void BeginRotate()
+    {
+        if (!IsActive) return;
+        isRotate = true;
+        SetRotateValue();
+        areaChilders[0].IsActive = true;
+        areaChilders[1].IsActive = true;
+    }
+
     //初期化と回転フラグ立った時に呼べ
     private void SetRotateValue()
     {
@@ -89,7 +105,9 @@ public class RotatePoint : MonoBehaviour
 
     private bool IsRotateComplete(float angle, float deg)
     {
-        if(rotateState == RotateState.NoRotate)
+        areaChilders[0].IsActive = false;
+        areaChilders[1].IsActive = false;
+        if (rotateState == RotateState.NoRotate)
         {
             //回転していない状態（デフォルトの状態）なので指定された角度以上ｔるえ
             if(angle >= deg)
@@ -145,5 +163,43 @@ public class RotatePoint : MonoBehaviour
                 break;
         }
         return Vector3.zero;
+    }
+
+    private void StopRotationSet(float deg)
+    {
+        switch (rotateAxis)
+        {
+            case RotateAxis.X:
+                {
+                    Vector3 rot = transform.rotation.eulerAngles;
+                    rot.x = deg;
+                    Quaternion q = Quaternion.identity;
+                    q.eulerAngles = rot;
+                    transform.rotation = q;
+                    break;
+                }
+                
+            case RotateAxis.Y:
+                {
+                    Vector3 rot = transform.rotation.eulerAngles;
+                    rot.x = deg;
+                    Quaternion q = Quaternion.identity;
+                    q.eulerAngles = rot;
+                    transform.rotation = q;
+                    break;
+                }
+            case RotateAxis.Z:
+                {
+                    Vector3 rot = transform.rotation.eulerAngles;
+                    rot.x = deg;
+                    Quaternion q = Quaternion.identity;
+                    q.eulerAngles = rot;
+                    transform.rotation = q;
+                    break;
+                }
+            default:
+                Debug.LogError("回転軸おかしくてワロタ");
+                break;
+        }
     }
 }
