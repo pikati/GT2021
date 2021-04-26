@@ -33,13 +33,15 @@ public class RotatePoint : MonoBehaviour
     private GameObject leftObj = null;
     [SerializeField]
     private GameObject rightObj = null;
-    public GameObject[] selectableObjs { get; private set; }
     private RotateState rotateState = RotateState.NoRotate;
     private bool isRotate = false;
     private float rotateValue;
     private float[] angles = new float[3];
     private ChangeColor changeColor;
     private AreaChilder[] areaChilders = new AreaChilder[2];
+
+    public GameObject[] selectableObjs { get; private set; }
+    public bool OnPlayer { get; set; } = false;
 
     private void Start()
     {
@@ -97,6 +99,7 @@ public class RotatePoint : MonoBehaviour
     public void BeginRotate()
     {
         if (!IsActive) return;
+        if (OnPlayer) return; 
         Invoke("IsRotateTure", 0.05f);
         SetRotateValue();
         areaChilders[0].IsActive = true;
