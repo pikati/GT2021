@@ -80,9 +80,5 @@ public class InputController : Singleton<InputController>
         Down = down.triggered;
         Left = left.triggered;
         Right = right.triggered;
-        Debug.Log("up:" + Up);
-        Debug.Log("down:" + Down);
-        Debug.Log("left:" + Left);
-        Debug.Log("right:" + Right);
     }
 }

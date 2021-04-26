@@ -24,7 +24,16 @@ public class RotatePoint : MonoBehaviour
     [SerializeField]
     private float rotateSpeed;
     [SerializeField]
-    private RotateAxis rotateAxis = RotateAxis.Z; 
+    private RotateAxis rotateAxis = RotateAxis.Z;
+    [SerializeField]
+    private GameObject upObj = null;
+    [SerializeField]
+    private GameObject downObj = null;
+    [SerializeField]
+    private GameObject leftObj = null;
+    [SerializeField]
+    private GameObject rightObj = null;
+    public GameObject[] selectableObjs { get; private set; }
     private RotateState rotateState = RotateState.NoRotate;
     private bool isRotate = false;
     private float rotateValue;
@@ -37,8 +46,14 @@ public class RotatePoint : MonoBehaviour
         IsActive = isActive;
         SetRotateValue();
         changeColor =GetComponentInChildren<ChangeColor>();
-        areaChilders[0] = transform.GetChild(0).gameObject.GetComponent<AreaChilder>();
-        areaChilders[1] = transform.GetChild(1).gameObject.GetComponent<AreaChilder>();
+        areaChilders[0] = transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<AreaChilder>();
+        areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
+        selectableObjs = new GameObject[4];
+        selectableObjs[0] = upObj;
+        selectableObjs[1] = downObj;
+        selectableObjs[2] = leftObj;
+        selectableObjs[3] = rightObj;
+
     }
 
 
@@ -48,6 +63,10 @@ public class RotatePoint : MonoBehaviour
         if(Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
         {
             changeColor.GetFlag = IsActive;
+        }
+        else
+        {
+            changeColor.GetFlag = false;
         }
         if (isRotate)
         {
@@ -59,7 +78,6 @@ public class RotatePoint : MonoBehaviour
             if (IsRotateComplete(angles[(int)rotateAxis], deg))
             {
                 angles[(int)rotateAxis] = deg;
-                isRotate = false;
                 if (rotateState == RotateState.NoRotate)
                 {
                     rotateState = RotateState.Rotated;
@@ -68,6 +86,9 @@ public class RotatePoint : MonoBehaviour
                 {
                     rotateState = RotateState.NoRotate;
                 }
+                Vector3 ang = transform.rotation.eulerAngles;
+                ang.z = deg;
+                transform.rotation = Quaternion.Euler(ang);
                 Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
@@ -76,7 +97,7 @@ public class RotatePoint : MonoBehaviour
     public void BeginRotate()
     {
         if (!IsActive) return;
-        isRotate = true;
+        Invoke("IsRotateTure", 0.05f);
         SetRotateValue();
         areaChilders[0].IsActive = true;
         areaChilders[1].IsActive = true;
@@ -105,13 +126,15 @@ public class RotatePoint : MonoBehaviour
 
     private bool IsRotateComplete(float angle, float deg)
     {
-        areaChilders[0].IsActive = false;
-        areaChilders[1].IsActive = false;
+        
         if (rotateState == RotateState.NoRotate)
         {
             //回転していない状態（デフォルトの状態）なので指定された角度以上ｔるえ
             if(angle >= deg)
             {
+                isRotate = false;
+                areaChilders[0].IsActive = false;
+                areaChilders[1].IsActive = false;
                 return true;
             }
             return false;
@@ -124,6 +147,9 @@ public class RotatePoint : MonoBehaviour
             }
             if(angle <= deg)
             {
+                isRotate = false;
+                areaChilders[0].IsActive = false;
+                areaChilders[1].IsActive = false;
                 return true;
             }
             return false;
@@ -201,5 +227,10 @@ public class RotatePoint : MonoBehaviour
                 Debug.LogError("回転軸おかしくてワロタ");
                 break;
         }
+    }
+
+    private void IsRotateTure()
+    {
+        isRotate = true;
     }
 }

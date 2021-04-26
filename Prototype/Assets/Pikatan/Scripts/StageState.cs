@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class StageState : Singleton<StageState>
 {
@@ -17,7 +16,7 @@ public class StageState : Singleton<StageState>
 
     private void Update()
     {
-        if (Keyboard.current.rKey.isPressed)
+        if (Singleton<InputController>.Instance.X)
         {
             ChangeStageState();
         }
