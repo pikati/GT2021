@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ErectricalEffect : MonoBehaviour
 {
-    ErectricalEffectManager eem;
+    [SerializeField]
+    private GameObject eemObj;
+    private ErectricalEffectManager eem;
 
     private void Start()
     {
-        eem = transform.root.gameObject.transform.GetChild(0).GetComponent<ErectricalEffectManager>();
+        eem = eemObj.GetComponent<ErectricalEffectManager>();
     }
 
     private void OnParticleCollision(GameObject other)
