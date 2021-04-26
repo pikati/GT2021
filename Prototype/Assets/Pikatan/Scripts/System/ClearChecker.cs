@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class ClearChecker : Singleton<ClearChecker>
 {
-    [SerializeField]
     private int checkPointCount = 1;
     public int ClearNum => checkPointCount;
-    public bool IsClear { get; private set; } = false; 
-    
+    public bool IsClear { get; private set; } = false;
+
+    private void Start()
+    {
+        GameObject[] goalObjs = GameObject.FindGameObjectsWithTag("Goal");
+        checkPointCount = goalObjs.Length;
+    }
+
     public void ReachChechkPoint()
     {
         checkPointCount--;
