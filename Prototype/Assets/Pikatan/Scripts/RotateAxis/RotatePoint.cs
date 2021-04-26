@@ -94,7 +94,6 @@ public class RotatePoint : MonoBehaviour
                 Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
-        Debug.Log(OnPlayer);
     }
 
     public void BeginRotate()
