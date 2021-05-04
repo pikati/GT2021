@@ -14,10 +14,25 @@ public class Switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!is_On)
+        if(is_On)
+        {
+            //trueになったら赤になる
+            GetComponent<Renderer>().material.color = Color.red;
+        }
+        else
+        {
+            GetComponent<Renderer>().material.color = Color.blue;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!is_On)
         {
             is_On = true;
-            GetComponent<Renderer>().material.color = Color.red;
+        }
+        else
+        {
+            is_On = false;
         }
     }
 }
