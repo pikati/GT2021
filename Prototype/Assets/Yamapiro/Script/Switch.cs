@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
+
+    public GameObject Panel;
+
     public bool is_On;
 
     // Start is called before the first frame update
@@ -16,23 +19,40 @@ public class Switch : MonoBehaviour
     {
         if(is_On)
         {
-            //trueになったら赤になる
+            //trueになったらスイッチがオンになり赤になる
             GetComponent<Renderer>().material.color = Color.red;
         }
         else
         {
+            //falseになったらスイッチがオフになり青になる
             GetComponent<Renderer>().material.color = Color.blue;
-        }
+  
+        }    
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!is_On)
+        if (other.gameObject.tag == "Player")
         {
-            is_On = true;
-        }
-        else
-        {
-            is_On = false;
+            if (!is_On)
+            {
+                //trueになってパネルが非表示になる
+                is_On = true;
+                Panel.SetActive(false);
+            }
+            else
+            {
+                //falseになってパネルが表示される
+                is_On = false;
+                Panel.SetActive(true);
+            }
         }
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (is_On == true)
+    //    {
+
+    //    }
+    //}
 }
