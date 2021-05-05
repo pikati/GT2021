@@ -7,11 +7,17 @@ public class Switch : MonoBehaviour
 
     public GameObject Panel;
 
+    public GameObject[] Switchs = GameObject.FindGameObjectsWithTag("Switch");
+
     public bool is_On;
 
     // Start is called before the first frame update
     void Start()
     {
+        for(int i = 0; i < Switchs.Length; i++)
+        {
+            Debug.Log(Switchs[i]);
+        }
     }
 
     // Update is called once per frame
@@ -47,12 +53,4 @@ public class Switch : MonoBehaviour
             }
         }
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (is_On == true)
-    //    {
-
-    //    }
-    //}
 }
