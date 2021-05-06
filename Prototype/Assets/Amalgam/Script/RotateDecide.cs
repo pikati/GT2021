@@ -5,9 +5,6 @@ using System.Linq;
 
 public class RotateDecide : MonoBehaviour
 {
-    //[SerializeField]
-    //private GameObject[] RotatePoints;
-
     //直接的には関係ないけど問題点
     //プレイヤーがエリアの境目にある壁にグリグリしている時
     //隣のエリアに入っている判定になってしまう(つまり隣のエリアが回転できなくなる)
@@ -35,8 +32,7 @@ public class RotateDecide : MonoBehaviour
 
     }
 
-
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
         {
@@ -44,6 +40,14 @@ public class RotateDecide : MonoBehaviour
         }
 
         SearchAxis();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Player"))
+        {
+            return;
+        }
 
         foreach (RotatePoint rp in RotatePointList)
         {
@@ -76,14 +80,6 @@ public class RotateDecide : MonoBehaviour
                 Debug.Log("RotatePoint：nullです");
             }
         }
-
-        //foreach (GameObject rp in RotatePoints)
-        //{
-        //    if (rp != null)
-        //    {
-        //        rp.GetComponent<RotatePoint>().OnPlayer = false;
-        //    }
-        //}
     }
 
     //回転軸更新
@@ -109,31 +105,5 @@ public class RotateDecide : MonoBehaviour
                 }
             }
         }
-
-        //遺産
-        //+X -X +Y -Y各一番近い軸を保存
-        //foreach(GameObject obj in GameObject.FindGameObjectsWithTag("RotatePoint"))
-        //{
-        //    float tmp_x, tmp_z, tmp_dis;
-        //    float near_xp, near_xm, near_zp, near_zm;
-        //    tmp_x = tmp_z = tmp_dis = near_xp = near_xm = near_zp = near_zm = 0.0f;
-
-        //    tmp_x = obj.transform.position.x - center.x;
-        //    tmp_z = obj.transform.position.z - center.z;
-
-        //    //Xについてプラスマイナス
-        //    if(tmp_x > 0.0f)
-        //    {
-        //        //距離を調べて一番近いやつを保存
-        //        tmp_dis = Vector3.Distance(center, obj.transform.position);
-
-        //        if (near_xp == 0 || near_xp > tmp_dis)
-        //        {
-        //            near_xp = tmp_dis;
-        //            RotatePoints[0] = obj;
-        //            Debug.Log("０取った　＋X");
-        //        }
-        //    }
-        //}
     }
 }
