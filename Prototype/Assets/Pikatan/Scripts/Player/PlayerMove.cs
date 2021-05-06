@@ -12,18 +12,21 @@ public class PlayerMove : MonoBehaviour
     private NavMeshAgent agent;
     private PlayerState playerState;
     public SlideParam SlideParam { get; set; }//何かに当たったら速度0にする処理書くかも
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         inputController = Singleton<InputController>.Instance;
         agent = GetComponent<NavMeshAgent>();
         playerState = GetComponent<PlayerState>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        Debug.Log(rb.velocity);
     }
 
     private void Move()
@@ -36,6 +39,10 @@ public class PlayerMove : MonoBehaviour
             {
                 Vector3 direction = Vector3.forward * move.y + Camera.main.transform.right * move.x;
                 agent.Move(direction * speed * Time.deltaTime);
+            }
+            else
+            {
+                rb.velocity = Vector3.zero;
             }
         }
         else if(playerState.state == PlayerState.PlayerStateEnum.Slide)

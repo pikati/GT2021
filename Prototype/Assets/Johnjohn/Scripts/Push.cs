@@ -10,6 +10,19 @@ public class Push : MonoBehaviour
     private GameObject endObj;
     [SerializeField]
     private float speed = 1.0f;
+    [SerializeField]
+    private ColDirection colliderDirection;
+    public ColDirection ColliderDirection { get; private set; }
+    public ColDirection ChildDirection { get; set; } = ColDirection.Max;
+
+    public enum ColDirection
+    {
+        Front,
+        Back,
+        Left,
+        Right,
+        Max
+    }
 
     private enum PushState
     {
@@ -25,28 +38,25 @@ public class Push : MonoBehaviour
 
     private PushState pushState = PushState.Init;
     private PushMoveState pushMoveState = PushMoveState.Stop;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("s" + startObj.transform.position);
-        Debug.Log("e" + endObj.transform.position);
-
+        ColliderDirection = colliderDirection;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         Move();
-        
-
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            if (ColliderDirection != ChildDirection) return;
             if(pushMoveState==PushMoveState.Stop)
             {
                 pushMoveState = PushMoveState.Move;
@@ -61,15 +71,21 @@ public class Push : MonoBehaviour
 
         if(pushState==PushState.Uninit)
         {
-            transform.position = Vector3.Lerp(transform.position, startObj.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, startObj.transform.position, speed * Time.deltaTime);
             if (IsMoveCompleted(startObj.transform.position))
+            {
                 ChengeState();
+                Singleton<NavMeshBaker>.Instance.Bake();
+            }
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, endObj.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, endObj.transform.position, speed * Time.deltaTime);
             if (IsMoveCompleted(endObj.transform.position))
+            {
                 ChengeState();
+                Singleton<NavMeshBaker>.Instance.Bake();
+            }
         }
 
         
@@ -77,7 +93,7 @@ public class Push : MonoBehaviour
 
     private bool IsMoveCompleted(Vector3 Target)
     {
-        if (Vec3Abs(transform.position, Target) <= 0.1f)
+        if (Vec3Abs(transform.position, Target) <= 0.001f)
             return true;
         return false;
 
@@ -106,6 +122,24 @@ public class Push : MonoBehaviour
         else
         {
             pushMoveState = PushMoveState.Stop;
+        }
+        switch (ColliderDirection)
+        {
+            case ColDirection.Front:
+                ColliderDirection = ColDirection.Back;
+                break;
+            case ColDirection.Back:
+                ColliderDirection = ColDirection.Front;
+                break;
+            case ColDirection.Left:
+                ColliderDirection = ColDirection.Right;
+                break;
+            case ColDirection.Right:
+                ColliderDirection = ColDirection.Left;
+                break;
+            default:
+                Debug.LogError("ColDirectionがMax");
+                break;
         }
 
     }
