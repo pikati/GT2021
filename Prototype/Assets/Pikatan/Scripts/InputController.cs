@@ -7,7 +7,7 @@ public class InputController : Singleton<InputController>
 {
     #region Field
     private PlayerInput input;
-    private InputAction move, look, a, b, x, y, rb, rt, r3, lb, lt, l3, select, start, up, down, left, right;
+    private InputAction move, look, a, b, x, y, rb, rt, r3, lb, lt, l3, select, start, up, down, left, right, arrow;
     private Vector2 moveValue, rightValue, arrowValue;
     #endregion
 
@@ -27,10 +27,10 @@ public class InputController : Singleton<InputController>
     public bool L3 { get; private set; }
     public bool SelectPress { get; private set; }
     public bool StartPress { get; private set; }
-    public bool Up { get; private set; }
-    public bool Down { get; private set; }
-    public bool Left { get; private set; }
-    public bool Right { get; private set; }
+    //public bool Up { get; private set; }
+    //public bool Down { get; private set; }
+    //public bool Left { get; private set; }
+    //public bool Right { get; private set; }
 
 
     #endregion
@@ -53,10 +53,11 @@ public class InputController : Singleton<InputController>
         r3 = actionMap["R3"];
         select = actionMap["Select"];
         start = actionMap["Start"];
-        up = actionMap["Up"];
-        down = actionMap["Down"];
-        left = actionMap["Left"];
-        right = actionMap["Right"];
+        //up = actionMap["Up"];
+        //down = actionMap["Down"];
+        //left = actionMap["Left"];
+        //right = actionMap["Right"];
+        arrow = actionMap["Arrow"];
     }
 
     // Update is called once per frame
@@ -64,6 +65,7 @@ public class InputController : Singleton<InputController>
     {
         moveValue = move.ReadValue<Vector2>();
         rightValue = look.ReadValue<Vector2>();
+        arrowValue = arrow.ReadValue<Vector2>();
         A = a.triggered;
         B = b.triggered;
         X = x.triggered;
@@ -76,9 +78,9 @@ public class InputController : Singleton<InputController>
         L3 = l3.triggered;
         SelectPress = select.triggered;
         StartPress = start.triggered;
-        Up = up.triggered;
-        Down = down.triggered;
-        Left = left.triggered;
-        Right = right.triggered;
+        //Up = up.triggered;
+        //Down = down.triggered;
+        //Left = left.triggered;
+        //Right = right.triggered;
     }
 }

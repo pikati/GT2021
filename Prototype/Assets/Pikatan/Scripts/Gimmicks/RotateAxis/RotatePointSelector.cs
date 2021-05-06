@@ -57,82 +57,11 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         selectableObjects[1] = rotatePoint.selectableObjs[1];
         selectableObjects[2] = rotatePoint.selectableObjs[2];
         selectableObjects[3] = rotatePoint.selectableObjs[3];
-        
-        //SetForntObject();
-        //SetBackObject();
-        //SetLeftObject();
-        //SetRightObject();
-    }
-
-    private void SetForntObject()
-    {
-        Vector3 selectPoint = new Vector3(0, 0, 10000);
-        foreach(GameObject pointObj in rotateObjects)
-        {
-            float length = pointObj.transform.position.z - selectableObjects[(int)SelectDirection.Own].transform.position.z;
-            if (length > 0)
-            {
-                if(length < selectPoint.z - selectableObjects[(int)SelectDirection.Own].transform.position.z)
-                {
-                    selectPoint = pointObj.transform.position;
-                    selectableObjects[0] = pointObj;
-                }
-            }
-        }
-    }
-
-    private void SetBackObject()
-    {
-        Vector3 selectPoint = new Vector3(0, 0, -10000);
-        foreach (GameObject pointObj in rotateObjects)
-        {
-            float length = pointObj.transform.position.z - selectableObjects[(int)SelectDirection.Own].transform.position.z;
-            if (length < 0)
-            {
-                if (length > selectPoint.x - selectableObjects[(int)SelectDirection.Own].transform.position.z)
-                {
-                    selectPoint = pointObj.transform.position;
-                    selectableObjects[1] = pointObj;
-                }
-            }
-        }
-    }
-    private void SetLeftObject()
-    {
-        Vector3 selectPoint = new Vector3(-10000, 0, 0);
-        foreach (GameObject pointObj in rotateObjects)
-        {
-            float length = pointObj.transform.position.x - selectableObjects[(int)SelectDirection.Own].transform.position.x;
-            if (length < 0)
-            {
-                if (length > selectPoint.x - selectableObjects[(int)SelectDirection.Own].transform.position.x)
-                {
-                    selectPoint = pointObj.transform.position;
-                    selectableObjects[2] = pointObj;
-                }
-            }
-        }
-    }
-    private void SetRightObject()
-    {
-        Vector3 selectPoint = new Vector3(10000, 0, 0);
-        foreach (GameObject pointObj in rotateObjects)
-        {
-            float length = pointObj.transform.position.x - selectableObjects[(int)SelectDirection.Own].transform.position.x;
-            if (length > 0)
-            {
-                if (length < selectPoint.x - selectableObjects[(int)SelectDirection.Own].transform.position.x)
-                {
-                    selectPoint = pointObj.transform.position;
-                    selectableObjects[3] = pointObj;
-                }
-            }
-        }
     }
 
     private void SelectObject()
     {
-        if (ic.Up)
+        if (ic.ArrowValue.y > 0)
         {
             if (selectableObjects[(int)SelectDirection.Front] != null)
             {
@@ -141,7 +70,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
                 selectableObjects[(int)SelectDirection.Own] = selectableObjects[(int)SelectDirection.Front];
             }
         }
-        if (ic.Down)
+        if (ic.ArrowValue.y < 0)
         {
             if (selectableObjects[(int)SelectDirection.Back] != null)
             {
@@ -150,7 +79,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
                 selectableObjects[(int)SelectDirection.Own] = selectableObjects[(int)SelectDirection.Back];
             }
         }
-        if (ic.Left)
+        if (ic.ArrowValue.x < 0)
         {
             if (selectableObjects[(int)SelectDirection.Left] != null)
             {
@@ -159,7 +88,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
                 selectableObjects[(int)SelectDirection.Own] = selectableObjects[(int)SelectDirection.Left];
             }
         }
-        if (ic.Right)
+        if (ic.ArrowValue.x > 0)
         {
             if (selectableObjects[(int)SelectDirection.Right] != null)
             {

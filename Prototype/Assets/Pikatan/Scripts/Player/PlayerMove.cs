@@ -26,7 +26,6 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         Move();
-        Debug.Log(rb.velocity);
     }
 
     private void Move()
