@@ -64,7 +64,7 @@ public class SoundManager : Singleton<SoundManager>
     }
 
     //起動時にSEとBGMをロード
-    private void Awake()
+    new public void Awake()
     {
         if(this != Instance)
         {
