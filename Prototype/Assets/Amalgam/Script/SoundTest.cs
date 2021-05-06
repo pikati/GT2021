@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class SoundTest : MonoBehaviour
 {
-    [SerializeField]
-    private AudioClip TestSe_1;
-    [SerializeField]
-    private AudioClip TestSe_2;
-
     // Start is called before the first frame update
     void Start()
     {
