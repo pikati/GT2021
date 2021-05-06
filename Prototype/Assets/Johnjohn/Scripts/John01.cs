@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class John01 : MonoBehaviour
 {
+    public float MoveSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,9 @@ public class John01 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKey(KeyCode.W))
+        {
+            transform.position += transform.forward * MoveSpeed;
+        }
     }
 }

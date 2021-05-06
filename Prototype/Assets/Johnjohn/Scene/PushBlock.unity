@@ -3618,7 +3618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734117541}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 3.5, y: 5, z: -2}
+  m_LocalPosition: {x: 3.5, y: 6.98, z: -3.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4909,7 +4909,6 @@ GameObject:
   - component: {fileID: 1208388318}
   - component: {fileID: 1208388317}
   - component: {fileID: 1208388316}
-  - component: {fileID: 1208388315}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -4917,18 +4916,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1208388315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208388314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7182bcb6bd07b3b4d8624430d3140fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1208388316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7812,6 +7799,10 @@ GameObject:
   - component: {fileID: 2113766756}
   - component: {fileID: 2113766755}
   - component: {fileID: 2113766754}
+  - component: {fileID: 2113766761}
+  - component: {fileID: 2113766760}
+  - component: {fileID: 2113766759}
+  - component: {fileID: 2113766758}
   - component: {fileID: 2113766753}
   m_Layer: 0
   m_Name: Cube
@@ -7829,7 +7820,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2113766752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7182bcb6bd07b3b4d8624430d3140fea, type: 3}
+  m_Script: {fileID: 11500000, guid: 00cf7f1239d02c24aa564ec46921d5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &2113766754
@@ -7906,6 +7897,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2113766758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113766752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 1, z: 1}
+  m_Center: {x: -0.6, y: 0, z: 0}
+--- !u!65 &2113766759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113766752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: -0.6}
+--- !u!65 &2113766760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113766752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 1, z: 1}
+  m_Center: {x: 0.6, y: 0, z: 0}
+--- !u!65 &2113766761
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113766752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0.6}
 --- !u!1 &2142290113
 GameObject:
   m_ObjectHideFlags: 0
