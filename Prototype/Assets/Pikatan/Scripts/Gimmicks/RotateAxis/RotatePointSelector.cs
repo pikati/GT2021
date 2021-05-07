@@ -19,6 +19,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
     private List<GameObject> rotateObjects = new List<GameObject>();
     private GameObject[] selectableObjects = new GameObject[5];
     private InputController ic;
+    private bool isInput = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,8 +62,15 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
 
     private void SelectObject()
     {
+        if(ic.ArrowValue == Vector2.zero)
+        {
+            isInput = false;
+        }
+        if (isInput) return;
+        Debug.Log(ic.ArrowValue);
         if (ic.ArrowValue.y > 0)
         {
+            isInput = true;
             if (selectableObjects[(int)SelectDirection.Front] != null)
             {
                 selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>().IsActive = false;
@@ -72,6 +80,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         }
         if (ic.ArrowValue.y < 0)
         {
+            isInput = true;
             if (selectableObjects[(int)SelectDirection.Back] != null)
             {
                 selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>().IsActive = false;
@@ -81,6 +90,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         }
         if (ic.ArrowValue.x < 0)
         {
+            isInput = true;
             if (selectableObjects[(int)SelectDirection.Left] != null)
             {
                 selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>().IsActive = false;
@@ -90,6 +100,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         }
         if (ic.ArrowValue.x > 0)
         {
+            isInput = true;
             if (selectableObjects[(int)SelectDirection.Right] != null)
             {
                 selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>().IsActive = false;
