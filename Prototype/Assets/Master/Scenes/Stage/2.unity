@@ -582,6 +582,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3783d65bb88e479419ec74d0b7ef1e8e, type: 3}
+--- !u!1 &757905148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2321875039122110827, guid: 3783d65bb88e479419ec74d0b7ef1e8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 757905147}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &757905149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757905148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotatePointList: []
+  Range: 0
 --- !u!1 &783182530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,6 +2351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1062486072528416902}
   - component: {fileID: 1062486072528416901}
+  - component: {fileID: 1062486072528416904}
   m_Layer: 0
   m_Name: Panel3x3 (3)
   m_TagString: PanelArea
@@ -2338,6 +2359,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1062486072528416904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062486072528416903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotatePointList: []
+  Range: 0
 --- !u!1 &1062486073376462640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,6 +2926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3805004798091301543}
   - component: {fileID: 3805004798091301540}
+  - component: {fileID: 3805004798091301544}
   m_Layer: 0
   m_Name: Panel3x3 (2)
   m_TagString: PanelArea
@@ -2918,6 +2954,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3805004798091301544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805004798091301542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotatePointList: []
+  Range: 0
 --- !u!114 &3805004798095827520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3494,6 +3544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7293052749200786742}
   - component: {fileID: 7293052749200786741}
+  - component: {fileID: 7293052749200786744}
   m_Layer: 0
   m_Name: Panel3x3
   m_TagString: PanelArea
@@ -3501,6 +3552,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7293052749200786744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7293052749200786743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotatePointList: []
+  Range: 0
 --- !u!65 &7293052749221443024
 BoxCollider:
   m_ObjectHideFlags: 0
