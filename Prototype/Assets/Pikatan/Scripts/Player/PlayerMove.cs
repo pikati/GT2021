@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     private NavMeshAgent agent;
     private PlayerState playerState;
     private Vector3 lastPosition;
+    private float iceSpeed = 4.0f;
     public SlideParam SlideParam { get; set; }//何かに当たったら速度0にする処理書くかも
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -48,11 +49,52 @@ public class PlayerMove : MonoBehaviour
         }
         else if(playerState.state == PlayerState.PlayerStateEnum.Slide)
         {
+            agent.Move(SlideParam.Direction * speed * Time.deltaTime);
             Vector3 move = inputController.MoveValue;
             move.z = move.y;
             move.y = 0;
-            SlideParam.Direction += move * 0.01f;
-            agent.Move(SlideParam.Direction * speed * Time.deltaTime);
+            if (Vec3Abs(transform.position, lastPosition) < 0.001f)
+            {
+                if (move.x == 0 && move.y == 0)
+                {
+                    SlideParam.Direction = Vector2.zero;
+                    lastPosition = transform.position;
+                    return;
+                }
+                else
+                {
+                    if (Mathf.Abs(move.x) > Mathf.Abs(move.z))
+                    {
+                        if (move.x > move.z)
+                        {
+                            move.x = 4.0f;
+                            move.z = 0;
+                        }
+                        else
+                        {
+                            move.x = -4.0f;
+                            move.z = 0;
+                        }
+                    }
+                    else
+                    {
+                        if (move.x > move.z)
+                        {
+                            move.x = 0;
+                            move.z = -4.0f;
+                        }
+                        else
+                        {
+                            move.x = 0;
+                            move.z = 4.0f;
+                        }
+                    }
+                    SlideParam.Direction = move;
+                }
+            }
+            
+            
+            lastPosition = transform.position;
         }
         LookDirection();
         lastPosition = transform.position;
@@ -60,10 +102,17 @@ public class PlayerMove : MonoBehaviour
 
     private void LookDirection()
     {
-        Vector3 diff = transform.position - lastPosition;
-        if(diff.magnitude > 0.01f)
+        Vector3 moveDir = inputController.MoveValue;
+        moveDir.z = moveDir.y;
+        moveDir.y = 0;
+        if(moveDir.magnitude > 0.01f)
         {
-            transform.rotation = Quaternion.LookRotation(diff);
+            transform.rotation = Quaternion.LookRotation(moveDir);
         }
+    }
+
+    private float Vec3Abs(Vector3 a, Vector3 b)
+    {
+        return (Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z)) / 3.0f;
     }
 }

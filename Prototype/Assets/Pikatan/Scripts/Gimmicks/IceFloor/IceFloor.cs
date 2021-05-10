@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class IceFloor : MonoBehaviour
 {
-    SlideParam slideParam;
-    InputController inputController;
+    private SlideParam slideParam;
+    private InputController inputController;
+    private float speed = 4.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,33 @@ public class IceFloor : MonoBehaviour
             Vector2 move = inputController.MoveValue;
             if (move != Vector2.zero)
             {
+                if (Mathf.Abs(move.x) > Mathf.Abs(move.y))
+                {
+                    if (move.x > move.y)
+                    {
+                        move.x = speed;
+                        move.y = 0;
+                    }
+                    else
+                    {
+                        move.x = -speed;
+                        move.y = 0;
+                    }
+                }
+                else
+                {
+                    if (move.x > move.y)
+                    {
+                        move.x = 0;
+                        move.y = -speed;
+                    }
+                    else
+                    {
+                        move.x = 0;
+                        move.y = speed;
+                    }
+                }
+                
                 slideParam.Direction = Vector3.forward * move.y + Camera.main.transform.right * move.x;
                 other.GetComponent<PlayerState>().state = PlayerState.PlayerStateEnum.Slide;
                 other.GetComponent<PlayerMove>().SlideParam = slideParam;
@@ -41,6 +69,7 @@ public class IceFloor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (slideParam.Direction.x == Vector2.zero.x && slideParam.Direction.y == Vector2.zero.y) return;
             other.GetComponent<PlayerState>().state = PlayerState.PlayerStateEnum.Slide;
             other.GetComponent<PlayerMove>().SlideParam = slideParam;
         }
