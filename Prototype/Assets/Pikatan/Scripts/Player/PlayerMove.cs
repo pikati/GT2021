@@ -60,10 +60,12 @@ public class PlayerMove : MonoBehaviour
 
     private void LookDirection()
     {
-        Vector3 diff = transform.position - lastPosition;
-        if(diff.magnitude > 0.01f)
+        Vector3 moveDir = inputController.MoveValue;
+        moveDir.z = moveDir.y;
+        moveDir.y = 0;
+        if(moveDir.magnitude > 0.01f)
         {
-            transform.rotation = Quaternion.LookRotation(diff);
+            transform.rotation = Quaternion.LookRotation(moveDir);
         }
     }
 }
