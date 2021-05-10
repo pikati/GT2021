@@ -6,6 +6,7 @@ public class IceFloor : MonoBehaviour
 {
     private SlideParam slideParam;
     private InputController inputController;
+    private float speed = 4.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +31,12 @@ public class IceFloor : MonoBehaviour
                 {
                     if (move.x > move.y)
                     {
-                        move.x = 2.0f;
+                        move.x = speed;
                         move.y = 0;
                     }
                     else
                     {
-                        move.x = -2.0f;
+                        move.x = -speed;
                         move.y = 0;
                     }
                 }
@@ -44,12 +45,12 @@ public class IceFloor : MonoBehaviour
                     if (move.x > move.y)
                     {
                         move.x = 0;
-                        move.y = -2.0f;
+                        move.y = -speed;
                     }
                     else
                     {
                         move.x = 0;
-                        move.y = 2.0f;
+                        move.y = speed;
                     }
                 }
                 

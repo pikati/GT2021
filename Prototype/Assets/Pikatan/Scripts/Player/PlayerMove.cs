@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     private NavMeshAgent agent;
     private PlayerState playerState;
     private Vector3 lastPosition;
+    private float iceSpeed = 4.0f;
     public SlideParam SlideParam { get; set; }//何かに当たったら速度0にする処理書くかも
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -66,12 +67,12 @@ public class PlayerMove : MonoBehaviour
                     {
                         if (move.x > move.z)
                         {
-                            move.x = 2.0f;
+                            move.x = 4.0f;
                             move.z = 0;
                         }
                         else
                         {
-                            move.x = -2.0f;
+                            move.x = -4.0f;
                             move.z = 0;
                         }
                     }
@@ -80,12 +81,12 @@ public class PlayerMove : MonoBehaviour
                         if (move.x > move.z)
                         {
                             move.x = 0;
-                            move.z = -2.0f;
+                            move.z = -4.0f;
                         }
                         else
                         {
                             move.x = 0;
-                            move.z = 2.0f;
+                            move.z = 4.0f;
                         }
                     }
                     SlideParam.Direction = move;
