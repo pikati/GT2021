@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     private InputController inputController;
     private NavMeshAgent agent;
     private PlayerState playerState;
+    private Vector3 lastPosition;
     public SlideParam SlideParam { get; set; }//何かに当たったら速度0にする処理書くかも
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -52,6 +53,17 @@ public class PlayerMove : MonoBehaviour
             move.y = 0;
             SlideParam.Direction += move * 0.01f;
             agent.Move(SlideParam.Direction * speed * Time.deltaTime);
+        }
+        LookDirection();
+        lastPosition = transform.position;
+    }
+
+    private void LookDirection()
+    {
+        Vector3 diff = transform.position - lastPosition;
+        if(diff.magnitude > 0.01f)
+        {
+            transform.rotation = Quaternion.LookRotation(diff);
         }
     }
 }

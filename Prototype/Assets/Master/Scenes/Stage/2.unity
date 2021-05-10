@@ -699,7 +699,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &793311656 stripped
 GameObject:
@@ -1028,6 +1028,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7189332067519478007, guid: b5ed320531de6584e90659c1863c1b25,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189332067519478007, guid: b5ed320531de6584e90659c1863c1b25,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5ed320531de6584e90659c1863c1b25, type: 3}
 --- !u!1001 &1192919226
@@ -1234,6 +1244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FrontViewCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985885608159472927, guid: d517a9e1840963a4cadffe3b27366e76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517a9e1840963a4cadffe3b27366e76, type: 3}
