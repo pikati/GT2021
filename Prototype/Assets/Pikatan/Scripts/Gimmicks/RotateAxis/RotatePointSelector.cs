@@ -35,8 +35,8 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
     // Update is called once per frame
     void Update()
     {
-        //ここに動く状態か選択状態かを取得する処理 このobjectが選択状態化も必要
-        if(Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
+        if (Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play) return;
+        if (Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
         {
             SelectObject();
             
@@ -67,7 +67,6 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
             isInput = false;
         }
         if (isInput) return;
-        Debug.Log(ic.ArrowValue);
         if (ic.ArrowValue.y > 0)
         {
             isInput = true;

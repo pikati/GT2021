@@ -9,20 +9,22 @@ public class GameManager : Singleton<GameManager>
     {
         Play,
         Pause,
+        Option,
         Clear
     }
 
     private GameObject clearText;
     private GameObject pauseUI;
+    private GameObject optionUI;
     private InputController ic;
     public GameState gameState { get; private set; } = GameState.Play;
     private void Start()
     {
         Singleton<Fade>.Instance.FadeOut();
         clearText = GameObject.Find("ClearText");
-        clearText.SetActive(false);
         pauseUI = GameObject.Find("PauseUI");
-        pauseUI.SetActive(false);
+        optionUI = GameObject.Find("OptionUI");
+        ChangeGameState(GameState.Play);
         ic = Singleton<InputController>.Instance;
     }
 
@@ -45,6 +47,10 @@ public class GameManager : Singleton<GameManager>
             {
                 ChangeGameState(GameState.Play);
             }
+            if (gameState == GameState.Option)
+            {
+                ChangeGameState(GameState.Pause);
+            }
         }
         if(Singleton<ClearChecker>.Instance.IsClear)
         {
@@ -62,12 +68,22 @@ public class GameManager : Singleton<GameManager>
         {
             case GameState.Play:
                 pauseUI.SetActive(false);
+                optionUI.SetActive(false);
+                clearText.SetActive(false);
                 break;
             case GameState.Pause:
                 pauseUI.SetActive(true);
+                optionUI.SetActive(false);
+                clearText.SetActive(false);
+                break;
+            case GameState.Option:
+                pauseUI.SetActive(false);
+                optionUI.SetActive(true);
+                clearText.SetActive(false);
                 break;
             case GameState.Clear:
                 pauseUI.SetActive(false);
+                optionUI.SetActive(false);
                 clearText.SetActive(true);
                 break;
         }

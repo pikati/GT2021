@@ -102,6 +102,7 @@ public class RotatePoint : MonoBehaviour
         if (!IsActive) return;
         if (OnPlayer) return;
         if (Singleton<AxisStateController>.Instance.AxisState == AxisStateController.AxisStateEnum.Rotating) return;
+        if (Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play) return;
         Invoke("IsRotateTure", 0.05f);
         SetRotateValue();
         areaChilders[0].IsActive = true;
@@ -146,24 +147,6 @@ public class RotatePoint : MonoBehaviour
         }
     }
 
-    private Vector3 SetNewAngle(float deg)
-    {
-        Vector3 rot = transform.localRotation.eulerAngles;
-        switch (rotateAxis)
-        {
-            case RotateAxis.X:
-                return new Vector3(deg, rot.y, rot.z);
-            case RotateAxis.Y:
-                return new Vector3(rot.x, deg, rot.z);
-            case RotateAxis.Z:
-                return new Vector3(rot.x, rot.y, deg);
-            default:
-                Debug.LogError("回転軸おかしくてワロタ");
-                break;
-        }
-        return Vector3.zero;
-    }
-
     private Vector3 GetAxis()
     {
         switch (rotateAxis)
@@ -179,44 +162,6 @@ public class RotatePoint : MonoBehaviour
                 break;
         }
         return Vector3.zero;
-    }
-
-    private void StopRotationSet(float deg)
-    {
-        switch (rotateAxis)
-        {
-            case RotateAxis.X:
-                {
-                    Vector3 rot = transform.rotation.eulerAngles;
-                    rot.x = deg;
-                    Quaternion q = Quaternion.identity;
-                    q.eulerAngles = rot;
-                    transform.rotation = q;
-                    break;
-                }
-                
-            case RotateAxis.Y:
-                {
-                    Vector3 rot = transform.rotation.eulerAngles;
-                    rot.x = deg;
-                    Quaternion q = Quaternion.identity;
-                    q.eulerAngles = rot;
-                    transform.rotation = q;
-                    break;
-                }
-            case RotateAxis.Z:
-                {
-                    Vector3 rot = transform.rotation.eulerAngles;
-                    rot.x = deg;
-                    Quaternion q = Quaternion.identity;
-                    q.eulerAngles = rot;
-                    transform.rotation = q;
-                    break;
-                }
-            default:
-                Debug.LogError("回転軸おかしくてワロタ");
-                break;
-        }
     }
 
     //参照無いのはBeginRotateでInvokeしてるからだよ

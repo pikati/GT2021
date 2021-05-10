@@ -5,10 +5,17 @@ using UnityEngine;
 public class ChangeColor : MonoBehaviour
 {
     public bool GetFlag { get; set; }
+    private Renderer defaultRenderer;
+    private Material defaultMat;
+    private Material changeMat;
     
     // Start is called before the first frame update
     void Start()
     {
+        defaultRenderer = GetComponent<Renderer>();
+        defaultMat = defaultRenderer.material;
+        changeMat = new Material(defaultMat);
+        changeMat.color = Color.red;
     }
 
     // Update is called once per frame
@@ -16,14 +23,11 @@ public class ChangeColor : MonoBehaviour
     {
         if (GetFlag == true)
         {
-            //色を赤に変更
-            GetComponent<Renderer>().material.color = Color.red;
+            defaultRenderer.material = changeMat;
         }
         else if (GetFlag == false)
         {
-            //色を白に変更
-            GetComponent<Renderer>().material.color = Color.black;
-
+            defaultRenderer.material = defaultMat;
         }
     }
 
