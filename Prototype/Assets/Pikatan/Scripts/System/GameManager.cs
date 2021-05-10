@@ -77,6 +77,7 @@ public class GameManager : Singleton<GameManager>
                 clearText.SetActive(false);
                 break;
             case GameState.Option:
+                pauseUI.SetActive(false);
                 optionUI.SetActive(true);
                 clearText.SetActive(false);
                 break;
