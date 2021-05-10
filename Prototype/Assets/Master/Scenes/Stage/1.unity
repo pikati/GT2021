@@ -868,6 +868,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 162427899763515609, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 432801146624023351, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: m_RootOrder
@@ -923,6 +928,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 824203018217128274, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434495716507508682, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3939616778269252523, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: m_Name
@@ -933,7 +948,38 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4400637604320598923, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263454731289776962, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263454731289776962, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263454731289776962, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263454731289776962, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137972822284583117, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2635527699959550352, guid: 3503e8db6543ab845ae4095e265d5139, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3503e8db6543ab845ae4095e265d5139, type: 3}
 --- !u!1001 &214089526
 PrefabInstance:

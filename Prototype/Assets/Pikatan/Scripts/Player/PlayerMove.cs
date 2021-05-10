@@ -25,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.GameState.Play != Singleton<GameManager>.Instance.gameState) return;
         Move();
     }
 

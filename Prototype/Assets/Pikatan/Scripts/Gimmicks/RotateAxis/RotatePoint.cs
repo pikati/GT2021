@@ -91,7 +91,8 @@ public class RotatePoint : MonoBehaviour
                 Vector3 ang = transform.rotation.eulerAngles;
                 ang.z = deg;
                 transform.rotation = Quaternion.Euler(ang);
-                Singleton<NavMeshBaker>.Instance.Bake();
+                Bake();
+                Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.NoRotate;
             }
         }
     }
@@ -99,7 +100,8 @@ public class RotatePoint : MonoBehaviour
     public void BeginRotate()
     {
         if (!IsActive) return;
-        if (OnPlayer) return; 
+        if (OnPlayer) return;
+        if (Singleton<AxisStateController>.Instance.AxisState == AxisStateController.AxisStateEnum.Rotating) return;
         Invoke("IsRotateTure", 0.05f);
         SetRotateValue();
         areaChilders[0].IsActive = true;
@@ -109,21 +111,6 @@ public class RotatePoint : MonoBehaviour
     //初期化と回転フラグ立った時に呼べ
     private void SetRotateValue()
     {
-        //switch (rotateAxis)
-        //{
-        //    case RotateAxis.X:
-        //        rotateValue = rotateState == RotateState.NoRotate ? new Vector3(1, 0, 0) : new Vector3(-1, 0, 0);
-        //        break;
-        //    case RotateAxis.Y:
-        //        rotateValue = rotateState == RotateState.NoRotate ? new Vector3(0, 1, 0) : new Vector3(0, -1, 0);
-        //        break;
-        //    case RotateAxis.Z:
-        //        rotateValue = rotateState == RotateState.NoRotate ? new Vector3(0, 0, 1) : new Vector3(0, 0, -1);
-        //        break;
-        //    default:
-        //        Debug.LogError("回転軸おかしくてワロタ");
-        //        break;
-        //}
         rotateValue = rotateState == RotateState.NoRotate ? 1 : -1;
     }
 
@@ -232,8 +219,16 @@ public class RotatePoint : MonoBehaviour
         }
     }
 
+    //参照無いのはBeginRotateでInvokeしてるからだよ
     private void IsRotateTure()
     {
         isRotate = true;
+        Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.Rotating;
+        Invoke("Bake", 0.1f);
+    }
+
+    private void Bake()
+    {
+        Singleton<NavMeshBaker>.Instance.Bake();
     }
 }
