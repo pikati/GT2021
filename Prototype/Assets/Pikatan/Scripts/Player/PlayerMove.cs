@@ -48,11 +48,52 @@ public class PlayerMove : MonoBehaviour
         }
         else if(playerState.state == PlayerState.PlayerStateEnum.Slide)
         {
+            agent.Move(SlideParam.Direction * speed * Time.deltaTime);
             Vector3 move = inputController.MoveValue;
             move.z = move.y;
             move.y = 0;
-            SlideParam.Direction += move * 0.01f;
-            agent.Move(SlideParam.Direction * speed * Time.deltaTime);
+            if (Vec3Abs(transform.position, lastPosition) < 0.001f)
+            {
+                if (move.x == 0 && move.y == 0)
+                {
+                    SlideParam.Direction = Vector2.zero;
+                    lastPosition = transform.position;
+                    return;
+                }
+                else
+                {
+                    if (Mathf.Abs(move.x) > Mathf.Abs(move.y))
+                    {
+                        if (move.x > move.y)
+                        {
+                            move.x = 2.0f;
+                            move.y = 0;
+                        }
+                        else
+                        {
+                            move.x = -2.0f;
+                            move.y = 0;
+                        }
+                    }
+                    else
+                    {
+                        if (move.x > move.y)
+                        {
+                            move.x = 0;
+                            move.y = -2.0f;
+                        }
+                        else
+                        {
+                            move.x = 0;
+                            move.y = 2.0f;
+                        }
+                    }
+                    SlideParam.Direction = move;
+                }
+            }
+            
+            
+            lastPosition = transform.position;
         }
         LookDirection();
         lastPosition = transform.position;
@@ -67,5 +108,10 @@ public class PlayerMove : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(moveDir);
         }
+    }
+
+    private float Vec3Abs(Vector3 a, Vector3 b)
+    {
+        return (Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z)) / 3.0f;
     }
 }

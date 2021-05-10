@@ -2880,6 +2880,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrontViewCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 8985885608159472927, guid: d517a9e1840963a4cadffe3b27366e76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517a9e1840963a4cadffe3b27366e76, type: 3}
 --- !u!1 &910972776 stripped
@@ -5062,12 +5067,12 @@ PrefabInstance:
     - target: {fileID: 7189332067519478007, guid: b5ed320531de6584e90659c1863c1b25,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.59
+      value: 7.338
       objectReference: {fileID: 0}
     - target: {fileID: 7189332067519478007, guid: b5ed320531de6584e90659c1863c1b25,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8
+      value: 1.368
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5ed320531de6584e90659c1863c1b25, type: 3}
