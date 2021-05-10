@@ -26,7 +26,7 @@ public class Fade : Singleton<Fade>
     public event EndFade OnEndFade;
 
     // Start is called before the first frame update
-    void Awake()
+    new void Awake()
     {
         canvas = GetComponent<Canvas>();
         image = transform.Find("FadeImage").GetComponent<Image>();

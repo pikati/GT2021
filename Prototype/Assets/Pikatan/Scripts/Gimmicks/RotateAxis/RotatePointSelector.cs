@@ -67,7 +67,6 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
             isInput = false;
         }
         if (isInput) return;
-        Debug.Log(ic.ArrowValue);
         if (ic.ArrowValue.y > 0)
         {
             isInput = true;

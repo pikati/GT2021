@@ -1186,7 +1186,6 @@ GameObject:
   - component: {fileID: 4007790934935915786}
   - component: {fileID: 4007790934935915789}
   - component: {fileID: 4007790934935915788}
-  - component: {fileID: 2635527699959550352}
   m_Layer: 5
   m_Name: ClearUI
   m_TagString: Untagged
@@ -1275,19 +1274,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2635527699959550352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007790934935915791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fee38bd38cf5b7469c4cdacbabd86fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeTime: 0.4
 --- !u!1 &4007790935340642699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,6 +1596,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9c91621cfe5f449857ea4f81f97ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseSelectObject: {fileID: 0}
+  optionSelectObject: {fileID: 0}
 --- !u!1 &4828674089532383022
 GameObject:
   m_ObjectHideFlags: 0
