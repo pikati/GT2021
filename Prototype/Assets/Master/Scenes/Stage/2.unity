@@ -582,6 +582,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3783d65bb88e479419ec74d0b7ef1e8e, type: 3}
+--- !u!1 &757905148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2321875039122110827, guid: 3783d65bb88e479419ec74d0b7ef1e8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 757905147}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &757905149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757905148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotatePointList: []
+  Range: 0
 --- !u!1 &783182530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1543,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1765,7 +1785,6 @@ GameObject:
   - component: {fileID: 1062486072032855931}
   - component: {fileID: 1062486072032855932}
   - component: {fileID: 1062486072032855933}
-  - component: {fileID: 1062486072032855934}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Panel
@@ -1833,18 +1852,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1062486072032855934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062486072032855920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1062486072032855935
 Transform:
   m_ObjectHideFlags: 0
@@ -1871,7 +1878,6 @@ GameObject:
   - component: {fileID: 1062486072060459339}
   - component: {fileID: 1062486072060459340}
   - component: {fileID: 1062486072060459341}
-  - component: {fileID: 1062486072060459342}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Panel
@@ -1939,18 +1945,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1062486072060459342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062486072060459328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1062486072060459343
 Transform:
   m_ObjectHideFlags: 0
@@ -1978,18 +1972,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1062486072217810657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062486072217810659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1062486072217810658
 Transform:
   m_ObjectHideFlags: 0
@@ -2016,7 +1998,6 @@ GameObject:
   - component: {fileID: 1062486072217810670}
   - component: {fileID: 1062486072217810671}
   - component: {fileID: 1062486072217810656}
-  - component: {fileID: 1062486072217810657}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Panel
@@ -2131,18 +2112,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1062486072271860828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062486072271860830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1062486072271860829
 Transform:
   m_ObjectHideFlags: 0
@@ -2169,7 +2138,6 @@ GameObject:
   - component: {fileID: 1062486072271860825}
   - component: {fileID: 1062486072271860826}
   - component: {fileID: 1062486072271860827}
-  - component: {fileID: 1062486072271860828}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Panel
@@ -2190,18 +2158,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1062486072498323553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062486072498323555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1062486072498323554
 Transform:
   m_ObjectHideFlags: 0
@@ -2228,7 +2184,6 @@ GameObject:
   - component: {fileID: 1062486072498323566}
   - component: {fileID: 1062486072498323567}
   - component: {fileID: 1062486072498323552}
-  - component: {fileID: 1062486072498323553}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Panel
@@ -2331,6 +2286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1062486072528416902}
   - component: {fileID: 1062486072528416901}
+  - component: {fileID: 1062486072528416904}
   m_Layer: 0
   m_Name: Panel3x3 (3)
   m_TagString: PanelArea
@@ -2338,6 +2294,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1062486072528416904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062486072528416903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotatePointList: []
+  Range: 0
 --- !u!1 &1062486073376462640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,7 +2320,6 @@ GameObject:
   - component: {fileID: 1062486073376462651}
   - component: {fileID: 1062486073376462652}
   - component: {fileID: 1062486073376462653}
-  - component: {fileID: 1062486073376462654}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Panel
@@ -2418,18 +2387,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1062486073376462654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062486073376462640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1062486073376462655
 Transform:
   m_ObjectHideFlags: 0
@@ -2504,18 +2461,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1062486073650840313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062486073650840315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1062486073650840314
 Transform:
   m_ObjectHideFlags: 0
@@ -2542,7 +2487,6 @@ GameObject:
   - component: {fileID: 1062486073650840262}
   - component: {fileID: 1062486073650840263}
   - component: {fileID: 1062486073650840312}
-  - component: {fileID: 1062486073650840313}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Panel
@@ -2624,18 +2568,6 @@ Transform:
   m_Father: {fileID: 3805004798091301543}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3805004797198259837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805004797198259839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3805004797198259839
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,7 +2580,6 @@ GameObject:
   - component: {fileID: 3805004797198259832}
   - component: {fileID: 3805004797198259835}
   - component: {fileID: 3805004797198259834}
-  - component: {fileID: 3805004797198259837}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Panel
@@ -2656,18 +2587,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3805004797244806336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805004797244806338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3805004797244806337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2693,7 +2612,6 @@ GameObject:
   - component: {fileID: 3805004797244806351}
   - component: {fileID: 3805004797244806350}
   - component: {fileID: 3805004797244806337}
-  - component: {fileID: 3805004797244806336}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Panel
@@ -2774,7 +2692,6 @@ GameObject:
   - component: {fileID: 3805004797496075610}
   - component: {fileID: 3805004797496075613}
   - component: {fileID: 3805004797496075612}
-  - component: {fileID: 3805004797496075615}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Panel
@@ -2856,18 +2773,6 @@ Transform:
   m_Father: {fileID: 3805004798091301543}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3805004797496075615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805004797496075601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3805004798091301540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2891,6 +2796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3805004798091301543}
   - component: {fileID: 3805004798091301540}
+  - component: {fileID: 3805004798091301544}
   m_Layer: 0
   m_Name: Panel3x3 (2)
   m_TagString: PanelArea
@@ -2918,18 +2824,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3805004798095827520
+--- !u!114 &3805004798091301544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805004798095827522}
+  m_GameObject: {fileID: 3805004798091301542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RotatePointList: []
+  Range: 0
 --- !u!65 &3805004798095827521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2955,7 +2863,6 @@ GameObject:
   - component: {fileID: 3805004798095827535}
   - component: {fileID: 3805004798095827534}
   - component: {fileID: 3805004798095827521}
-  - component: {fileID: 3805004798095827520}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Panel
@@ -3036,7 +2943,6 @@ GameObject:
   - component: {fileID: 3805004798300779802}
   - component: {fileID: 3805004798300779805}
   - component: {fileID: 3805004798300779804}
-  - component: {fileID: 3805004798300779807}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Panel
@@ -3118,30 +3024,6 @@ Transform:
   m_Father: {fileID: 3805004798091301543}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3805004798300779807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805004798300779793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3805004799116222680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805004799116222682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3805004799116222681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3167,7 +3049,6 @@ GameObject:
   - component: {fileID: 3805004799116222695}
   - component: {fileID: 3805004799116222694}
   - component: {fileID: 3805004799116222681}
-  - component: {fileID: 3805004799116222680}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Panel
@@ -3249,18 +3130,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7293052748077315913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293052748077315915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7293052748077315914
 Transform:
   m_ObjectHideFlags: 0
@@ -3287,7 +3156,6 @@ GameObject:
   - component: {fileID: 7293052748077315958}
   - component: {fileID: 7293052748077315959}
   - component: {fileID: 7293052748077315912}
-  - component: {fileID: 7293052748077315913}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Panel
@@ -3354,7 +3222,6 @@ GameObject:
   - component: {fileID: 7293052748892791435}
   - component: {fileID: 7293052748892791436}
   - component: {fileID: 7293052748892791437}
-  - component: {fileID: 7293052748892791438}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Panel
@@ -3422,18 +3289,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7293052748892791438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293052748892791424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7293052748892791439
 Transform:
   m_ObjectHideFlags: 0
@@ -3494,6 +3349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7293052749200786742}
   - component: {fileID: 7293052749200786741}
+  - component: {fileID: 7293052749200786744}
   m_Layer: 0
   m_Name: Panel3x3
   m_TagString: PanelArea
@@ -3501,6 +3357,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7293052749200786744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7293052749200786743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotatePointList: []
+  Range: 0
 --- !u!65 &7293052749221443024
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3514,18 +3384,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7293052749221443025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293052749221443027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7293052749221443026
 Transform:
   m_ObjectHideFlags: 0
@@ -3552,7 +3410,6 @@ GameObject:
   - component: {fileID: 7293052749221443038}
   - component: {fileID: 7293052749221443039}
   - component: {fileID: 7293052749221443024}
-  - component: {fileID: 7293052749221443025}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Panel
@@ -3619,7 +3476,6 @@ GameObject:
   - component: {fileID: 7293052749671894267}
   - component: {fileID: 7293052749671894268}
   - component: {fileID: 7293052749671894269}
-  - component: {fileID: 7293052749671894270}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Panel
@@ -3687,18 +3543,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7293052749671894270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293052749671894256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7293052749671894271
 Transform:
   m_ObjectHideFlags: 0
@@ -3773,18 +3617,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7293052749683311989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293052749683311991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7293052749683311990
 Transform:
   m_ObjectHideFlags: 0
@@ -3811,7 +3643,6 @@ GameObject:
   - component: {fileID: 7293052749683311986}
   - component: {fileID: 7293052749683311987}
   - component: {fileID: 7293052749683311988}
-  - component: {fileID: 7293052749683311989}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Panel
@@ -3831,7 +3662,6 @@ GameObject:
   - component: {fileID: 7293052749695300299}
   - component: {fileID: 7293052749695300300}
   - component: {fileID: 7293052749695300301}
-  - component: {fileID: 7293052749695300302}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Panel
@@ -3899,18 +3729,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7293052749695300302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293052749695300288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7293052749695300303
 Transform:
   m_ObjectHideFlags: 0
@@ -3925,18 +3743,6 @@ Transform:
   m_Father: {fileID: 7293052749200786742}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7293052749802405184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293052749802405186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7293052749802405185
 Transform:
   m_ObjectHideFlags: 0
@@ -3963,7 +3769,6 @@ GameObject:
   - component: {fileID: 7293052749802405197}
   - component: {fileID: 7293052749802405198}
   - component: {fileID: 7293052749802405199}
-  - component: {fileID: 7293052749802405184}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Panel
@@ -4044,18 +3849,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7293052750047216465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293052750047216467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f85e6867755b8449102c52d1d4c24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7293052750047216466
 Transform:
   m_ObjectHideFlags: 0
@@ -4082,7 +3875,6 @@ GameObject:
   - component: {fileID: 7293052750047216478}
   - component: {fileID: 7293052750047216479}
   - component: {fileID: 7293052750047216464}
-  - component: {fileID: 7293052750047216465}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Panel

@@ -20,7 +20,7 @@ public class ClearChecker : Singleton<ClearChecker>
         Singleton<ClearCount>.Instance.UpdateClearNum();
         if(checkPointCount <= 0)
         {
-            Singleton<GameManager>.Instance.StageClear();
+            Singleton<GameManager>.Instance.ChangeGameState(GameManager.GameState.Clear);
             IsClear = true;
         }
     }

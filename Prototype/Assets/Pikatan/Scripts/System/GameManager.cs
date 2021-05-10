@@ -5,24 +5,46 @@ using UnityEngine;
 //クリア時のテキスト表示やエフェクト発生などの管理、シーンの遷移の実行などする
 public class GameManager : Singleton<GameManager>
 {
+    public enum GameState
+    {
+        Play,
+        Pause,
+        Clear
+    }
+
     private GameObject clearText;
+    private GameObject pauseUI;
     private InputController ic;
+    public GameState gameState { get; private set; } = GameState.Play;
     private void Start()
     {
+        Singleton<Fade>.Instance.FadeOut();
         clearText = GameObject.Find("ClearText");
         clearText.SetActive(false);
+        pauseUI = GameObject.Find("PauseUI");
+        pauseUI.SetActive(false);
         ic = Singleton<InputController>.Instance;
     }
 
     private void Update()
     {
-        if(ic.SelectPress)
-        {
-            Singleton<SceneChanger>.Instance.ReloadScene();
-        }
         if(ic.StartPress)
         {
-            Quit();
+            if(gameState == GameState.Play)
+            {
+                ChangeGameState(GameState.Pause);
+            }
+            else if(gameState == GameState.Pause)
+            {
+                ChangeGameState(GameState.Play);
+            }
+        }
+        if(ic.B)
+        {
+            if(gameState == GameState.Pause)
+            {
+                ChangeGameState(GameState.Play);
+            }
         }
         if(Singleton<ClearChecker>.Instance.IsClear)
         {
@@ -33,9 +55,28 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void ChangeGameState(GameState state)
+    {
+        gameState = state;
+        switch (state)
+        {
+            case GameState.Play:
+                pauseUI.SetActive(false);
+                break;
+            case GameState.Pause:
+                pauseUI.SetActive(true);
+                break;
+            case GameState.Clear:
+                pauseUI.SetActive(false);
+                clearText.SetActive(true);
+                break;
+        }
+
+    }
+
     public void StageClear()
     {
-        clearText.SetActive(true);
+        
     }
 
     private void Quit()

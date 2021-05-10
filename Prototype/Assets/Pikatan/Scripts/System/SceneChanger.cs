@@ -10,11 +10,16 @@ public class SceneChanger : Singleton<SceneChanger>
     public void SceneChange()
     {
         if (nextSceneName == "non") return;
-        SceneManager.LoadScene(nextSceneName);
+        Singleton<Fade>.Instance.FadeIn(nextSceneName);
+    }
+
+    public void SceneChange(string nextSceneName)
+    {
+        Singleton<Fade>.Instance.FadeIn(nextSceneName);
     }
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Singleton<Fade>.Instance.FadeIn(SceneManager.GetActiveScene().name);
     }
 }
