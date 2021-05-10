@@ -16,7 +16,7 @@ public class GameButtonController : MonoBehaviour
 
     public void Option()
     {
-
+        Singleton<GameManager>.Instance.ChangeGameState(GameManager.GameState.Option);
     }
 
     public void ToTitle()
