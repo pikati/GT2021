@@ -62,30 +62,30 @@ public class PlayerMove : MonoBehaviour
                 }
                 else
                 {
-                    if (Mathf.Abs(move.x) > Mathf.Abs(move.y))
+                    if (Mathf.Abs(move.x) > Mathf.Abs(move.z))
                     {
-                        if (move.x > move.y)
+                        if (move.x > move.z)
                         {
                             move.x = 2.0f;
-                            move.y = 0;
+                            move.z = 0;
                         }
                         else
                         {
                             move.x = -2.0f;
-                            move.y = 0;
+                            move.z = 0;
                         }
                     }
                     else
                     {
-                        if (move.x > move.y)
+                        if (move.x > move.z)
                         {
                             move.x = 0;
-                            move.y = -2.0f;
+                            move.z = -2.0f;
                         }
                         else
                         {
                             move.x = 0;
-                            move.y = 2.0f;
+                            move.z = 2.0f;
                         }
                     }
                     SlideParam.Direction = move;
