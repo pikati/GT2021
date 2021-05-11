@@ -15,7 +15,7 @@ public class ElectricalController : MonoBehaviour
 
     void Start()
     {
-        elecObj = transform.Find("ElectArea").gameObject;
+        elecObj = transform.Find("ElecArea").gameObject;
     }
 
     // Update is called once per frame
