@@ -12,6 +12,7 @@ public class Push : MonoBehaviour
     private float speed = 1.0f;
     [SerializeField]
     private ColDirection colliderDirection;
+    private GameTimer bakeTimer = new GameTimer(0.25f);
     public ColDirection ColliderDirection { get; private set; }
     public ColDirection ChildDirection { get; set; } = ColDirection.Max;
 
@@ -66,29 +67,34 @@ public class Push : MonoBehaviour
 
     private void Move()
     {
+        Vector3 adjust = new Vector3(0, 0.25f, 0);
         if (pushMoveState == PushMoveState.Stop)
             return;
 
         if(pushState==PushState.Uninit)
         {
-            transform.position = Vector3.MoveTowards(transform.position, startObj.transform.position, speed * Time.deltaTime);
-            if (IsMoveCompleted(startObj.transform.position))
+
+            transform.position = Vector3.MoveTowards(transform.position, startObj.transform.position + adjust , speed * Time.deltaTime);
+            if (IsMoveCompleted(startObj.transform.position + adjust))
             {
                 ChengeState();
-                Singleton<NavMeshBaker>.Instance.Bake();
+                //Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, endObj.transform.position, speed * Time.deltaTime);
-            if (IsMoveCompleted(endObj.transform.position))
+            transform.position = Vector3.MoveTowards(transform.position, endObj.transform.position + adjust, speed * Time.deltaTime);
+            if (IsMoveCompleted(endObj.transform.position + adjust))
             {
                 ChengeState();
-                Singleton<NavMeshBaker>.Instance.Bake();
+                //Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
-
-        
+        //if(bakeTimer.UpdateTimer())
+        //{
+        //    Singleton<NavMeshBaker>.Instance.Bake();
+        //    bakeTimer.ResetTimer(0.25f);
+        //}
     }
 
     private bool IsMoveCompleted(Vector3 Target)
@@ -142,5 +148,10 @@ public class Push : MonoBehaviour
                 break;
         }
 
+    }
+
+    private void Bake()
+    {
+        Singleton<NavMeshBaker>.Instance.Bake();
     }
 }
