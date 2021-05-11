@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7383415478301307929}
   - component: {fileID: 9100970014352885813}
   m_Layer: 0
-  m_Name: IceFloors2Down
+  m_Name: IceFloors2Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4817365263957266541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3393428277079490015}
@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.30927157, z: 1}
-  m_Center: {x: 1, y: -0.20278132, z: 0}
+  m_Size: {x: 2, y: 0.4339037, z: 1}
+  m_Center: {x: 1, y: 0.28304815, z: 0}
 --- !u!114 &9100970014352885813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ PrefabInstance:
     - target: {fileID: 6377338648476219695, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.025
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 6377338648476219695, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}
@@ -161,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 6377338648476219695, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.025
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 6377338648476219695, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}

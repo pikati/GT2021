@@ -11,7 +11,7 @@ public class StageState : Singleton<StageState>
     }
 
     [SerializeField]
-    private StageStateEnum state = StageStateEnum.Player;
+    private StageStateEnum state = StageStateEnum.Rotate;
     public StageStateEnum NowStageState => state;
 
     private void Update()
@@ -24,14 +24,14 @@ public class StageState : Singleton<StageState>
 
     public void ChangeStageState()
     {
-        if(state == StageStateEnum.Player)
-        {
-            state = StageStateEnum.Rotate;
-            Singleton<RotatePointSelector>.Instance.SetSelectableObjects();
-        }
-        else
-        {
-            state = StageStateEnum.Player;
-        }
+        //if(state == StageStateEnum.Player)
+        //{
+        //    state = StageStateEnum.Rotate;
+        //    Singleton<RotatePointSelector>.Instance.SetSelectableObjects();
+        //}
+        //else
+        //{
+        //    state = StageStateEnum.Player;
+        //}
     }
 }
