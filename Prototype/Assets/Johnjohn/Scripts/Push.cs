@@ -12,7 +12,6 @@ public class Push : MonoBehaviour
     private float speed = 1.0f;
     [SerializeField]
     private ColDirection colliderDirection;
-    private GameTimer bakeTimer = new GameTimer(0.25f);
     public ColDirection ColliderDirection { get; private set; }
     public ColDirection ChildDirection { get; set; } = ColDirection.Max;
 
@@ -90,11 +89,6 @@ public class Push : MonoBehaviour
                 //Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
-        //if(bakeTimer.UpdateTimer())
-        //{
-        //    Singleton<NavMeshBaker>.Instance.Bake();
-        //    bakeTimer.ResetTimer(0.25f);
-        //}
     }
 
     private bool IsMoveCompleted(Vector3 Target)
