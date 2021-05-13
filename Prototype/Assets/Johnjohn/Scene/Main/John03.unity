@@ -338,6 +338,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728049, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!1001 &328442557
@@ -406,6 +416,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728049, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -700,6 +720,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!1001 &514237196
@@ -709,6 +734,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8743122329590357802, guid: fc877573f6b74b5479b0d3444258a451,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743122330237587885, guid: fc877573f6b74b5479b0d3444258a451,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8743122331416770629, guid: fc877573f6b74b5479b0d3444258a451,
         type: 3}
       propertyPath: m_Name
@@ -849,6 +884,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728049, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!1001 &747280885
@@ -922,6 +967,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -1035,6 +1085,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 6.164071
       objectReference: {fileID: 0}
+    - target: {fileID: 5369484415868314292, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5369484415868314295, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1050,6 +1105,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5369484416055235746, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5369484417077834500, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
       propertyPath: m_Size.z
@@ -1059,6 +1119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369484417077834500, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5369484417077834503, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
@@ -1074,6 +1139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.x
       value: 6.164071
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369484417191825766, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5369484417421351616, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
@@ -1375,6 +1445,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!1001 &1325868383
@@ -1449,6 +1524,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!1001 &1332483165
@@ -1517,6 +1597,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728049, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -1662,6 +1752,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728049, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!1001 &1658560021
@@ -1730,6 +1830,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728049, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
