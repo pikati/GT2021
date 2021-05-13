@@ -24,7 +24,7 @@ public class CameraRotater : Singleton<CameraRotater>
     private GameObject camera2;
     private CameraState state = CameraState.NoRotate;
     private bool isBeginRotate = false;
-
+    private bool isEndRotate = false;
     private float targetRot;
     private float targetPos;
 
@@ -43,8 +43,18 @@ public class CameraRotater : Singleton<CameraRotater>
         float newAngle = Mathf.MoveTowards(camera1.transform.eulerAngles.x, targetRot, Time.deltaTime * rotateSpeed);
         camera1.transform.eulerAngles = new Vector3(newAngle, 0, 0);
         camera2.transform.eulerAngles = new Vector3(newAngle, 0, 0);
+
         float newPoint = Mathf.MoveTowards(camera1.transform.position.z, targetPos, Time.deltaTime * moveSpeed);
+        Vector3 pos = new Vector3(camera1.transform.position.x, camera1.transform.position.y, newPoint);
+        camera1.transform.position = pos;
+        camera2.transform.position = pos;
+
         CheckeEndRotate();
+    }
+
+    public void EndRotate()
+    {
+        state = CameraState.Rotating;
     }
 
 
@@ -56,6 +66,7 @@ public class CameraRotater : Singleton<CameraRotater>
             targetPos = endPos;
             state = CameraState.Rotating;
             isBeginRotate = true;
+            isEndRotate = false;
         }
     }
 
@@ -63,26 +74,27 @@ public class CameraRotater : Singleton<CameraRotater>
     {
         if (isBeginRotate)
         {
-            if (Mathf.Abs(camera1.transform.eulerAngles.x - targetRot) < 1f)
+            if (Mathf.Abs(camera1.transform.eulerAngles.x - targetRot) < 0.01f)
             {
+                state = CameraState.NoRotate;
+                if (isEndRotate)
+                {
+                    isBeginRotate = false;
+                    
+                }
                 targetRot = startRot;
                 targetPos = startPos;
-                isBeginRotate = false;
-
+                isEndRotate = true;
             }
         }
         else
         {
-            if (Mathf.Abs(camera1.transform.eulerAngles.x - targetRot) < 0.01f)
-            {
-                state = CameraState.NoRotate;
-                Vector3 pos = new Vector3(camera1.transform.position.x, camera1.transform.position.y, startPos);
-                camera1.transform.eulerAngles = new Vector3(startRot, 0, 0);
-                camera2.transform.eulerAngles = new Vector3(startRot, 0, 0);
-                camera1.transform.position = pos;
-                camera2.transform.eulerAngles = pos;
-            }
+            state = CameraState.NoRotate;
         }
+    }
 
+    private void Reset()
+    {
+        
     }
 }

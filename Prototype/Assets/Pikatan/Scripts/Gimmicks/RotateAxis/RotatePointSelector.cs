@@ -42,7 +42,6 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
             {
                 if (selectObject == null) return;
                 selectObject.GetComponent<RotatePoint>().BeginRotate();
-                //Singleton<CameraRotater>.Instance.CameraRotate();
             }
         }
     }

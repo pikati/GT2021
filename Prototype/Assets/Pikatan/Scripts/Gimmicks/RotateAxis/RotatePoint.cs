@@ -70,7 +70,6 @@ public class RotatePoint : MonoBehaviour
         if (isRotate)
         {
             float deg = rotateState == RotateState.NoRotate ? 180.0f : 0;
-            //transform.Rotate(rotateValue * rotateSpeed * Time.deltaTime);
             float angleSpeed = rotateValue * rotateSpeed * Time.deltaTime;
             angles[(int)rotateAxis] += angleSpeed;
             transform.rotation = transform.rotation * Quaternion.AngleAxis(angleSpeed, GetAxis());
@@ -90,6 +89,7 @@ public class RotatePoint : MonoBehaviour
                 transform.rotation = Quaternion.Euler(ang);
                 Bake();
                 Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.NoRotate;
+                Singleton<CameraRotater>.Instance.EndRotate();
             }
         }
     }
@@ -104,6 +104,7 @@ public class RotatePoint : MonoBehaviour
         SetRotateValue();
         areaChilders[0].IsActive = true;
         areaChilders[1].IsActive = true;
+        Singleton<CameraRotater>.Instance.CameraRotate();
     }
 
     //初期化と回転フラグ立った時に呼べ
