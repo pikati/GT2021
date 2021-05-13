@@ -82,7 +82,7 @@ public class Push : MonoBehaviour
             if (IsMoveCompleted(startObj.transform.position + adjust))
             {
                 ChengeState();
-                //Singleton<NavMeshBaker>.Instance.Bake();
+                Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
         else
@@ -91,7 +91,7 @@ public class Push : MonoBehaviour
             if (IsMoveCompleted(endObj.transform.position + adjust))
             {
                 ChengeState();
-                //Singleton<NavMeshBaker>.Instance.Bake();
+                Singleton<NavMeshBaker>.Instance.Bake();
             }
         }
     }
