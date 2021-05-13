@@ -263,6 +263,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &25660100 stripped
@@ -356,7 +361,7 @@ PrefabInstance:
     - target: {fileID: 1362381207504682130, guid: 12335a4ce4a525945a340db354668641,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1362381207504682130, guid: 12335a4ce4a525945a340db354668641,
         type: 3}
@@ -493,6 +498,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &65121512 stripped
@@ -567,6 +577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -643,6 +658,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &91608225 stripped
@@ -717,6 +737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -793,6 +818,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &114839590 stripped
@@ -867,6 +897,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -952,13 +987,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116932646}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 6, y: 10, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &140545698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1101,6 +1136,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &239622071 stripped
@@ -1175,6 +1215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -1559,6 +1604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &407719821 stripped
@@ -1784,6 +1834,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &417907861 stripped
@@ -1807,7 +1862,7 @@ PrefabInstance:
     - target: {fileID: 8985885608159472922, guid: d517a9e1840963a4cadffe3b27366e76,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8985885608159472922, guid: d517a9e1840963a4cadffe3b27366e76,
         type: 3}
@@ -2003,6 +2058,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &469910656 stripped
@@ -2077,6 +2137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -2228,6 +2293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &594453993 stripped
@@ -2302,6 +2372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -2385,6 +2460,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6377338648476219695, guid: e8646b24fe918e54c8aa0657394d0744,
     type: 3}
   m_PrefabInstance: {fileID: 669956002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &682721282 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7762052094071175653, guid: cac20077334fc7544a7dcbde16efaa47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1771305417}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &686795896
 PrefabInstance:
@@ -2528,6 +2609,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &694838917 stripped
@@ -2626,7 +2712,7 @@ PrefabInstance:
     - target: {fileID: 3346537314915884324, guid: 7fb7a3335e6260e47a01c77ca0415fca,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3346537314915884324, guid: 7fb7a3335e6260e47a01c77ca0415fca,
         type: 3}
@@ -2682,6 +2768,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -2838,6 +2929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &846756757 stripped
@@ -2993,6 +3089,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &903423020 stripped
@@ -3067,6 +3168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -3223,6 +3329,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &949367502 stripped
@@ -3297,6 +3408,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -3385,7 +3501,7 @@ PrefabInstance:
     - target: {fileID: 3346537314915884324, guid: 7fb7a3335e6260e47a01c77ca0415fca,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3346537314915884324, guid: 7fb7a3335e6260e47a01c77ca0415fca,
         type: 3}
@@ -3441,6 +3557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -3516,6 +3637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -3667,6 +3793,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1151316244 stripped
@@ -3690,7 +3821,7 @@ PrefabInstance:
     - target: {fileID: 2439104229715592879, guid: 25d6c05b947903c4a8b5738581ba2dd9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2439104229715592879, guid: 25d6c05b947903c4a8b5738581ba2dd9,
         type: 3}
@@ -3880,6 +4011,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1285711259 stripped
@@ -3954,6 +4090,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -4030,6 +4171,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1302238875 stripped
@@ -4105,6 +4251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1305947219 stripped
@@ -4179,6 +4330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -4410,6 +4566,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1441489725 stripped
@@ -4484,6 +4645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -4727,6 +4893,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1590855903 stripped
@@ -4952,6 +5123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1691731940 stripped
@@ -5102,6 +5278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1730006914 stripped
@@ -5176,6 +5357,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -5252,6 +5438,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1739595325 stripped
@@ -5327,6 +5518,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1739725772 stripped
@@ -5340,7 +5536,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 6807489669778648196}
     m_Modifications:
     - target: {fileID: 7762052094071175650, guid: cac20077334fc7544a7dcbde16efaa47,
         type: 3}
@@ -5350,7 +5546,7 @@ PrefabInstance:
     - target: {fileID: 7762052094071175653, guid: cac20077334fc7544a7dcbde16efaa47,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7762052094071175653, guid: cac20077334fc7544a7dcbde16efaa47,
         type: 3}
@@ -5639,7 +5835,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 8387946655735246969}
     m_Modifications:
     - target: {fileID: 7762052094071175650, guid: cac20077334fc7544a7dcbde16efaa47,
         type: 3}
@@ -5649,12 +5845,12 @@ PrefabInstance:
     - target: {fileID: 7762052094071175653, guid: cac20077334fc7544a7dcbde16efaa47,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7762052094071175653, guid: cac20077334fc7544a7dcbde16efaa47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7762052094071175653, guid: cac20077334fc7544a7dcbde16efaa47,
         type: 3}
@@ -5664,7 +5860,7 @@ PrefabInstance:
     - target: {fileID: 7762052094071175653, guid: cac20077334fc7544a7dcbde16efaa47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7762052094071175653, guid: cac20077334fc7544a7dcbde16efaa47,
         type: 3}
@@ -5845,6 +6041,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1838279354 stripped
@@ -5852,6 +6053,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3346537314915884324, guid: 7fb7a3335e6260e47a01c77ca0415fca,
     type: 3}
   m_PrefabInstance: {fileID: 1838279353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1850875107 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7762052094071175653, guid: cac20077334fc7544a7dcbde16efaa47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1827165659}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1853322937
 PrefabInstance:
@@ -5920,6 +6127,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1853322938 stripped
@@ -5935,10 +6147,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5369484415868314292, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369484416055235746, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369484417077834500, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369484417191825766, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5369484417421351616, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 5369484417421351616, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
@@ -6149,6 +6381,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &1932452518 stripped
@@ -6298,6 +6535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -6523,6 +6765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
@@ -6818,6 +7065,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &2106458953 stripped
@@ -6962,6 +7214,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HarfPanel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3346537314915884326, guid: 7fb7a3335e6260e47a01c77ca0415fca,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb7a3335e6260e47a01c77ca0415fca, type: 3}
 --- !u!4 &2140913336 stripped
@@ -7060,7 +7317,7 @@ PrefabInstance:
     - target: {fileID: 8173683366296728048, guid: a24acdaaf2ec056459d9159f34626dd0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8173683366296728048, guid: a24acdaaf2ec056459d9159f34626dd0,
         type: 3}
@@ -7808,7 +8065,7 @@ PrefabInstance:
     - target: {fileID: 8173683366296728048, guid: a24acdaaf2ec056459d9159f34626dd0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8173683366296728048, guid: a24acdaaf2ec056459d9159f34626dd0,
         type: 3}
@@ -9437,12 +9694,12 @@ Transform:
   - {fileID: 2850723824299934868}
   - {fileID: 3493715715981007700}
   - {fileID: 1304510935848481417}
-  - {fileID: 6973984892692361449}
-  - {fileID: 1082166814979004506}
-  - {fileID: 1336827099}
   - {fileID: 918353711}
+  - {fileID: 6973984892692361449}
   - {fileID: 2075665615}
   - {fileID: 292643339}
+  - {fileID: 1082166814979004506}
+  - {fileID: 1336827099}
   - {fileID: 1739595325}
   - {fileID: 484662662}
   - {fileID: 407719821}
@@ -10287,7 +10544,7 @@ PrefabInstance:
     - target: {fileID: 8173683366296728048, guid: a24acdaaf2ec056459d9159f34626dd0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8173683366296728048, guid: a24acdaaf2ec056459d9159f34626dd0,
         type: 3}
@@ -10875,10 +11132,10 @@ Transform:
   - {fileID: 1969841936585227752}
   - {fileID: 8326676234849350869}
   - {fileID: 2775827291298919360}
-  - {fileID: 1108239488554851655}
-  - {fileID: 2070189695}
   - {fileID: 64119164}
+  - {fileID: 2070189695}
   - {fileID: 1631941242}
+  - {fileID: 1108239488554851655}
   - {fileID: 565553333}
   - {fileID: 2088804086}
   - {fileID: 1328703279}
@@ -10912,7 +11169,6 @@ Transform:
   - {fileID: 3844946353246551387}
   - {fileID: 3844946352825337196}
   - {fileID: 3844946353127817719}
-  - {fileID: 752968286805905926}
   - {fileID: 804375459}
   - {fileID: 1797685232}
   - {fileID: 1810702832}
@@ -10921,6 +11177,7 @@ Transform:
   - {fileID: 289409449}
   - {fileID: 2106458953}
   - {fileID: 1838279354}
+  - {fileID: 752968286805905926}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11823,12 +12080,11 @@ Transform:
   m_LocalPosition: {x: 9, y: 0, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4358865442181468734}
-  - {fileID: 2103198029}
   - {fileID: 948879537}
   - {fileID: 1385518091}
   - {fileID: 1888820799}
   - {fileID: 1853322938}
+  - {fileID: 2103198029}
   - {fileID: 114839590}
   - {fileID: 1302238875}
   - {fileID: 116500252}
@@ -11836,6 +12092,7 @@ Transform:
   - {fileID: 417907861}
   - {fileID: 1691731940}
   - {fileID: 105315026}
+  - {fileID: 4358865442181468734}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14907,6 +15164,7 @@ Transform:
   - {fileID: 469910656}
   - {fileID: 846756757}
   - {fileID: 1151316244}
+  - {fileID: 682721282}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16030,10 +16288,10 @@ Transform:
   - {fileID: 1322200602765193535}
   - {fileID: 4803101430834018413}
   - {fileID: 5875847197121247568}
-  - {fileID: 5558268274571414847}
-  - {fileID: 6128149480471286834}
   - {fileID: 1788209690}
+  - {fileID: 5558268274571414847}
   - {fileID: 21553796}
+  - {fileID: 6128149480471286834}
   - {fileID: 694838917}
   - {fileID: 1739725772}
   - {fileID: 65655933}
@@ -17255,11 +17513,12 @@ Transform:
   - {fileID: 1082775334368978862}
   - {fileID: 3684126409573295037}
   - {fileID: 64844118}
-  - {fileID: 1019856313}
   - {fileID: 762636292}
+  - {fileID: 1019856313}
   - {fileID: 293931215}
   - {fileID: 2140913336}
   - {fileID: 594453993}
+  - {fileID: 1850875107}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
