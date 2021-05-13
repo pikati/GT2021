@@ -89,7 +89,7 @@ public class RotatePoint : MonoBehaviour
                 transform.rotation = Quaternion.Euler(ang);
                 Bake();
                 Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.NoRotate;
-                Singleton<CameraRotater>.Instance.EndRotate();
+                //Singleton<CameraRotater>.Instance.EndRotate();
                 //Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
 
             }
