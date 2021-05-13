@@ -90,7 +90,7 @@ public class RotatePoint : MonoBehaviour
                 Bake();
                 Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.NoRotate;
                 //Singleton<CameraRotater>.Instance.EndRotate();
-                Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
+                //Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
 
             }
         }
