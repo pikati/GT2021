@@ -88,7 +88,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321875037962963735}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -181,7 +181,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321875038221131484}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -274,7 +274,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321875039100799375}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -453,7 +453,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321875039276989874}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -546,7 +546,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321875039348375311}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -639,7 +639,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321875039460049182}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -732,7 +732,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321875039566335644}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -825,7 +825,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321875039579535659}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -918,7 +918,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2321875039589609644}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -989,6 +989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -1065,6 +1070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!4 &8527494083431089852 stripped
@@ -1139,6 +1149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -1215,6 +1230,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!4 &9135951944708854380 stripped
@@ -1289,6 +1309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -1365,6 +1390,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!4 &7722273797689074656 stripped
@@ -1439,6 +1469,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -1515,6 +1550,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!4 &7962045558686523315 stripped
@@ -1589,6 +1629,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -1665,6 +1710,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!4 &4835347680388029492 stripped
@@ -1739,6 +1789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -1815,6 +1870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!4 &2547027357987199068 stripped
@@ -1889,6 +1949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -1965,6 +2030,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!4 &2966807048360082108 stripped
@@ -2039,6 +2109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
@@ -2115,6 +2190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!4 &3235228016586638634 stripped
@@ -2190,6 +2270,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HalfBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}
 --- !u!4 &1610725278907853788 stripped
@@ -2264,6 +2349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HalfBlock (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173683366296728050, guid: a24acdaaf2ec056459d9159f34626dd0,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24acdaaf2ec056459d9159f34626dd0, type: 3}

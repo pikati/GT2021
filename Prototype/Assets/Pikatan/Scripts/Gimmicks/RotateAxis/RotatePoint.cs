@@ -17,22 +17,20 @@ public class RotatePoint : MonoBehaviour
         Y,
         Z
     }
-    [SerializeField]
-    private bool isActive = false;
     public bool IsActive { get; set; }
 
     [SerializeField]
     private float rotateSpeed;
     [SerializeField]
     private RotateAxis rotateAxis = RotateAxis.Z;
-    [SerializeField]
-    private GameObject upObj = null;
-    [SerializeField]
-    private GameObject downObj = null;
-    [SerializeField]
-    private GameObject leftObj = null;
-    [SerializeField]
-    private GameObject rightObj = null;
+    //[SerializeField]
+    //private GameObject upObj = null;
+    //[SerializeField]
+    //private GameObject downObj = null;
+    //[SerializeField]
+    //private GameObject leftObj = null;
+    //[SerializeField]
+    //private GameObject rightObj = null;
     private RotateState rotateState = RotateState.NoRotate;
     private bool isRotate = false;
     private float rotateValue;
@@ -40,21 +38,20 @@ public class RotatePoint : MonoBehaviour
     private ChangeColor changeColor;
     private AreaChilder[] areaChilders = new AreaChilder[2];
 
-    public GameObject[] selectableObjs { get; private set; }
+    //public GameObject[] selectableObjs { get; private set; }
     public bool OnPlayer { get; set; } = false;
 
     private void Start()
     {
-        IsActive = isActive;
         SetRotateValue();
         changeColor =GetComponentInChildren<ChangeColor>();
         areaChilders[0] = transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<AreaChilder>();
         areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
-        selectableObjs = new GameObject[4];
-        selectableObjs[0] = upObj;
-        selectableObjs[1] = downObj;
-        selectableObjs[2] = leftObj;
-        selectableObjs[3] = rightObj;
+        //selectableObjs = new GameObject[4];
+        //selectableObjs[0] = upObj;
+        //selectableObjs[1] = downObj;
+        //selectableObjs[2] = leftObj;
+        //selectableObjs[3] = rightObj;
 
     }
 
@@ -175,5 +172,23 @@ public class RotatePoint : MonoBehaviour
     private void Bake()
     {
         Singleton<NavMeshBaker>.Instance.Bake();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("AxisPointer"))
+        {
+            Singleton<RotatePointSelector>.Instance.SetSelectAxis(gameObject);
+            IsActive = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("AxisPointer"))
+        {
+            Singleton<RotatePointSelector>.Instance.SetSelectAxis(null);
+            IsActive = false;
+        }
     }
 }
