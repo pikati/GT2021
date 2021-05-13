@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6335580922405217630}
   - component: {fileID: 6335580922405217617}
+  - component: {fileID: 1295127602885314985}
   m_Layer: 0
   m_Name: RotatePopint
   m_TagString: RotatePoint
@@ -73,13 +74,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e003d5d0eb4463b4796f77a36934417e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   rotateSpeed: 180
   rotateAxis: 2
-  upObj: {fileID: 0}
-  downObj: {fileID: 0}
-  leftObj: {fileID: 0}
-  rightObj: {fileID: 0}
+--- !u!65 &1295127602885314985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6335580922405217616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21994519, y: 0.10999477, z: 2.1566844}
+  m_Center: {x: 0.0023657084, y: 0.011212766, z: 0.002323866}
 --- !u!114 &3571877292649507493
 MonoBehaviour:
   m_ObjectHideFlags: 0

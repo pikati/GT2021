@@ -14,8 +14,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         Own
     };
 
-    [SerializeField]
-    private GameObject defaultSelectObject;
+    private GameObject selectObject;
     private List<GameObject> rotateObjects = new List<GameObject>();
     private GameObject[] selectableObjects = new GameObject[5];
     private InputController ic;
@@ -29,7 +28,6 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         {
             rotateObjects.Add(obj);
         }
-        selectableObjects[(int)SelectDirection.Own] = defaultSelectObject;
     }
 
     // Update is called once per frame
@@ -38,26 +36,28 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         if (Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play) return;
         if (Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
         {
-            SelectObject();
+            //SelectObject();
             
             if (ic.A)
             {
-                selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>().BeginRotate();
+                if (selectObject == null) return;
+                selectObject.GetComponent<RotatePoint>().BeginRotate();
+                Singleton<CameraRotater>.Instance.CameraRotate();
             }
         }
     }
 
-    public void SetSelectableObjects()
+    private void SetSelectableObjects()
     {
-        for(int i = 0; i < 4; i++)
-        {
-            selectableObjects[i] = null;
-        }
-        RotatePoint rotatePoint = selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>();
-        selectableObjects[0] = rotatePoint.selectableObjs[0];
-        selectableObjects[1] = rotatePoint.selectableObjs[1];
-        selectableObjects[2] = rotatePoint.selectableObjs[2];
-        selectableObjects[3] = rotatePoint.selectableObjs[3];
+        //for(int i = 0; i < 4; i++)
+        //{
+        //    selectableObjects[i] = null;
+        //}
+        //RotatePoint rotatePoint = selectableObjects[(int)SelectDirection.Own].GetComponent<RotatePoint>();
+        //selectableObjects[0] = rotatePoint.selectableObjs[0];
+        //selectableObjects[1] = rotatePoint.selectableObjs[1];
+        //selectableObjects[2] = rotatePoint.selectableObjs[2];
+        //selectableObjects[3] = rotatePoint.selectableObjs[3];
     }
 
     private void SelectObject()
@@ -108,5 +108,10 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
             }
         }
         SetSelectableObjects();
+    }
+
+    public void SetSelectAxis(GameObject obj)
+    {
+        selectObject = obj;
     }
 }

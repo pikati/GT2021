@@ -52,16 +52,21 @@ public class Push : MonoBehaviour
         Move();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             if (ColliderDirection != ChildDirection) return;
-            if(pushMoveState==PushMoveState.Stop)
+            if (pushMoveState == PushMoveState.Stop)
             {
                 pushMoveState = PushMoveState.Move;
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 
     private void Move()
