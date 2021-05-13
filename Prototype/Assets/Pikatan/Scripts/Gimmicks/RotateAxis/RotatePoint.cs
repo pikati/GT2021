@@ -89,7 +89,9 @@ public class RotatePoint : MonoBehaviour
                 transform.rotation = Quaternion.Euler(ang);
                 Bake();
                 Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.NoRotate;
-                Singleton<CameraRotater>.Instance.EndRotate();
+                //Singleton<CameraRotater>.Instance.EndRotate();
+                Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
+
             }
         }
     }
@@ -105,6 +107,7 @@ public class RotatePoint : MonoBehaviour
         areaChilders[0].IsActive = true;
         areaChilders[1].IsActive = true;
         Singleton<CameraRotater>.Instance.CameraRotate();
+        Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
     }
 
     //初期化と回転フラグ立った時に呼べ
