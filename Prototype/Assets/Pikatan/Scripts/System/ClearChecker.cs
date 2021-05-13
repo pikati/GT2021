@@ -8,7 +8,7 @@ public class ClearChecker : Singleton<ClearChecker>
     public int ClearNum => checkPointCount;
     public bool IsClear { get; private set; } = false;
 
-    private void Start()
+    new private void Awake()
     {
         GameObject[] goalObjs = GameObject.FindGameObjectsWithTag("Goal");
         checkPointCount = goalObjs.Length;

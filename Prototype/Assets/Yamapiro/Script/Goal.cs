@@ -5,6 +5,14 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     private bool isReach = false;
+
+    private void Update()
+    {
+
+        transform.Rotate(0, 120 * Time.deltaTime, 0);
+            
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (isReach) return;
