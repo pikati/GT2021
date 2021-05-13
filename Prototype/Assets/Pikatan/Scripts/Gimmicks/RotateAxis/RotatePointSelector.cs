@@ -38,7 +38,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         {
             //SelectObject();
             
-            if (ic.A)
+            if (ic.RB)
             {
                 if (selectObject == null) return;
                 selectObject.GetComponent<RotatePoint>().BeginRotate();
