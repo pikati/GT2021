@@ -69,7 +69,7 @@ public class IceFloor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (slideParam.Direction.x == Vector2.zero.x && slideParam.Direction.y == Vector2.zero.y) return;
+            if (slideParam.Direction.x == 0 && slideParam.Direction.z == 0) return;
             other.GetComponent<PlayerState>().state = PlayerState.PlayerStateEnum.Slide;
             other.GetComponent<PlayerMove>().SlideParam = slideParam;
         }
