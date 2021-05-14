@@ -1735,9 +1735,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 15
-  moveSpeed: 1
-  endRot: 80
-  endPos: 1
+  moveSpeed: 1.5
+  endRot: 75
+  endPos: -1
 --- !u!1 &941647009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,6 +2913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479974176694337375, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1896819218009646374, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
