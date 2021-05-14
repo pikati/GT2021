@@ -40,6 +40,7 @@ public class CameraRotater : Singleton<CameraRotater>
     private void Update()
     {
         if (state == CameraState.NoRotate) return;
+
         float newAngle = Mathf.MoveTowards(camera1.transform.eulerAngles.x, targetRot, Time.deltaTime * rotateSpeed);
         camera1.transform.eulerAngles = new Vector3(newAngle, 0, 0);
         camera2.transform.eulerAngles = new Vector3(newAngle, 0, 0);
@@ -48,6 +49,7 @@ public class CameraRotater : Singleton<CameraRotater>
         Vector3 pos = new Vector3(camera1.transform.position.x, camera1.transform.position.y, newPoint);
         camera1.transform.position = pos;
         camera2.transform.position = pos;
+        Debug.Log(pos.z);
 
         CheckeEndRotate();
     }
