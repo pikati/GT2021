@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
     private GameObject clearText;
     private GameObject pauseUI;
     private GameObject optionUI;
+    private PauseController pc;
     private InputController ic;
     public GameState gameState { get; private set; } = GameState.Play;
     private void Start()
@@ -26,6 +27,7 @@ public class GameManager : Singleton<GameManager>
         optionUI = GameObject.Find("OptionUI");
         ChangeGameState(GameState.Play);
         ic = Singleton<InputController>.Instance;
+        pc = GameObject.Find("UI").GetComponent<PauseController>();
     }
 
     private void Update()
@@ -59,6 +61,10 @@ public class GameManager : Singleton<GameManager>
                 Singleton<SceneChanger>.Instance.SceneChange();
             }
         }
+        if(ic.RT && ic.LT)
+        {
+            Quit();
+        }
     }
 
     public void ChangeGameState(GameState state)
@@ -75,6 +81,7 @@ public class GameManager : Singleton<GameManager>
                 pauseUI.SetActive(true);
                 optionUI.SetActive(false);
                 clearText.SetActive(false);
+                Invoke("Pause", 0.1f);
                 break;
             case GameState.Option:
                 pauseUI.SetActive(false);
@@ -88,6 +95,11 @@ public class GameManager : Singleton<GameManager>
                 break;
         }
 
+    }
+
+    private void Pause()
+    {
+        pc.BeginPause();
     }
 
     public void StageClear()
