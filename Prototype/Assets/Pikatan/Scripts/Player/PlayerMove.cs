@@ -41,6 +41,7 @@ public class PlayerMove : MonoBehaviour
             //var cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
             if (move != Vector2.zero)
             {
+                isMove = true;
                 Vector3 direction = Vector3.forward * move.y + Camera.main.transform.right * move.x;
                 agent.Move(direction * speed * Time.deltaTime);
             }
