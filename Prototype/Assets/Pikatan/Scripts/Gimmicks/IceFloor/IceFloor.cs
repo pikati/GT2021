@@ -49,7 +49,7 @@ public class IceFloor : MonoBehaviour
     //    }
     //}
 
-    private void SetSlideDirection(GameObject other)
+    public void SetSlideDirection(GameObject other)
     {
         PlayerMove pm = other.GetComponent<PlayerMove>();
         if (pm.SlideParam.Direction.x != 0 || pm.SlideParam.Direction.y != 0) return;
