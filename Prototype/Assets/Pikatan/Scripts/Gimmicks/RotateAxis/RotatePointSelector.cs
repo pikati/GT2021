@@ -14,7 +14,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         Own
     };
 
-    private GameObject selectObject;
+    private GameObject selectObject = null;
     private List<GameObject> rotateObjects = new List<GameObject>();
     private GameObject[] selectableObjects = new GameObject[5];
     private InputController ic;
@@ -41,7 +41,11 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
             if (ic.RB)
             {
                 if (selectObject == null) return;
-                selectObject.GetComponent<RotatePoint>().BeginRotate();
+                RotatePoint r = selectObject.GetComponent<RotatePoint>();
+                if(r != null)
+                {
+                    selectObject.GetComponent<RotatePoint>().BeginRotate();
+                }
             }
         }
     }
