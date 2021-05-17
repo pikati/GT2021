@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerState playerState;
     private Vector3 lastPosition;
     private float iceSpeed = 4.0f;
+    private bool isMove = true;
     public SlideParam SlideParam { get; set; } = null;//何かに当たったら速度0にする処理書くかも
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -52,6 +53,10 @@ public class PlayerMove : MonoBehaviour
         {
             Debug.Log(SlideParam.Direction);
             agent.Move(SlideParam.Direction * speed * Time.deltaTime);
+            if (Vec3Abs(transform.position, lastPosition) < 0.001f)
+            {
+                isMove = false;
+            }
             //Vector3 move = inputController.MoveValue;
             //move.z = move.y;
             //move.y = 0;
@@ -94,9 +99,9 @@ public class PlayerMove : MonoBehaviour
             //        SlideParam.Direction = move;
             //    }
             //}
-            
-            
-            //lastPosition = transform.position;
+
+
+                //lastPosition = transform.position;
         }
         LookDirection();
         lastPosition = transform.position;
@@ -125,6 +130,21 @@ public class PlayerMove : MonoBehaviour
         {
             playerState.state = PlayerState.PlayerStateEnum.Move;
             SlideParam.Direction = Vector3.zero;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            if (isMove) return;
+            playerState.state = PlayerState.PlayerStateEnum.Move;
+            SlideParam.Direction = Vector3.zero;
+        }
+        if(other.CompareTag("IcePanel"))
+        {
+            if (!isMove) return;
+            other.GetComponent<IceFloor>().SetSlideDirection(gameObject);
         }
     }
 
