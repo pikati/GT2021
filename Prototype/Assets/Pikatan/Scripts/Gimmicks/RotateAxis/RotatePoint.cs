@@ -107,7 +107,7 @@ public class RotatePoint : MonoBehaviour
         areaChilders[0].IsActive = true;
         areaChilders[1].IsActive = true;
         //Singleton<CameraRotater>.Instance.CameraRotate();
-        Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
+       // Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
     }
 
     //初期化と回転フラグ立った時に呼べ
