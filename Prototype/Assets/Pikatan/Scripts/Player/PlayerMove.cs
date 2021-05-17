@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerState playerState;
     private Vector3 lastPosition;
     private float iceSpeed = 4.0f;
-    public SlideParam SlideParam { get; set; }//何かに当たったら速度0にする処理書くかも
+    public SlideParam SlideParam { get; set; } = null;//何かに当たったら速度0にする処理書くかも
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,7 @@ public class PlayerMove : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         playerState = GetComponent<PlayerState>();
         rb = GetComponent<Rigidbody>();
+        SlideParam = new SlideParam();
     }
 
     // Update is called once per frame
@@ -49,52 +50,53 @@ public class PlayerMove : MonoBehaviour
         }
         else if(playerState.state == PlayerState.PlayerStateEnum.Slide)
         {
+            Debug.Log(SlideParam.Direction);
             agent.Move(SlideParam.Direction * speed * Time.deltaTime);
-            Vector3 move = inputController.MoveValue;
-            move.z = move.y;
-            move.y = 0;
-            if (Vec3Abs(transform.position, lastPosition) < 0.001f)
-            {
-                if (move.x == 0 && move.y == 0)
-                {
-                    SlideParam.Direction = Vector2.zero;
-                    lastPosition = transform.position;
-                    return;
-                }
-                else
-                {
-                    if (Mathf.Abs(move.x) > Mathf.Abs(move.z))
-                    {
-                        if (move.x > move.z)
-                        {
-                            move.x = 4.0f;
-                            move.z = 0;
-                        }
-                        else
-                        {
-                            move.x = -4.0f;
-                            move.z = 0;
-                        }
-                    }
-                    else
-                    {
-                        if (move.x > move.z)
-                        {
-                            move.x = 0;
-                            move.z = -4.0f;
-                        }
-                        else
-                        {
-                            move.x = 0;
-                            move.z = 4.0f;
-                        }
-                    }
-                    SlideParam.Direction = move;
-                }
-            }
+            //Vector3 move = inputController.MoveValue;
+            //move.z = move.y;
+            //move.y = 0;
+            //if (Vec3Abs(transform.position, lastPosition) < 0.001f)
+            //{
+            //    if (move.x == 0 && move.y == 0)
+            //    {
+            //        SlideParam.Direction = Vector2.zero;
+            //        lastPosition = transform.position;
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        if (Mathf.Abs(move.x) > Mathf.Abs(move.z))
+            //        {
+            //            if (move.x > move.z)
+            //            {
+            //                move.x = iceSpeed;
+            //                move.z = 0;
+            //            }
+            //            else
+            //            {
+            //                move.x = -iceSpeed;
+            //                move.z = 0;
+            //            }
+            //        }
+            //        else
+            //        {
+            //            if (move.x > move.z)
+            //            {
+            //                move.x = 0;
+            //                move.z = -iceSpeed;
+            //            }
+            //            else
+            //            {
+            //                move.x = 0;
+            //                move.z = iceSpeed;
+            //            }
+            //        }
+            //        SlideParam.Direction = move;
+            //    }
+            //}
             
             
-            lastPosition = transform.position;
+            //lastPosition = transform.position;
         }
         LookDirection();
         lastPosition = transform.position;
@@ -114,5 +116,20 @@ public class PlayerMove : MonoBehaviour
     private float Vec3Abs(Vector3 a, Vector3 b)
     {
         return (Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z)) / 3.0f;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Obstacle") || other.CompareTag("Panel"))
+        {
+            playerState.state = PlayerState.PlayerStateEnum.Move;
+            SlideParam.Direction = Vector3.zero;
+        }
+    }
+
+    public void SetPlayerState(PlayerState.PlayerStateEnum state)
+    {
+        playerState.state = state;
     }
 }
