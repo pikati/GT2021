@@ -27,6 +27,7 @@ public class Goal : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (Singleton<NavMeshBaker>.Instance == null) return;
         Singleton<NavMeshBaker>.Instance.Bake();
     }
 }

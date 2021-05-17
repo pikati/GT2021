@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7383415478301307929}
   - component: {fileID: 9100970014352885813}
   m_Layer: 0
-  m_Name: IceFloors2Up
-  m_TagString: Untagged
+  m_Name: UpIceFloors2
+  m_TagString: IcePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,8 +42,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4817365263957266541}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 0.4339037, z: 1}
   m_Center: {x: 1, y: 0.28304815, z: 0}
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4817365263957266541}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ac9e76387d27cf42ba93788e6f53784, type: 3}
   m_Name: 
@@ -70,6 +70,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfIce (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377338648476219688, guid: e8646b24fe918e54c8aa0657394d0744,
+        type: 3}
+      propertyPath: m_TagString
+      value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6377338648476219695, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}
@@ -126,9 +146,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744, type: 3}
-    - {fileID: 6377338648476219694, guid: e8646b24fe918e54c8aa0657394d0744, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8646b24fe918e54c8aa0657394d0744, type: 3}
 --- !u!4 &5269527532313011349 stripped
 Transform:
@@ -147,6 +165,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HarfIce
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377338648476219688, guid: e8646b24fe918e54c8aa0657394d0744,
+        type: 3}
+      propertyPath: m_TagString
+      value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6377338648476219695, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}
@@ -203,9 +241,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744, type: 3}
-    - {fileID: 6377338648476219694, guid: e8646b24fe918e54c8aa0657394d0744, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8646b24fe918e54c8aa0657394d0744, type: 3}
 --- !u!4 &3393428277079490015 stripped
 Transform:
