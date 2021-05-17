@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1362381207504682130}
-  - component: {fileID: 7383415478301307929}
-  - component: {fileID: 9100970014352885813}
   m_Layer: 0
   m_Name: DownIceFloors2
   m_TagString: IcePanel
@@ -34,31 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7383415478301307929
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4817365263957266541}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0.30927157, z: 1}
-  m_Center: {x: 1, y: -0.20278132, z: 0}
---- !u!114 &9100970014352885813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4817365263957266541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ac9e76387d27cf42ba93788e6f53784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1270513076166401466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,7 +47,7 @@ PrefabInstance:
     - target: {fileID: 6377338648476219688, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}
       propertyPath: m_TagString
-      value: Panel
+      value: IcePanel
       objectReference: {fileID: 0}
     - target: {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}
@@ -159,7 +132,7 @@ PrefabInstance:
     - target: {fileID: 6377338648476219688, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}
       propertyPath: m_TagString
-      value: Panel
+      value: IcePanel
       objectReference: {fileID: 0}
     - target: {fileID: 6377338648476219693, guid: e8646b24fe918e54c8aa0657394d0744,
         type: 3}
