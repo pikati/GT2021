@@ -21,16 +21,7 @@ public class RotatePoint : MonoBehaviour
 
     [SerializeField]
     private float rotateSpeed;
-    [SerializeField]
     private RotateAxis rotateAxis = RotateAxis.Z;
-    //[SerializeField]
-    //private GameObject upObj = null;
-    //[SerializeField]
-    //private GameObject downObj = null;
-    //[SerializeField]
-    //private GameObject leftObj = null;
-    //[SerializeField]
-    //private GameObject rightObj = null;
     private RotateState rotateState = RotateState.NoRotate;
     private bool isRotate = false;
     private float rotateValue;
@@ -47,11 +38,6 @@ public class RotatePoint : MonoBehaviour
         changeColor =GetComponentInChildren<ChangeColor>();
         areaChilders[0] = transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<AreaChilder>();
         areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
-        //selectableObjs = new GameObject[4];
-        //selectableObjs[0] = upObj;
-        //selectableObjs[1] = downObj;
-        //selectableObjs[2] = leftObj;
-        //selectableObjs[3] = rightObj;
 
     }
 
@@ -73,6 +59,9 @@ public class RotatePoint : MonoBehaviour
             float angleSpeed = rotateValue * rotateSpeed * Time.deltaTime;
             angles[(int)rotateAxis] += angleSpeed;
             transform.rotation = transform.rotation * Quaternion.AngleAxis(angleSpeed, GetAxis());
+            Singleton<RotatePointSelector>.Instance.IsRotating = true;
+            Singleton<PlayerMove>.Instance.SaveDirection();
+
             if (IsRotateComplete(angles[(int)rotateAxis], deg))
             {
                 angles[(int)rotateAxis] = deg;
@@ -89,6 +78,8 @@ public class RotatePoint : MonoBehaviour
                 transform.rotation = Quaternion.Euler(ang);
                 Bake();
                 Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.NoRotate;
+                Singleton<RotatePointSelector>.Instance.IsRotating = false;
+                Singleton<PlayerMove>.Instance.LoadDirection();
                 ///Singleton<CameraRotater>.Instance.EndRotate();
                 //Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
 
