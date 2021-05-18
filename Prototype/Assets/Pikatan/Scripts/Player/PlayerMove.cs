@@ -111,7 +111,7 @@ public class PlayerMove : Singleton<PlayerMove>
             Vector3 move = inputController.MoveValue;
             move.z = move.y;
             move.y = 0;
-            if (move.x == 0 && move.z == 0)
+            if (Mathf.Abs(move.x) < 0.8f && Mathf.Abs(move.z) < 0.8f)
             {
                 SlideParam.Direction = Vector2.zero;
                 lastPosition = transform.position;
