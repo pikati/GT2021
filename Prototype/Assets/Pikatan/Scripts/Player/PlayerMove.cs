@@ -24,6 +24,12 @@ public class PlayerMove : Singleton<PlayerMove>
         playerState = GetComponent<PlayerState>();
         rb = GetComponent<Rigidbody>();
         SlideParam = new SlideParam();
+        Application.lowMemory += OnLowMemory;
+    }
+
+    private void OnLowMemory()
+    {
+        Debug.LogError("メモリ足りなくて草");
     }
 
 
@@ -32,7 +38,7 @@ public class PlayerMove : Singleton<PlayerMove>
         if (GameManager.GameState.Play != Singleton<GameManager>.Instance.gameState) return;
         CheckPanel();
         Move();
-        Debug.Log(playerState.state);
+
     }
 
     private void CheckPanel()
