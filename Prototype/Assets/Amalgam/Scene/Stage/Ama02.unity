@@ -2355,8 +2355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &188450772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5626,10 +5624,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 347168609950059029, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953937491357391701, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6335580922405217616, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
       propertyPath: m_Name
       value: RotatePopint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335580922405217616, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6335580922405217630, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
@@ -5689,7 +5702,7 @@ PrefabInstance:
     - target: {fileID: 6335580923507662449, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595f47daf080ee74291a63120d9840f2, type: 3}
@@ -6844,8 +6857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &551714316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9941,8 +9952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &750394813
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14448,8 +14457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &1003078711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14791,8 +14798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &1024758052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14849,10 +14854,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 347168609950059029, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953937491357391701, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6335580922405217616, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
       propertyPath: m_Name
       value: RotatePopint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335580922405217616, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6335580922405217630, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
@@ -14912,7 +14932,7 @@ PrefabInstance:
     - target: {fileID: 6335580923507662449, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595f47daf080ee74291a63120d9840f2, type: 3}
@@ -14946,8 +14966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &1035588651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17213,8 +17231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &1221311344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17470,8 +17486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &1237504566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18717,8 +18731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &1341994541
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20313,10 +20325,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 347168609950059029, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953937491357391701, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6335580922405217616, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
       propertyPath: m_Name
       value: RotatePopint
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335580922405217616, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6335580922405217630, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
@@ -20376,7 +20403,7 @@ PrefabInstance:
     - target: {fileID: 6335580923507662449, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595f47daf080ee74291a63120d9840f2, type: 3}
@@ -20393,10 +20420,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 347168609950059029, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953937491357391701, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6335580922405217616, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
       propertyPath: m_Name
       value: RotatePopint (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335580922405217616, guid: 595f47daf080ee74291a63120d9840f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6335580922405217630, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
@@ -20456,7 +20498,7 @@ PrefabInstance:
     - target: {fileID: 6335580923507662449, guid: 595f47daf080ee74291a63120d9840f2,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595f47daf080ee74291a63120d9840f2, type: 3}
@@ -21562,8 +21604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &1565374968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22807,8 +22847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &1638821145
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29257,8 +29295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae707d1f23077848ba71eb2ad21bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotatePointList: []
-  Range: 0
 --- !u!65 &2097356516
 BoxCollider:
   m_ObjectHideFlags: 0
