@@ -13,7 +13,6 @@ public class RotateDecide : MonoBehaviour
     //正方形じゃないエリアが来たら
     //１、検索範囲がおかしくなる
     //２、そもそもボックスコライダーじゃなくなったら大変なことになる
-
     [SerializeField]
     private List<RotatePoint> RotatePointList;
     [SerializeField]
