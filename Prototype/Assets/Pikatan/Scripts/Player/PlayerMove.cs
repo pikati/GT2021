@@ -14,6 +14,7 @@ public class PlayerMove : Singleton<PlayerMove>
     private Vector3 lastPosition;
     private float iceSpeed = 4.0f;
     private Vector3 saveDirection;
+    private PlayerAnimation playerAnimation;
     public SlideParam SlideParam { get; set; } = null;//何かに当たったら速度0にする処理書くかも
     private Rigidbody rb;
 
@@ -24,14 +25,8 @@ public class PlayerMove : Singleton<PlayerMove>
         playerState = GetComponent<PlayerState>();
         rb = GetComponent<Rigidbody>();
         SlideParam = new SlideParam();
-        Application.lowMemory += OnLowMemory;
+        playerAnimation = transform.Find("MEBIZO").GetComponent<PlayerAnimation>();
     }
-
-    private void OnLowMemory()
-    {
-        Debug.LogError("メモリ足りなくて草");
-    }
-
 
     void Update()
     {
@@ -80,11 +75,13 @@ public class PlayerMove : Singleton<PlayerMove>
         if (playerState.state == PlayerState.PlayerStateEnum.Move)
         {
             Vector2 move = inputController.MoveValue;
+            playerAnimation.MoveValue = Mathf.Abs(move.x) + Mathf.Abs(move.y);
             //var cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
             if (move != Vector2.zero)
             {
                 Vector3 direction = Vector3.forward * move.y + Camera.main.transform.right * move.x;
                 agent.Move(direction * speed * Time.deltaTime);
+                
             }
             else
             {
@@ -111,7 +108,7 @@ public class PlayerMove : Singleton<PlayerMove>
             Vector3 move = inputController.MoveValue;
             move.z = move.y;
             move.y = 0;
-            if (move.x == 0 && move.z == 0)
+            if (move.x == 0 && move.y == 0)
             {
                 SlideParam.Direction = Vector2.zero;
                 lastPosition = transform.position;
