@@ -6,7 +6,7 @@ public class SoundManager : Singleton<SoundManager>
 {
     //ボリューム一覧
     [SerializeField, Range(0, 1), Tooltip("マスター音量")]
-    private float MasterVolume = 1;
+    private float MasterVolume = 0.5f;
     [SerializeField, Range(0, 1), Tooltip("BGM音量")]
     private float BgmVolume = 1;
     [SerializeField, Range(0, 1), Tooltip("SE音量")]

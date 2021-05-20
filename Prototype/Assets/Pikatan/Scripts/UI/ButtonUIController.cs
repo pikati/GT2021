@@ -56,9 +56,13 @@ public class ButtonUIController : MonoBehaviour
         {
             ButtonIdx = 0;
         }
-        if(ButtonIdx >= cursors.Count)
+        else if(ButtonIdx >= cursors.Count)
         {
             ButtonIdx = cursors.Count - 1;
+        }
+        else
+        {
+            Singleton<SoundManager>.Instance.PlaySeByName("ok_no9");
         }
         EnableCursor(ButtonIdx);
         isInput = true;
@@ -73,5 +77,15 @@ public class ButtonUIController : MonoBehaviour
     private void DisableCursor(int index)
     {
         cursors[index].SetActive(false);
+    }
+
+    public void ResetCursor()
+    {
+        ButtonIdx = 0;
+        EnableCursor(0);
+        for (int i = 1; i < buttonNum; i++)
+        {
+            DisableCursor(i);
+        }
     }
 }
