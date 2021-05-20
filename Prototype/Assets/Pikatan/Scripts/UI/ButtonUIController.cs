@@ -15,7 +15,7 @@ public class ButtonUIController : MonoBehaviour
     public int ButtonIdx { get; private set; } = 0;
     void Start()
     {
-        for(int i = 0; i < buttonNum; i++)
+        for(int i = 1; i < buttonNum + 1; i++)
         {
             cursors.Add(transform.GetChild(i).gameObject);
         }
