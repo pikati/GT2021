@@ -1122,6 +1122,16 @@ PrefabInstance:
       propertyPath: buttonEvent.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 7243296136717195893, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: seVolumeObj
+      value: 
+      objectReference: {fileID: 1406257128}
+    - target: {fileID: 7243296136717195893, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: bgmVolumeObj
+      value: 
+      objectReference: {fileID: 290052182}
     - target: {fileID: 8644884261160918869, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: m_IsActive
@@ -1286,6 +1296,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 9.94
       objectReference: {fileID: 0}
+    - target: {fileID: 5369484416055235749, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369484417077834503, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.72
+      objectReference: {fileID: 0}
     - target: {fileID: 5369484417421351616, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
       propertyPath: m_RootOrder
@@ -1422,6 +1442,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9af7b09b098f27c4a99d412db8a6d857, type: 3}
+--- !u!1 &290052182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7243296136012505024, guid: 3503e8db6543ab845ae4095e265d5139,
+    type: 3}
+  m_PrefabInstance: {fileID: 185808993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &305818113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4855,6 +4881,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e6ddf300a758643a3989f358200fca, type: 3}
+--- !u!1 &1406257128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7243296137033192779, guid: 3503e8db6543ab845ae4095e265d5139,
+    type: 3}
+  m_PrefabInstance: {fileID: 185808993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1441339528
 PrefabInstance:
   m_ObjectHideFlags: 0
