@@ -7,6 +7,12 @@ public class SoundUIController : MonoBehaviour
     private SoundManager sm;
     [SerializeField]
     private ButtonUIController bc;
+    [SerializeField]
+    private GameObject masterVolumeObj;
+    [SerializeField]
+    private GameObject bgmVolumeObj;
+    [SerializeField]
+    private GameObject seVolumeObj;
     private InputController ic;
     private GameObject[] masterVolumeObjs = new GameObject[10];
     private GameObject[] bgmVolumeObjs = new GameObject[10];
@@ -21,9 +27,6 @@ public class SoundUIController : MonoBehaviour
     {
         sm = Singleton<SoundManager>.Instance;
         ic = Singleton<InputController>.Instance;
-        GameObject masterVolumeObj = GameObject.Find("Master");
-        GameObject bgmVolumeObj = GameObject.Find("BGM");
-        GameObject seVolumeObj = GameObject.Find("SE");
         for(int i = 0; i < 10; i++)
         {
             masterVolumeObjs[i] = masterVolumeObj.transform.GetChild(i).gameObject;
@@ -112,6 +115,7 @@ public class SoundUIController : MonoBehaviour
 
     private void DispVolume()
     {
+        Debug.Log(master);
         for(int i = 0; i < master; i++)
         {
             masterVolumeObjs[i].SetActive(true);
