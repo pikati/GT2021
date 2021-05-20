@@ -20,10 +20,11 @@ public class TitleManager : MonoBehaviour
     void Start()
     {
         fade = Singleton<Fade>.Instance;
-        titleObj = GameObject.Find("Title");
-        selectObj = GameObject.Find("StageSelect");
-        optionObj = GameObject.Find("Option");
+        titleObj = GameObject.Find("TitleUI");
+        selectObj = GameObject.Find("StageSelectUI");
+        optionObj = GameObject.Find("OptionUI");
         ChangeDisp(DispState.Title);
+        Singleton<SoundManager>.Instance.PlayBgmByName("cocoro");
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class TitleManager : MonoBehaviour
         }
     }
 
-    void ChangeDisp(DispState state)
+    private void ChangeDisp(DispState state)
     {
         dispState = state;
         switch (dispState)
@@ -47,24 +48,21 @@ public class TitleManager : MonoBehaviour
                 titleObj.SetActive(true);
                 selectObj.SetActive(false);
                 optionObj.SetActive(false);
-                Singleton<DefaultButtonSelector>.Instance.SelectButton(DispState.Title);
+                titleObj.transform.GetChild(0).GetComponent<ButtonUIController>().ResetCursor();
                 break;
             case DispState.Select:
                 titleObj.SetActive(false);
                 selectObj.SetActive(true);
                 optionObj.SetActive(false);
-                Singleton<DefaultButtonSelector>.Instance.SelectButton(DispState.Select);
                 break;
             case DispState.Option:
                 titleObj.SetActive(false);
                 selectObj.SetActive(false);
                 optionObj.SetActive(true);
-                Singleton<DefaultButtonSelector>.Instance.SelectButton(DispState.Option);
+                optionObj.GetComponent<ButtonUIController>().ResetCursor();
                 break;
         }
-
     }
-
 
     public void StartGame()
     {
@@ -74,6 +72,11 @@ public class TitleManager : MonoBehaviour
     public void Option()
     {
         ChangeDisp(DispState.Option);
+    }
+
+    public void ChangeDispUI(int n)
+    {
+        ChangeDisp((DispState)n);
     }
 
     public void ExitGame()
