@@ -1657,6 +1657,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1517548634672333283, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_Name
+      value: OptionUI
+      objectReference: {fileID: 0}
     - target: {fileID: 162427899763515609, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1736,6 +1741,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243296136539765447, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243296136717195893, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: seVolumeObj
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243296136717195893, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: bgmVolumeObj
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3503e8db6543ab845ae4095e265d5139, type: 3}

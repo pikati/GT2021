@@ -83,11 +83,27 @@ public class StageSelectUIController : MonoBehaviour
         index += n;
         if (index < 0)
         {
-            index = tmp;
+            if(page > 0)
+            {
+                index = 9;
+                ChangePage(-1);
+            }
+            else
+            {
+                index = tmp;
+            }
         }
         else if (index >= 10)
         {
-            index = tmp;
+            if (page < maxPage)
+            {
+                index = 0;
+                ChangePage(1);
+            }
+            else
+            {
+                index = tmp;
+            }
         }
         else if(index + page * 10 >= stageNum)
         {
