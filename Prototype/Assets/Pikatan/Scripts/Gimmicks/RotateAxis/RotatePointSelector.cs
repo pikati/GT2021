@@ -35,7 +35,7 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
         if (Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play) return;
         if (Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
         {
-            if (ic.RB)
+            if (ic.A)
             {
                 if (selectObject == null) return;
                 RotatePoint r = selectObject.GetComponent<RotatePoint>();

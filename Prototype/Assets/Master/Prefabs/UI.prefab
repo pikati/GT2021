@@ -2880,6 +2880,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 432801146624023351}
     m_Modifications:
+    - target: {fileID: 8270963255883839836, guid: 38699794f087b9b428b611e3d7e7ab4c,
+        type: 3}
+      propertyPath: seVolumeObj
+      value: 
+      objectReference: {fileID: 7243296136978033930}
+    - target: {fileID: 8270963255883839836, guid: 38699794f087b9b428b611e3d7e7ab4c,
+        type: 3}
+      propertyPath: bgmVolumeObj
+      value: 
+      objectReference: {fileID: 7243296137780480106}
+    - target: {fileID: 8270963255883839836, guid: 38699794f087b9b428b611e3d7e7ab4c,
+        type: 3}
+      propertyPath: masterVolumeObj
+      value: 
+      objectReference: {fileID: 7243296137270953975}
     - target: {fileID: 8270963256061204961, guid: 38699794f087b9b428b611e3d7e7ab4c,
         type: 3}
       propertyPath: buttonEvent.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -3010,6 +3025,24 @@ PrefabInstance:
 --- !u!224 &7243296136539765447 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8270963256061204974, guid: 38699794f087b9b428b611e3d7e7ab4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606947476118397737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7243296137270953975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8270963257980871902, guid: 38699794f087b9b428b611e3d7e7ab4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606947476118397737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7243296137780480106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8270963256967965507, guid: 38699794f087b9b428b611e3d7e7ab4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606947476118397737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7243296136978033930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8270963256151477795, guid: 38699794f087b9b428b611e3d7e7ab4c,
     type: 3}
   m_PrefabInstance: {fileID: 1606947476118397737}
   m_PrefabAsset: {fileID: 0}
