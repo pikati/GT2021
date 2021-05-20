@@ -7,7 +7,7 @@ public class StageName
     public string[] StageNames { get; private set; }
     public StageName()
     {
-        StageNames = new string[49];
+        StageNames = new string[51];
         StageNames[0] = "1";
         StageNames[1] = "2";
         StageNames[2] = "3";
@@ -57,5 +57,7 @@ public class StageName
         StageNames[46] = "John19";
         StageNames[47] = "John20";
         StageNames[48] = "John21";
+        StageNames[49] = "John22";
+        StageNames[50] = "John23";
     }
 }

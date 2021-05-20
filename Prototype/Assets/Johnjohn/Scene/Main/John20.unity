@@ -362,6 +362,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 23800000, guid: 61337383df743d44faf0022bb9b22014,
         type: 2}
+    - target: {fileID: 1185034667381618124, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: nextSceneName
+      value: John21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3be5d6031511af645b18a63b70751ed9, type: 3}
 --- !u!4 &124548415 stripped
@@ -1606,6 +1611,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6137972822284583117, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243296136539765447, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0

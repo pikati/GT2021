@@ -194,6 +194,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 23800000, guid: f595808ddfdf0bc4db59c33ca6f4884f,
         type: 2}
+    - target: {fileID: 1185034667381618124, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: nextSceneName
+      value: John15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3be5d6031511af645b18a63b70751ed9, type: 3}
 --- !u!1001 &319581051
@@ -567,6 +572,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6137972822284583117, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243296136539765447, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -4121,12 +4131,12 @@ Transform:
   - {fileID: 2750885120012799452}
   - {fileID: 5769758171272227690}
   - {fileID: 1420983055376308766}
+  - {fileID: 332713907183676558}
   - {fileID: 698695858278519119}
   - {fileID: 6722792418381503597}
   - {fileID: 7019501072562509950}
   - {fileID: 1486996518}
   - {fileID: 1639382437}
-  - {fileID: 332713907183676558}
   - {fileID: 319581052}
   - {fileID: 2127191142636286448}
   - {fileID: 1803112817770880146}
