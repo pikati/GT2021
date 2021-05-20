@@ -33,7 +33,10 @@ public class PlayerMove : Singleton<PlayerMove>
         if (GameManager.GameState.Play != Singleton<GameManager>.Instance.gameState) return;
         CheckPanel();
         Move();
-
+        if(inputController.R3)
+        {
+            Singleton<ClearChecker>.Instance.DebugClear();
+        }
     }
 
     private void CheckPanel()

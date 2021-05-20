@@ -14,6 +14,13 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Move", MoveValue);
+        if(Singleton<ClearChecker>.Instance.IsClear)
+        {
+            anim.SetFloat("Move", 0);
+        }
+        else
+        {
+            anim.SetFloat("Move", MoveValue);
+        }
     }
 }
