@@ -18,6 +18,7 @@ public class StageSelectUIController : MonoBehaviour
     private float diff = 0;
     private bool isChangePage = false;
     private RectTransform rt;
+    private readonly int stageNum = 51;
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +85,10 @@ public class StageSelectUIController : MonoBehaviour
             index = tmp;
         }
         else if (index >= 10)
+        {
+            index = tmp;
+        }
+        else if(index + page * 10 >= stageNum)
         {
             index = tmp;
         }
