@@ -50,6 +50,7 @@ public class ButtonUIController : MonoBehaviour
 
     private void ChangeCursor(int n)
     {
+        isInput = true;
         DisableCursor(ButtonIdx);
         ButtonIdx += n;
         if(ButtonIdx < 0)
@@ -65,7 +66,6 @@ public class ButtonUIController : MonoBehaviour
             Singleton<SoundManager>.Instance.PlaySeByName("ok_no9");
         }
         EnableCursor(ButtonIdx);
-        isInput = true;
     }
 
     private void EnableCursor(int index)

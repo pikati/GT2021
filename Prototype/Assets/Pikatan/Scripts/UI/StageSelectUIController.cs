@@ -70,13 +70,14 @@ public class StageSelectUIController : MonoBehaviour
         }
         if (ic.A)
         {
-            ChangeSecne(stageName.StageNames[index + page]);
+            ChangeSecne(stageName.StageNames[index + page * 10]);
         }
         MovePage();
     }
 
     private void ChangeCursor(int n)
     {
+        isInput = true;
         DisableCursor(index);
         int tmp = index;
         index += n;
@@ -97,11 +98,11 @@ public class StageSelectUIController : MonoBehaviour
             Singleton<SoundManager>.Instance.PlaySeByName("ok_no9");
         }
         EnableCursor(index);
-        isInput = true;
     }
 
     private void ChangePage(int n)
     {
+        isInput = true;
         int prePage = page;
         page += n;
         if(page < 0)
@@ -112,7 +113,8 @@ public class StageSelectUIController : MonoBehaviour
         {
             page = maxPage;
         }
-        if(page > prePage)
+        
+        if (page > prePage)
         {
             diff += -2000.0f;
             isChangePage = true;
@@ -122,7 +124,12 @@ public class StageSelectUIController : MonoBehaviour
             diff += 2000.0f;
             isChangePage = true;
         }
-        isInput = true;
+        if (index + page * 10 >= stageNum)
+        {
+            DisableCursor(index);
+            index = 0;
+            EnableCursor(index);
+        }
     }
 
     private void MovePage()
