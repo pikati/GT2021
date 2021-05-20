@@ -29,18 +29,4 @@ public class GameButtonController : MonoBehaviour
     {
         Singleton<SceneChanger>.Instance.SceneChange("Title");
     }
-
-    public void SetActiveButton(GameManager.GameState state)
-    {
-        switch (state)
-        {
-            case GameManager.GameState.Pause:
-                EventSystem.current.SetSelectedGameObject(pauseSelectObject);
-                break;
-            case GameManager.GameState.Option:
-                EventSystem.current.SetSelectedGameObject(optionSelectObject);
-                break;
-        }
-
-    }
 }

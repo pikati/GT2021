@@ -5,7 +5,6 @@ using UnityEngine;
 public class CursorAnimation: MonoBehaviour
 {
     private Animator animator;
-    private bool isAnimStart = false;
     private void Start()
     {
         animator = GetComponent<Animator>();
