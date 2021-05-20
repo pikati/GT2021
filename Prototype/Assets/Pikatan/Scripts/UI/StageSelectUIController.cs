@@ -10,6 +10,10 @@ public class StageSelectUIController : MonoBehaviour
     private float pageChangeSpeed;
     [SerializeField]
     private List<GameObject> cursors;
+    [SerializeField]
+    private Animator LBAnim;
+    [SerializeField]
+    private Animator RBAnim;
     private InputController ic;
     private bool isInput = false;
     private int index = 0;
@@ -19,6 +23,7 @@ public class StageSelectUIController : MonoBehaviour
     private bool isChangePage = false;
     private RectTransform rt;
     private readonly int stageNum = 51;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,11 +62,13 @@ public class StageSelectUIController : MonoBehaviour
         else if (ic.RB)
         {
             if (isInput) return;
+            RBAnim.SetTrigger("OnPlay");
             ChangePage(1);
         }
         else if (ic.LB)
         {
             if (isInput) return;
+            LBAnim.SetTrigger("OnPlay");
             ChangePage(-1);
         }
         else
