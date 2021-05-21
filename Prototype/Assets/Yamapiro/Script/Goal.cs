@@ -5,12 +5,12 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     private bool isReach = false;
-
+    private ClearCount clearCount;
     private void Update()
     {
 
         transform.Rotate(0, 120 * Time.deltaTime, 0);
-            
+        clearCount = GameObject.Find("GoalUI").GetComponent<ClearCount>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,6 +20,7 @@ public class Goal : MonoBehaviour
         {
             isReach = true;
             Singleton<ClearChecker>.Instance.ReachChechkPoint();
+            clearCount.ChangeState(ClearCount.ImageState.Visible);
             Destroy(gameObject);
             
         }

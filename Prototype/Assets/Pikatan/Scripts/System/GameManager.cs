@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     private GameObject pauseUI;
     private GameObject optionUI;
     private InputController ic;
+    private ClearCount clearCount;
     public GameState gameState { get; private set; } = GameState.Play;
     private void Start()
     {
@@ -24,6 +25,7 @@ public class GameManager : Singleton<GameManager>
         clearText = GameObject.Find("ClearText");
         pauseUI = GameObject.Find("PauseUI");
         optionUI = GameObject.Find("OptionUI");
+        clearCount = GameObject.Find("GoalUI").GetComponent<ClearCount>();
         ChangeGameState(GameState.Play);
         ic = Singleton<InputController>.Instance;
     }
@@ -62,6 +64,11 @@ public class GameManager : Singleton<GameManager>
         if(ic.RT && ic.LT)
         {
             Quit();
+        }
+
+        if(gameState == GameState.Pause || gameState == GameState.Option)
+        {
+            clearCount.ChangeState(ClearCount.ImageState.Visible);
         }
     }
 
