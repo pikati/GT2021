@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageSelectUIController : MonoBehaviour
 {
@@ -39,22 +40,22 @@ public class StageSelectUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ic.MoveValue.x > 0 || ic.ArrowValue.x > 0)
+        if (ic.MoveValue.x > 0.7f || ic.ArrowValue.x > 0)
         {
             if (isInput) return;
             ChangeCursor(1);
         }
-        else if (ic.MoveValue.x < 0 || ic.ArrowValue.x < 0)
+        else if (ic.MoveValue.x < -0.7f || ic.ArrowValue.x < 0)
         {
             if (isInput) return;
             ChangeCursor(-1);
         }
-        else if (ic.MoveValue.y > 0 || ic.ArrowValue.y > 0)
+        else if (ic.MoveValue.y > 0.7f || ic.ArrowValue.y > 0)
         {
             if (isInput) return;
             ChangeCursor(-5);
         }
-        else if (ic.MoveValue.y < 0 || ic.ArrowValue.y < 0)
+        else if (ic.MoveValue.y < -0.7f || ic.ArrowValue.y < 0)
         {
             if (isInput) return;
             ChangeCursor(5);
@@ -169,13 +170,13 @@ public class StageSelectUIController : MonoBehaviour
 
     private void EnableCursor(int index)
     {
-        cursors[index].SetActive(true);
+        cursors[index].GetComponent<Image>().enabled = true;
         cursors[index].GetComponent<CursorAnimation>().StartAniamtion();
     }
 
     private void DisableCursor(int index)
     {
-        cursors[index].SetActive(false);
+        cursors[index].GetComponent<Image>().enabled = false;
     }
 
     public void ResetCursor()

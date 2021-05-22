@@ -43,7 +43,7 @@ public class SoundUIController : MonoBehaviour
 
     private void ChangeSound()
     {
-        if (ic.MoveValue.x < 0 || ic.ArrowValue.x < 0)
+        if (ic.MoveValue.x < -0.7f || ic.ArrowValue.x < 0)
         {
             if (isInput) return;
             isInput = true;
@@ -75,7 +75,7 @@ public class SoundUIController : MonoBehaviour
                 }
             }
         }
-        else if (ic.MoveValue.x > 0 || ic.ArrowValue.x > 0)
+        else if (ic.MoveValue.x > 0.7f || ic.ArrowValue.x > 0)
         {
             if (isInput) return;
             isInput = true;
