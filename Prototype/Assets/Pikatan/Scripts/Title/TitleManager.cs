@@ -15,6 +15,7 @@ public class TitleManager : MonoBehaviour
     private GameObject titleObj;
     private GameObject selectObj;
     private GameObject optionObj;
+    private GameObject cursorObj;
     private DispState dispState;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class TitleManager : MonoBehaviour
         titleObj = GameObject.Find("TitleUI");
         selectObj = GameObject.Find("StageSelectUI");
         optionObj = GameObject.Find("OptionUI");
+        cursorObj = GameObject.Find("SelectCursorUI");
         ChangeDisp(DispState.Title);
         Singleton<SoundManager>.Instance.PlayBgmByName("cocoro");
     }
@@ -48,17 +50,20 @@ public class TitleManager : MonoBehaviour
                 titleObj.SetActive(true);
                 selectObj.SetActive(false);
                 optionObj.SetActive(false);
+                cursorObj.SetActive(false);
                 titleObj.transform.GetChild(0).GetComponent<ButtonUIController>().ResetCursor();
                 break;
             case DispState.Select:
                 titleObj.SetActive(false);
                 selectObj.SetActive(true);
                 optionObj.SetActive(false);
+                cursorObj.SetActive(true);
                 break;
             case DispState.Option:
                 titleObj.SetActive(false);
                 selectObj.SetActive(false);
                 optionObj.SetActive(true);
+                cursorObj.SetActive(false);
                 optionObj.GetComponent<ButtonUIController>().ResetCursor();
                 break;
         }

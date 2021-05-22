@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 985d9a1a7132b11439a658ea2b19fa21, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.6494072, g: 0.8884659, b: 0.34966552, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -572,6 +572,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3288554131298358369, guid: 73ec2e015b6519045ae9a0ac644404ee,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3288554131298358370, guid: 73ec2e015b6519045ae9a0ac644404ee,
         type: 3}
       propertyPath: m_RootOrder
@@ -1037,6 +1042,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4186263717057542099, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4400637604320598923, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: m_SortingOrder
@@ -1078,6 +1088,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6137972822284583117, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760983385110245212, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -1126,12 +1141,12 @@ PrefabInstance:
         type: 3}
       propertyPath: seVolumeObj
       value: 
-      objectReference: {fileID: 1406257128}
+      objectReference: {fileID: 0}
     - target: {fileID: 7243296136717195893, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: bgmVolumeObj
       value: 
-      objectReference: {fileID: 290052182}
+      objectReference: {fileID: 0}
     - target: {fileID: 8644884261160918869, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
       propertyPath: m_IsActive
@@ -1442,12 +1457,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9af7b09b098f27c4a99d412db8a6d857, type: 3}
---- !u!1 &290052182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7243296136012505024, guid: 3503e8db6543ab845ae4095e265d5139,
-    type: 3}
-  m_PrefabInstance: {fileID: 185808993}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &305818113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4881,12 +4890,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e6ddf300a758643a3989f358200fca, type: 3}
---- !u!1 &1406257128 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7243296137033192779, guid: 3503e8db6543ab845ae4095e265d5139,
-    type: 3}
-  m_PrefabInstance: {fileID: 185808993}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1441339528
 PrefabInstance:
   m_ObjectHideFlags: 0
