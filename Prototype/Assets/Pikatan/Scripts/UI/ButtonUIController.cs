@@ -28,12 +28,12 @@ public class ButtonUIController : MonoBehaviour
 
     void Update()
     {
-        if(ic.MoveValue.y > 0 || ic.ArrowValue.y > 0)
+        if(ic.MoveValue.y > 0.7f || ic.ArrowValue.y > 0)
         {
             if (isInput) return;
             ChangeCursor(-1);
         }
-        else if(ic.MoveValue.y < 0 || ic.ArrowValue.y < 0)
+        else if(ic.MoveValue.y < -0.7f || ic.ArrowValue.y < 0)
         {
             if (isInput) return;
             ChangeCursor(1);
