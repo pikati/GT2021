@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6494072, g: 0.8884659, b: 0.34966552, a: 1}
+  m_IndirectSpecularColor: {r: 0.4772756, g: 0.52025855, b: 0.8270383, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -491,6 +491,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9af7b09b098f27c4a99d412db8a6d857, type: 3}
+--- !u!1 &63478352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63478353}
+  - component: {fileID: 63478354}
+  m_Layer: 0
+  m_Name: BGColorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &63478353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63478352}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1185034666742924025}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &63478354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63478352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03e3c225a0c5d34c8a18a4c6e55e4f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topColor: {r: 0.97479916, g: 0, b: 1, a: 1}
+  bottomColor: {r: 0, g: 1, b: 0.66422915, a: 1}
+  gradationTime: 0.1
 --- !u!1001 &96759017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7550,6 +7596,7 @@ Transform:
   - {fileID: 1185034667575562274}
   - {fileID: 1185034666288524918}
   - {fileID: 2072962746122939437}
+  - {fileID: 63478353}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

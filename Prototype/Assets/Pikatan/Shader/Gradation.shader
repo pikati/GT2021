@@ -1,7 +1,7 @@
 ﻿Shader "Gradation/Gradation" {
     Properties{
         _TopColor("Top Color", Color) = (1,1,1,1)
-        _ButtomColor("Buttom Color", Color) = (1,1,1,1)
+        _BottomColor("Bottom Color", Color) = (1,1,1,1)
         _TopColorPos("Top Color Pos", Range(0, 1)) = 1 //初期値は1
         _TopColorAmount("Top Color Amount", Range(0, 1)) = 0.5 //初期値は0.5
     }
@@ -23,7 +23,7 @@
 #include "UnityCG.cginc"
 
             fixed4 _TopColor;
-            fixed4 _ButtomColor;
+            fixed4 _BottomColor;
             fixed _TopColorPos;
             fixed _TopColorAmount;
 
@@ -48,7 +48,7 @@ return o;
 }
 fixed4 frag(v2f i) : COLOR{
     fixed amount = clamp(abs(_TopColorPos - i.uv.y) + (0.5 - _TopColorAmount), 0, 1);
-    i.color = lerp(_TopColor, _ButtomColor, amount);
+    i.color = lerp(_TopColor, _BottomColor, amount);
 
     return i.color;
 }
