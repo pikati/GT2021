@@ -26,6 +26,7 @@ public class PlayerMove : Singleton<PlayerMove>
         rb = GetComponent<Rigidbody>();
         SlideParam = new SlideParam();
         playerAnimation = transform.Find("MEBIZO").GetComponent<PlayerAnimation>();
+        agent.enabled = false;
     }
 
     void Update()
@@ -213,5 +214,10 @@ public class PlayerMove : Singleton<PlayerMove>
         SlideParam.Direction = saveDirection;
         saveDirection = Vector3.zero;
         lastPosition = new Vector3(100, 100, 100);
+    }
+
+    public void ActivateAgent()
+    {
+        agent.enabled = true;
     }
 }

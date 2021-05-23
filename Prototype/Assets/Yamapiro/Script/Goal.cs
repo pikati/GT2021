@@ -6,6 +6,13 @@ public class Goal : MonoBehaviour
 {
     private bool isReach = false;
     private ClearCount clearCount;
+    private GameObject emitter;
+
+    private void Start()
+    {
+        emitter = transform.GetChild(1).gameObject;
+        emitter.SetActive(false);
+    }
     private void Update()
     {
 
@@ -21,7 +28,9 @@ public class Goal : MonoBehaviour
             isReach = true;
             Singleton<ClearChecker>.Instance.ReachChechkPoint();
             clearCount.ChangeState(ClearCount.ImageState.Visible);
-            Destroy(gameObject);
+            transform.GetChild(0).gameObject.SetActive(false);
+            emitter.SetActive(true);
+            Destroy(gameObject, 5.0f);
             
         }
     }
