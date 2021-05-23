@@ -33,6 +33,8 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
     void Update()
     {
         if (Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play) return;
+        if (!Singleton<StageStart>.Instance.IsEnd) return;
+        if (Singleton<ClearChecker>.Instance.IsClear) return;
         if (Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
         {
             if (ic.A)

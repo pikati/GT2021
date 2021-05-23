@@ -46,7 +46,6 @@ public class BackGroundColorController : MonoBehaviour
         {
             skyboxMat.SetColor("_BottomColor", bgBottomColor);
         }
-        Debug.Log(bgTopColor);
     }
 
     private void ChangeState()

@@ -9,14 +9,19 @@ public class AxisPointer : MonoBehaviour
     private InputController ic;
     private Rigidbody rb;
     private Vector3 direction;
+    private MeshRenderer meshRenderer;
+    private bool isGameStart = false;
     void Start()
     {
         ic = Singleton<InputController>.Instance;
         rb = GetComponent<Rigidbody>();
+        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.enabled = false;
     }
 
     void Update()
     {
+        if (!isGameStart) return;
         MovePointer();
     }
 
@@ -41,5 +46,11 @@ public class AxisPointer : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
+    }
+
+    public void ActivatePointer()
+    {
+        meshRenderer.enabled = true;
+        isGameStart = true;
     }
 }
