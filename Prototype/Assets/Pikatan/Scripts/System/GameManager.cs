@@ -25,7 +25,7 @@ public class GameManager : Singleton<GameManager>
         Singleton<Fade>.Instance.FadeOut();
         sm = Singleton<SoundManager>.Instance;
         sm.PlayBgmByName("game");
-        clearText = GameObject.Find("ClearText");
+        clearText = GameObject.Find("ClearUI");
         pauseUI = GameObject.Find("PauseUI");
         optionUI = GameObject.Find("OptionUI");
         clearCount = GameObject.Find("GoalUI").GetComponent<ClearCount>();
@@ -59,14 +59,6 @@ public class GameManager : Singleton<GameManager>
             {
                 ChangeGameState(GameState.Pause);
                 sm.PlaySeByName("cancel");
-            }
-        }
-        if(Singleton<ClearChecker>.Instance.IsClear)
-        {
-            if (ic.A)
-            {
-                Singleton<SceneChanger>.Instance.SceneChange();
-                sm.PlaySeByName("decide");
             }
         }
         if(ic.RT && ic.LT)
