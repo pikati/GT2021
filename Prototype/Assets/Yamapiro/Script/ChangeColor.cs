@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour
 {
+    //ROtatePointのupdateコメントしてるｐ
     public bool GetFlag { get; set; }
     private Renderer defaultRenderer;
     private Material defaultMat;
