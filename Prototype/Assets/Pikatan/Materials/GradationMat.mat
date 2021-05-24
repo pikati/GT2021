@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GradationMat
+  m_Name: GradationMAt
   m_Shader: {fileID: 4800000, guid: 8f5af051d1dbbf846969b999c6875873, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -70,37 +70,12 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TopColorAmount: 0.567
-    - _TopColorPos: 0
+    - _TopColorAmount: 0.5
+    - _TopColorPos: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-<<<<<<< HEAD
-    - _BottomColor: {r: 0.51065946, g: 0.47613895, b: 0.84012616, a: 1}
-    - _ButtomColor: {r: 0, g: 1, b: 0.66422915, a: 1}
+    - _BottomColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TopColor: {r: 0.46413946, g: 0.52386147, b: 0.824103, a: 1}
-=======
-<<<<<<< HEAD
-    - _BottomColor: {r: 0.5665327, g: 0, b: 0, a: 1}
-    - _ButtomColor: {r: 0, g: 1, b: 0.66422915, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TopColor: {r: 0.4334673, g: 0, b: 0, a: 1}
-=======
-<<<<<<< HEAD
-    - _BottomColor: {r: 0.37703875, g: 0.9245918, b: 0.41378918, a: 1}
-    - _ButtomColor: {r: 0, g: 1, b: 0.66422915, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TopColor: {r: 0.62296116, g: 0.8754083, b: 0.25044015, a: 1}
-=======
-    - _BottomColor: {r: 0.2552874, g: 0.73811233, b: 0.75216377, a: 1}
-    - _ButtomColor: {r: 0, g: 1, b: 0.66422915, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TopColor: {r: 0.7195113, g: 0.2618872, b: 0.9120654, a: 1}
->>>>>>> b3f166bd027909418243c1e9a1e7ca415cf75814
->>>>>>> 30f0cf1cbafc096355a2f0a99104a6f302912521
->>>>>>> 846e3d02f9d199f28e967011f14f7ff82292bb60
+    - _TopColor: {r: 1, g: 1, b: 1, a: 1}
