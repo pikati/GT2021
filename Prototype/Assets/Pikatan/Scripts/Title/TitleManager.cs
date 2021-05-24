@@ -17,16 +17,19 @@ public class TitleManager : MonoBehaviour
     private GameObject optionObj;
     private GameObject cursorObj;
     private DispState dispState;
-    // Start is called before the first frame update
+    private SoundManager sm;
+
     void Start()
     {
         fade = Singleton<Fade>.Instance;
+        sm = Singleton<SoundManager>.Instance;
         titleObj = GameObject.Find("TitleUI");
         selectObj = GameObject.Find("StageSelectUI");
         optionObj = GameObject.Find("OptionUI");
         cursorObj = GameObject.Find("SelectCursorUI");
         ChangeDisp(DispState.Title);
-        Singleton<SoundManager>.Instance.PlayBgmByName("cocoro");
+        sm.StopBgm();
+        sm.PlayBgmByName("title");
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class TitleManager : MonoBehaviour
             if(Singleton<InputController>.Instance.B)
             {
                 ChangeDisp(DispState.Title);
+                sm.PlaySeByName("cancel");
             }
         }
     }
@@ -72,16 +76,19 @@ public class TitleManager : MonoBehaviour
     public void StartGame()
     {
         ChangeDisp(DispState.Select);
+        sm.PlaySeByName("decide");
     }
 
     public void Option()
     {
         ChangeDisp(DispState.Option);
+        sm.PlaySeByName("decide");
     }
 
     public void ChangeDispUI(int n)
     {
         ChangeDisp((DispState)n);
+        sm.PlaySeByName("decide");
     }
 
     public void ExitGame()

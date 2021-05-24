@@ -12,6 +12,7 @@ public class ButtonUIController : MonoBehaviour
     private List<GameObject> cursors = new List<GameObject>();
     private InputController ic;
     private bool isInput = false;
+    private SoundManager sm;
     public int ButtonIdx { get; private set; } = 0;
     void Start()
     {
@@ -24,6 +25,7 @@ public class ButtonUIController : MonoBehaviour
             DisableCursor(i);
         }
         ic = Singleton<InputController>.Instance;
+        sm = Singleton<SoundManager>.Instance;
     }
 
     void Update()
@@ -38,13 +40,15 @@ public class ButtonUIController : MonoBehaviour
             if (isInput) return;
             ChangeCursor(1);
         }
+        else if(ic.A)
+        {
+            if (isInput) return;
+            isInput = true;
+            buttonEvent[ButtonIdx].Invoke();
+        }
         else
         {
             isInput = false;
-        }
-        if(ic.A)
-        {
-            buttonEvent[ButtonIdx].Invoke();
         }
     }
 
@@ -63,7 +67,7 @@ public class ButtonUIController : MonoBehaviour
         }
         else
         {
-            Singleton<SoundManager>.Instance.PlaySeByName("ok_no9");
+            sm.PlaySeByName("cursor");
         }
         EnableCursor(ButtonIdx);
     }

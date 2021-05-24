@@ -5,28 +5,28 @@ using UnityEngine.EventSystems;
 
 public class GameButtonController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject pauseSelectObject;
-    [SerializeField]
-    private GameObject optionSelectObject;
     
     public void Resume()
     {
         Singleton<GameManager>.Instance.ChangeGameState(GameManager.GameState.Play);
+        Singleton<SoundManager>.Instance.PlaySeByName("decide");
     }
 
     public void Retry()
     {
         Singleton<SceneChanger>.Instance.ReloadScene();
+        Singleton<SoundManager>.Instance.PlaySeByName("decide");
     }
 
     public void Option()
     {
         Singleton<GameManager>.Instance.ChangeGameState(GameManager.GameState.Option);
+        Singleton<SoundManager>.Instance.PlaySeByName("decide");
     }
 
     public void ToTitle()
     {
         Singleton<SceneChanger>.Instance.SceneChange("Title");
+        Singleton<SoundManager>.Instance.PlaySeByName("decide");
     }
 }

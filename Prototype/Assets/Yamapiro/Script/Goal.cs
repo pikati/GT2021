@@ -7,6 +7,7 @@ public class Goal : MonoBehaviour
     private bool isReach = false;
     private ClearCount clearCount;
     private GameObject emitter;
+    private bool isGoal = false;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class Goal : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (isReach) return;
+        if (isGoal) return;
         if(other.CompareTag("Player"))
         {
             isReach = true;
@@ -30,8 +32,9 @@ public class Goal : MonoBehaviour
             clearCount.ChangeState(ClearCount.ImageState.Visible);
             transform.GetChild(0).gameObject.SetActive(false);
             emitter.SetActive(true);
+            Singleton<SoundManager>.Instance.PlaySeByName("get");
             Destroy(gameObject, 5.0f);
-            
+            isGoal = true;
         }
     }
 
