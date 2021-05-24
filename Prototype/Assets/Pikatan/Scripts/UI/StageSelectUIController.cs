@@ -15,6 +15,8 @@ public class StageSelectUIController : MonoBehaviour
     private Animator LBAnim;
     [SerializeField]
     private Animator RBAnim;
+    [SerializeField]
+    private float stageNum;
     private InputController ic;
     private bool isInput = false;
     private int index = 0;
@@ -23,7 +25,6 @@ public class StageSelectUIController : MonoBehaviour
     private float diff = 0;
     private bool isChangePage = false;
     private RectTransform rt;
-    private readonly int stageNum = 51;
     private SoundManager sm;
 
     // Start is called before the first frame update

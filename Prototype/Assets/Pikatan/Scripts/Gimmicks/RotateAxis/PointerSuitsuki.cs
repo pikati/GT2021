@@ -5,10 +5,12 @@ using UnityEngine;
 public class PointerSuitsuki : MonoBehaviour
 {
     private GameObject parentObj;
+    private PointerAnimationController pac;
     // Start is called before the first frame update
     void Start()
     {
         parentObj = transform.root.gameObject;
+        pac = transform.root.gameObject.GetComponent<PointerAnimationController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,6 +22,7 @@ public class PointerSuitsuki : MonoBehaviour
             pos.y = Mathf.Lerp(parentObj.transform.position.y, other.transform.position.y, 0.1f);
             pos.z = Mathf.Lerp(parentObj.transform.position.z, other.transform.position.z, 0.1f);
             parentObj.transform.position = pos;
+            pac.FocusPointer();
         }
     }
 
