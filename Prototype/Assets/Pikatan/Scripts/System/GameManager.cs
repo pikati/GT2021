@@ -61,14 +61,6 @@ public class GameManager : Singleton<GameManager>
                 sm.PlaySeByName("cancel");
             }
         }
-        if(Singleton<ClearChecker>.Instance.IsClear)
-        {
-            if (ic.A)
-            {
-                Singleton<SceneChanger>.Instance.SceneChange();
-                sm.PlaySeByName("decide");
-            }
-        }
         if(ic.RT && ic.LT)
         {
             Quit();
