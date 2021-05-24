@@ -29,7 +29,7 @@ public class RotatePoint : MonoBehaviour
     private ChangeColor changeColor;
     private AreaChilder[] areaChilders = new AreaChilder[2];
 
-    //public GameObject[] selectableObjs { get; private set; }
+
     public bool OnPlayer { get; set; } = false;
 
     private void Start()
@@ -53,6 +53,8 @@ public class RotatePoint : MonoBehaviour
         //{
         //    changeColor.GetFlag = false;
         //}
+        changeColor.GetFlag = OnPlayer;
+        
         if (isRotate)
         {
             float deg = rotateState == RotateState.NoRotate ? 180.0f : 0;
