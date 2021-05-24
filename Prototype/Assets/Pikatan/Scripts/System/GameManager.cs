@@ -25,7 +25,7 @@ public class GameManager : Singleton<GameManager>
         Singleton<Fade>.Instance.FadeOut();
         sm = Singleton<SoundManager>.Instance;
         sm.PlayBgmByName("game");
-        clearText = GameObject.Find("ClearText");
+        clearText = GameObject.Find("ClearUI");
         pauseUI = GameObject.Find("PauseUI");
         optionUI = GameObject.Find("OptionUI");
         clearCount = GameObject.Find("GoalUI").GetComponent<ClearCount>();

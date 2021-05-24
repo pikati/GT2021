@@ -21,6 +21,10 @@ public class StageStart : Singleton<StageStart>
     void Update()
     {
         if (IsEnd) return;
+        if(Singleton<InputController>.Instance.A)
+        {
+            player.transform.position = startPosition;
+        }
         player.transform.position = Vector3.Lerp(player.transform.position, startPosition, Time.deltaTime * speed);
         if(Mathf.Abs(player.transform.position.y - startPosition.y) < 0.5f)
         {

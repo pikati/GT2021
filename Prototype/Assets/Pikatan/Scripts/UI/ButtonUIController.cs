@@ -26,6 +26,7 @@ public class ButtonUIController : MonoBehaviour
         }
         ic = Singleton<InputController>.Instance;
         sm = Singleton<SoundManager>.Instance;
+        ButtonIdx = 0;
     }
 
     void Update()
@@ -50,6 +51,7 @@ public class ButtonUIController : MonoBehaviour
         {
             isInput = false;
         }
+        Debug.Log(ButtonIdx);
     }
 
     private void ChangeCursor(int n)
