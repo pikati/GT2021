@@ -32,7 +32,7 @@ public class StageStart : Singleton<StageStart>
             IsEnd = true;
             player.GetComponent<PlayerMove>().ActivateAgent();
             GameObject.FindGameObjectWithTag("AxisPointer").GetComponent<AxisPointer>().ActivatePointer();
-            GameObject.Find("MEBIZO").GetComponent<PlayerAnimation>().Knee();
+            GameObject.Find("mebi").GetComponent<PlayerAnimation>().Knee();
         }
     }
 }
