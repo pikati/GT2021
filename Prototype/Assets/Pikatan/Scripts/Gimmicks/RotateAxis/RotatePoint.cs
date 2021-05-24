@@ -80,8 +80,7 @@ public class RotatePoint : MonoBehaviour
                 Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.NoRotate;
                 Singleton<RotatePointSelector>.Instance.IsRotating = false;
                 Singleton<PlayerMove>.Instance.LoadDirection();
-                ///Singleton<CameraRotater>.Instance.EndRotate();
-                //Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
+                Singleton<SoundManager>.Instance.PlaySeByName("endRotate");
 
             }
         }
@@ -93,6 +92,8 @@ public class RotatePoint : MonoBehaviour
         if (OnPlayer) return;
         if (Singleton<AxisStateController>.Instance.AxisState == AxisStateController.AxisStateEnum.Rotating) return;
         if (Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play) return;
+
+        Singleton<SoundManager>.Instance.PlaySeByName("startRotate");
         Invoke("IsRotateTure", 0.05f);
         SetRotateValue();
         areaChilders[0].IsActive = true;

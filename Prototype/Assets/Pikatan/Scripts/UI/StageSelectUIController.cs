@@ -24,6 +24,7 @@ public class StageSelectUIController : MonoBehaviour
     private bool isChangePage = false;
     private RectTransform rt;
     private readonly int stageNum = 51;
+    private SoundManager sm;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class StageSelectUIController : MonoBehaviour
         ic = Singleton<InputController>.Instance;
         stageName = new StageName();
         rt = GetComponent<RectTransform>();
+        sm = Singleton<SoundManager>.Instance;
     }
 
     // Update is called once per frame
@@ -78,6 +80,7 @@ public class StageSelectUIController : MonoBehaviour
         }
         if (ic.A)
         {
+            sm.PlaySeByName("decide");
             ChangeSecne(stageName.StageNames[index + page * 10]);
         }
         MovePage();
@@ -119,7 +122,7 @@ public class StageSelectUIController : MonoBehaviour
         }
         else
         {
-            Singleton<SoundManager>.Instance.PlaySeByName("ok_no9");
+            sm.PlaySeByName("cursor");
         }
         EnableCursor(index);
     }
@@ -191,6 +194,7 @@ public class StageSelectUIController : MonoBehaviour
 
     private void ChangeSecne(string sceneName)
     {
+        Singleton<SoundManager>.Instance.StopBgm();
         Singleton<SceneChanger>.Instance.SceneChange(sceneName);
     }
 }

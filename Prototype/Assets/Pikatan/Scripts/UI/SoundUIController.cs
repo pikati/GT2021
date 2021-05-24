@@ -46,6 +46,7 @@ public class SoundUIController : MonoBehaviour
         if (ic.MoveValue.x < -0.7f || ic.ArrowValue.x < 0)
         {
             if (isInput) return;
+            Singleton<SoundManager>.Instance.PlaySeByName("decide");
             isInput = true;
             if (bc.ButtonIdx == 0)
             {
@@ -78,6 +79,7 @@ public class SoundUIController : MonoBehaviour
         else if (ic.MoveValue.x > 0.7f || ic.ArrowValue.x > 0)
         {
             if (isInput) return;
+            Singleton<SoundManager>.Instance.PlaySeByName("decide");
             isInput = true;
             if (bc.ButtonIdx == 0)
             {
@@ -115,7 +117,6 @@ public class SoundUIController : MonoBehaviour
 
     private void DispVolume()
     {
-        Debug.Log(master);
         for(int i = 0; i < master; i++)
         {
             masterVolumeObjs[i].SetActive(true);

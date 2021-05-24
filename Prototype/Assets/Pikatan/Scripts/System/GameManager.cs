@@ -18,10 +18,13 @@ public class GameManager : Singleton<GameManager>
     private GameObject optionUI;
     private InputController ic;
     private ClearCount clearCount;
+    private SoundManager sm;
     public GameState gameState { get; private set; } = GameState.Play;
     private void Start()
     {
         Singleton<Fade>.Instance.FadeOut();
+        sm = Singleton<SoundManager>.Instance;
+        sm.PlayBgmByName("game");
         clearText = GameObject.Find("ClearText");
         pauseUI = GameObject.Find("PauseUI");
         optionUI = GameObject.Find("OptionUI");
@@ -37,10 +40,12 @@ public class GameManager : Singleton<GameManager>
             if(gameState == GameState.Play)
             {
                 ChangeGameState(GameState.Pause);
+                sm.PlaySeByName("decide");
             }
             else if(gameState == GameState.Pause)
             {
                 ChangeGameState(GameState.Play);
+                sm.PlaySeByName("cancel");
             }
         }
         if(ic.B)
@@ -48,10 +53,12 @@ public class GameManager : Singleton<GameManager>
             if(gameState == GameState.Pause)
             {
                 ChangeGameState(GameState.Play);
+                sm.PlaySeByName("cancel");
             }
             if (gameState == GameState.Option)
             {
                 ChangeGameState(GameState.Pause);
+                sm.PlaySeByName("cancel");
             }
         }
         if(Singleton<ClearChecker>.Instance.IsClear)
@@ -59,6 +66,7 @@ public class GameManager : Singleton<GameManager>
             if (ic.A)
             {
                 Singleton<SceneChanger>.Instance.SceneChange();
+                sm.PlaySeByName("decide");
             }
         }
         if(ic.RT && ic.LT)
@@ -104,11 +112,13 @@ public class GameManager : Singleton<GameManager>
     public void Pause()
     {
         ChangeGameState(GameState.Pause);
+        sm.PlaySeByName("decide");
     }
 
     private void Play()
     {
         ChangeGameState(GameState.Play);
+        sm.PlaySeByName("decide");
     }
 
     public void StageClear()
