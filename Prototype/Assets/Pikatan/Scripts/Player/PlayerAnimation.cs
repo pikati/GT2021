@@ -23,4 +23,9 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetFloat("Move", MoveValue);
         }
     }
+
+    public void Knee()
+    {
+        anim.SetTrigger("Knee");
+    }
 }

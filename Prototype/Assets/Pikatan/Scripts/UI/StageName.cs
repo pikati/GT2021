@@ -7,7 +7,7 @@ public class StageName
     public string[] StageNames { get; private set; }
     public StageName()
     {
-        StageNames = new string[51];
+        StageNames = new string[50];
         StageNames[0] = "1";
         StageNames[1] = "2";
         StageNames[2] = "3";
@@ -45,19 +45,18 @@ public class StageName
         StageNames[34] = "John06";
         StageNames[35] = "John08";
         StageNames[36] = "John09";
-        StageNames[37] = "John10";
-        StageNames[38] = "John11";
-        StageNames[39] = "John12";
-        StageNames[40] = "John13";
-        StageNames[41] = "John14";
-        StageNames[42] = "John15";
-        StageNames[43] = "John16";
-        StageNames[44] = "John17";
-        StageNames[45] = "John18";
-        StageNames[46] = "John19";
-        StageNames[47] = "John20";
-        StageNames[48] = "John21";
+        StageNames[37] = "John11";
+        StageNames[38] = "John12";
+        StageNames[39] = "John13";
+        StageNames[40] = "John14";
+        StageNames[41] = "John15";
+        StageNames[42] = "John16";
+        StageNames[43] = "John17";
+        StageNames[44] = "John18";
+        StageNames[45] = "John19";
+        StageNames[46] = "John20";
+        StageNames[47] = "John21";
+        StageNames[48] = "John22";
         StageNames[49] = "John22";
-        StageNames[50] = "John23";
     }
 }
