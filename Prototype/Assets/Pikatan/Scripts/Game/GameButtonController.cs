@@ -29,4 +29,9 @@ public class GameButtonController : MonoBehaviour
         Singleton<SceneChanger>.Instance.SceneChange("Title");
         Singleton<SoundManager>.Instance.PlaySeByName("decide");
     }
+
+    public void Next()
+    {
+        Singleton<SceneChanger>.Instance.SceneChange();
+    }
 }
