@@ -51,7 +51,6 @@ public class ButtonUIController : MonoBehaviour
         {
             isInput = false;
         }
-        Debug.Log(ButtonIdx);
     }
 
     private void ChangeCursor(int n)

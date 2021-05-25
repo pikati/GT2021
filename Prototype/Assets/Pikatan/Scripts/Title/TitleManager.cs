@@ -18,6 +18,7 @@ public class TitleManager : MonoBehaviour
     private GameObject cursorObj;
     private DispState dispState;
     private SoundManager sm;
+    private bool isStage = false;
 
     void Start()
     {
@@ -30,6 +31,10 @@ public class TitleManager : MonoBehaviour
         ChangeDisp(DispState.Title);
         sm.StopBgm();
         sm.PlayBgmByName("title");
+        if(isStage)
+        {
+            ChangeDisp(DispState.Select);
+        }
     }
 
     // Update is called once per frame
@@ -71,6 +76,11 @@ public class TitleManager : MonoBehaviour
                 optionObj.GetComponent<ButtonUIController>().ResetCursor();
                 break;
         }
+    }
+
+    public void DispStageSelect()
+    {
+        isStage = true;
     }
 
     public void StartGame()
