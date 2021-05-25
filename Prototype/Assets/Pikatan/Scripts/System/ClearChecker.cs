@@ -23,6 +23,7 @@ public class ClearChecker : Singleton<ClearChecker>
             Singleton<GameManager>.Instance.ChangeGameState(GameManager.GameState.Clear);
             Singleton<SoundManager>.Instance.StopBgm();
             Singleton<SoundManager>.Instance.PlayBgmByName("result");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().ClearRotation();
             IsClear = true;
         }
     }

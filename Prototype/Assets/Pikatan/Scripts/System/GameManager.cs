@@ -113,6 +113,11 @@ public class GameManager : Singleton<GameManager>
         sm.PlaySeByName("decide");
     }
 
+    public void StageSelect()
+    {
+        Singleton<SceneChanger>.Instance.ChangeStageSelect();
+    }
+
     public void StageClear()
     {
         

@@ -148,9 +148,9 @@ RectTransform:
   m_Father: {fileID: 4007790934935915787}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -585, y: -118}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -140, y: -118}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &638840928518900924
@@ -1873,7 +1873,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TO TITLE
+  m_text: STAGE SELECT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1116804ff687d94b827db5a073c8115, type: 2}
   m_sharedMaterial: {fileID: -6466218401100592169, guid: a1116804ff687d94b827db5a073c8115,
@@ -3093,8 +3093,8 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5090773887751215997}
-        m_MethodName: ToTitle
+      - m_Target: {fileID: 8609724115980797557}
+        m_MethodName: StageSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
