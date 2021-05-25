@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager>
         Clear
     }
 
+    [SerializeField]
+    private int stageID;
     private GameObject clearText;
     private GameObject pauseUI;
     private GameObject optionUI;
@@ -31,6 +33,7 @@ public class GameManager : Singleton<GameManager>
         clearCount = GameObject.Find("GoalUI").GetComponent<ClearCount>();
         ChangeGameState(GameState.Play);
         ic = Singleton<InputController>.Instance;
+        Singleton<StageClearManager>.Instance.PlayStage(stageID);
     }
 
     private void Update()
@@ -96,6 +99,7 @@ public class GameManager : Singleton<GameManager>
                 pauseUI.SetActive(false);
                 optionUI.SetActive(false);
                 clearText.SetActive(true);
+                Singleton<StageClearManager>.Instance.ClearStage(stageID);
                 break;
         }
 
