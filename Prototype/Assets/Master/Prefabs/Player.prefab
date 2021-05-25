@@ -79,18 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7486068395991589679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5007617844877539597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f795acc0fcf6842915a79356137f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &8649167176206132006
 Animator:
   serializedVersion: 3
@@ -110,6 +98,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7486068395991589679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007617844877539597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f795acc0fcf6842915a79356137f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7524350878270848934
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +121,6 @@ GameObject:
   - component: {fileID: 524087700942073281}
   - component: {fileID: 7560939720367067620}
   - component: {fileID: 7210198467710597976}
-  - component: {fileID: 2147007049766293541}
   - component: {fileID: 5308559430017324730}
   - component: {fileID: 3975592356530904983}
   - component: {fileID: 6515226287087604467}
@@ -183,18 +182,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2147007049766293541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7524350878270848934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f32c2503c1715a40a78dd088e9e0b7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &5308559430017324730
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -275,7 +262,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: be476d5a657faa447a70c963013331cd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be476d5a657faa447a70c963013331cd,
         type: 3}
