@@ -26,10 +26,4 @@ public class ClearChecker : Singleton<ClearChecker>
             IsClear = true;
         }
     }
-
-    public void DebugClear()
-    {
-        checkPointCount = 0;
-        ReachChechkPoint();
-    }
 }

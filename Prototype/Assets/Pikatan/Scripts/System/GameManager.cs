@@ -63,7 +63,7 @@ public class GameManager : Singleton<GameManager>
         }
         if(ic.RT && ic.LT)
         {
-            Quit();
+            Singleton<SceneChanger>.Instance.ReloadScene();
         }
 
         if(gameState == GameState.Pause || gameState == GameState.Option)
