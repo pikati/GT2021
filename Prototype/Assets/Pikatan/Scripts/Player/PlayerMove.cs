@@ -202,39 +202,6 @@ public class PlayerMove : Singleton<PlayerMove>
         return (Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z)) / 3.0f;
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-
-    //    if (other.CompareTag("IceStopper"))
-    //    {
-    //        playerState.state = PlayerState.PlayerStateEnum.Move;
-    //        SlideParam.Direction = Vector3.zero;
-    //    }
-    //}
-
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    //if (other.CompareTag("Obstacle"))
-    //    //{
-    //    //    if (isMove) return;
-    //    //    playerState.state = PlayerState.PlayerStateEnum.Move;
-    //    //    SlideParam.Direction = Vector3.zero;
-    //    //}
-    //    //if (other.CompareTag("IcePanel"))
-    //    //{
-    //    //    if (!isMove) return;
-    //    //    other.GetComponent<IceFloor>().SetSlideDirection(gameObject);
-    //    //}
-    //    if (other.CompareTag("Panel"))
-    //    {
-    //        if (playerState.state == PlayerState.PlayerStateEnum.Slide)
-    //        {
-    //            playerState.state = PlayerState.PlayerStateEnum.Move;
-    //        }
-    //    }
-
-    //}
-
     public void SaveDirection()
     {
         saveDirection = SlideParam.Direction;
@@ -250,5 +217,10 @@ public class PlayerMove : Singleton<PlayerMove>
     public void ActivateAgent()
     {
         agent.enabled = true;
+    }
+
+    public void ClearRotation()
+    {
+        transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 }
