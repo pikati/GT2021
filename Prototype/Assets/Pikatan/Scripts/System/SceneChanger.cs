@@ -26,6 +26,8 @@ public class SceneChanger : Singleton<SceneChanger>
 
     public void ChangeStageSelect()
     {
+        if (isChange) return;
+        isChange = true;
         SceneManager.sceneLoaded += StageSelect;
         Singleton<Fade>.Instance.FadeIn("title");
     }
@@ -39,6 +41,7 @@ public class SceneChanger : Singleton<SceneChanger>
 
     private void StageSelect(Scene next, LoadSceneMode mode)
     {
+        
         GameObject.Find("TitleManager").GetComponent<TitleManager>().DispStageSelect();
         SceneManager.sceneLoaded -= StageSelect;
     }
