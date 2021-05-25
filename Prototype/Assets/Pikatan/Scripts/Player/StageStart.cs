@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class StageStart : Singleton<StageStart>
 {
-    [SerializeField]
-    private float speed;
+    private float speed = 12.5f;
     GameObject player;
     Vector3 startPosition;
     public bool IsEnd { get; private set; } = false;
@@ -21,17 +20,14 @@ public class StageStart : Singleton<StageStart>
     void Update()
     {
         if (IsEnd) return;
-        if(Singleton<InputController>.Instance.A)
-        {
-            player.transform.position = startPosition;
-        }
-        player.transform.position = Vector3.Lerp(player.transform.position, startPosition, Time.deltaTime * speed);
+        player.transform.position = Vector3.MoveTowards(player.transform.position, startPosition, Time.deltaTime * speed);
         if(Mathf.Abs(player.transform.position.y - startPosition.y) < 0.5f)
         {
             player.transform.position = startPosition;
             IsEnd = true;
             player.GetComponent<PlayerMove>().ActivateAgent();
             GameObject.FindGameObjectWithTag("AxisPointer").GetComponent<AxisPointer>().ActivatePointer();
+            Singleton<SoundManager>.Instance.PlaySeByName("endRotate");
             GameObject.Find("mebi").GetComponent<PlayerAnimation>().Knee();
         }
     }
