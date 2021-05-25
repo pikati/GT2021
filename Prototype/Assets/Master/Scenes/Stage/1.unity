@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 985d9a1a7132b11439a658ea2b19fa21, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 880b7ea349c5982469eec0c228582af2, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.6716346, g: 0.6716346, b: 0.6716346, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 046ba085f155e894580157e5694dbd94,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -534,9 +535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03e3c225a0c5d34c8a18a4c6e55e4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topColor: {r: 0.97479916, g: 0, b: 1, a: 1}
-  bottomColor: {r: 0, g: 1, b: 0.66422915, a: 1}
-  gradationTime: 3
+  topColor: {r: 0.9019608, g: 0.8627451, b: 0.8627451, a: 1}
+  bottomColor: {r: 0.43137255, g: 0.39215687, b: 0.39215687, a: 1}
+  gradationTime: 5
 --- !u!1001 &96759017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2945,7 +2946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3fefc6fe3b4a448adccf5976a38d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
 --- !u!1001 &858840737
 PrefabInstance:
   m_ObjectHideFlags: 0
