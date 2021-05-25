@@ -94,6 +94,7 @@ public class RotatePoint : MonoBehaviour
         if (OnPlayer) return;
         if (Singleton<AxisStateController>.Instance.AxisState == AxisStateController.AxisStateEnum.Rotating) return;
         if (Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play) return;
+        if (!Singleton<StageStart>.Instance.IsEnd) return;
 
         Singleton<SoundManager>.Instance.PlaySeByName("startRotate");
         Invoke("IsRotateTure", 0.05f);
