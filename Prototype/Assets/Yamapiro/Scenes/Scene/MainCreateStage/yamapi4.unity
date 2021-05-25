@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 985d9a1a7132b11439a658ea2b19fa21, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 880b7ea349c5982469eec0c228582af2, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.6201689, g: 0.58128494, b: 0.58128494, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -987,23 +987,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
+      propertyPath: topColor.b
+      value: 0.8627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
       propertyPath: topColor.g
-      value: 0.9618751
+      value: 0.8627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: topColor.r
+      value: 0.9019608
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: bottomColor.b
-      value: 0.047468662
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: bottomColor.g
-      value: 0
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: bottomColor.r
-      value: 1
+      value: 0.43137255
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3be5d6031511af645b18a63b70751ed9, type: 3}
@@ -1116,6 +1126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515226287087604467, guid: b5ed320531de6584e90659c1863c1b25,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7524350878270848934, guid: b5ed320531de6584e90659c1863c1b25,
         type: 3}
@@ -1230,6 +1245,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5369484415868314292, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5369484415868314295, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1240,10 +1260,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 10.04
       objectReference: {fileID: 0}
+    - target: {fileID: 5369484416055235746, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5369484416055235749, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 4.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369484417077834500, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5369484417077834503, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
@@ -1254,6 +1284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 4.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369484417191825766, guid: 4daee48c8d156e14380ef25627afdf31,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5369484417191825785, guid: 4daee48c8d156e14380ef25627afdf31,
         type: 3}
