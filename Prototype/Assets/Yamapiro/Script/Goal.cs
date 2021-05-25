@@ -35,12 +35,7 @@ public class Goal : MonoBehaviour
             Singleton<SoundManager>.Instance.PlaySeByName("get");
             Destroy(gameObject, 5.0f);
             isGoal = true;
+            Singleton<NavMeshBaker>.Instance.Bake();
         }
-    }
-
-    private void OnDestroy()
-    {
-        if (Singleton<NavMeshBaker>.Instance == null) return;
-        Singleton<NavMeshBaker>.Instance.Bake();
     }
 }
