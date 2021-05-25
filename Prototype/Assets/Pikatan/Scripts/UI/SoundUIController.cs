@@ -18,9 +18,6 @@ public class SoundUIController : MonoBehaviour
     private GameObject[] bgmVolumeObjs = new GameObject[10];
     private GameObject[] seVolumeObjs = new GameObject[10];
     private readonly int maxVolume = 10;
-    private int master = 5;
-    private int bgm = 10;
-    private int se = 10;
     private bool isInput = false;
 
     void Start()
@@ -51,28 +48,28 @@ public class SoundUIController : MonoBehaviour
             if (bc.ButtonIdx == 0)
             {
                 sm.MasterVolumeProperty -= 0.1f;
-                master--;
-                if(master < 0)
+                sm.MasterLevel--;
+                if(sm.MasterLevel < 0)
                 {
-                    master = 0;
+                    sm.MasterLevel = 0;
                 }
             }
             else if (bc.ButtonIdx == 1)
             {
                 sm.BgmVolumeProperty -= 0.1f;
-                bgm--;
-                if(bgm < 0)
+                sm.BGMLevel--;
+                if(sm.BGMLevel < 0)
                 {
-                    bgm = 0;
+                    sm.BGMLevel = 0;
                 }
             }
             else if (bc.ButtonIdx == 2)
             {
                 sm.SeVolumeProperty -= 0.1f;
-                se--;
-                if(se < 0)
+                sm.SELevel--;
+                if(sm.SELevel < 0)
                 {
-                    se = 0;
+                    sm.SELevel = 0;
                 }
             }
         }
@@ -84,28 +81,28 @@ public class SoundUIController : MonoBehaviour
             if (bc.ButtonIdx == 0)
             {
                 sm.MasterVolumeProperty += 0.1f;
-                master++;
-                if(master > maxVolume)
+                sm.MasterLevel++;
+                if(sm.MasterLevel > maxVolume)
                 {
-                    master = maxVolume;
+                    sm.MasterLevel = maxVolume;
                 }
             }
             else if (bc.ButtonIdx == 1)
             {
                 sm.BgmVolumeProperty += 0.1f;
-                bgm++;
-                if(bgm > maxVolume)
+                sm.BGMLevel++;
+                if(sm.BGMLevel > maxVolume)
                 {
-                    bgm = maxVolume;
+                    sm.BGMLevel = maxVolume;
                 }
             }
             else if (bc.ButtonIdx == 2)
             {
                 sm.SeVolumeProperty += 0.1f;
-                se++;
-                if(se > maxVolume)
+                sm.SELevel++;
+                if(sm.SELevel > maxVolume)
                 {
-                    se = maxVolume;
+                    sm.SELevel = maxVolume;
                 }
             }
         }
@@ -117,29 +114,29 @@ public class SoundUIController : MonoBehaviour
 
     private void DispVolume()
     {
-        for(int i = 0; i < master; i++)
+        for(int i = 0; i < sm.MasterLevel; i++)
         {
             masterVolumeObjs[i].SetActive(true);
         }
-        for(int i = master; i < maxVolume; i++)
+        for(int i = sm.MasterLevel; i < maxVolume; i++)
         {
             masterVolumeObjs[i].SetActive(false);
         }
 
-        for (int i = 0; i < bgm; i++)
+        for (int i = 0; i < sm.BGMLevel; i++)
         {
             bgmVolumeObjs[i].SetActive(true);
         }
-        for (int i = bgm; i < maxVolume; i++)
+        for (int i = sm.BGMLevel; i < maxVolume; i++)
         {
             bgmVolumeObjs[i].SetActive(false);
         }
 
-        for (int i = 0; i < se; i++)
+        for (int i = 0; i < sm.SELevel; i++)
         {
             seVolumeObjs[i].SetActive(true);
         }
-        for (int i = se; i < maxVolume; i++)
+        for (int i = sm.SELevel; i < maxVolume; i++)
         {
             seVolumeObjs[i].SetActive(false);
         }
