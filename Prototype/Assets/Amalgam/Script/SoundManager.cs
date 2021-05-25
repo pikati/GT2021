@@ -63,6 +63,9 @@ public class SoundManager : Singleton<SoundManager>
         }
     }
 
+    public int MasterLevel { get; set; } = 5;
+    public int BGMLevel { get; set; } = 10;
+    public int SELevel { get; set; } = 10;
     //起動時にSEとBGMをロード
     new public void Awake()
     {
