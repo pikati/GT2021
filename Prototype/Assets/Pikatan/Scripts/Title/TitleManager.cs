@@ -67,6 +67,7 @@ public class TitleManager : MonoBehaviour
                 selectObj.SetActive(true);
                 optionObj.SetActive(false);
                 cursorObj.SetActive(true);
+                Singleton<StageIconController>.Instance.SetIcon();
                 break;
             case DispState.Option:
                 titleObj.SetActive(false);
