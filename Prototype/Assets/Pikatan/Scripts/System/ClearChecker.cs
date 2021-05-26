@@ -21,13 +21,10 @@ public class ClearChecker : Singleton<ClearChecker>
         if(checkPointCount <= 0)
         {
             Singleton<GameManager>.Instance.ChangeGameState(GameManager.GameState.Clear);
+            Singleton<SoundManager>.Instance.StopBgm();
+            Singleton<SoundManager>.Instance.PlayBgmByName("result");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().ClearRotation();
             IsClear = true;
         }
-    }
-
-    public void DebugClear()
-    {
-        checkPointCount = 0;
-        ReachChechkPoint();
     }
 }

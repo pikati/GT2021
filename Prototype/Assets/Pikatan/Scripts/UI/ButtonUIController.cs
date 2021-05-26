@@ -14,7 +14,7 @@ public class ButtonUIController : MonoBehaviour
     private bool isInput = false;
     private SoundManager sm;
     public int ButtonIdx { get; private set; } = 0;
-    void Start()
+    void Awake()
     {
         for(int i = 1; i < buttonNum + 1; i++)
         {
@@ -51,7 +51,6 @@ public class ButtonUIController : MonoBehaviour
         {
             isInput = false;
         }
-        Debug.Log(ButtonIdx);
     }
 
     private void ChangeCursor(int n)

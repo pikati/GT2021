@@ -11,6 +11,7 @@ public class PlayerMove : Singleton<PlayerMove>
     private InputController inputController;
     private NavMeshAgent agent;
     private PlayerState playerState;
+    private PlayerState preState;
     private Vector3 lastPosition;
     private float iceSpeed = 4.0f;
     private Vector3 saveDirection;
@@ -22,7 +23,8 @@ public class PlayerMove : Singleton<PlayerMove>
     {
         inputController = Singleton<InputController>.Instance;
         agent = GetComponent<NavMeshAgent>();
-        playerState = GetComponent<PlayerState>();
+        playerState = new PlayerState();
+        preState = new PlayerState();
         rb = GetComponent<Rigidbody>();
         SlideParam = new SlideParam();
         playerAnimation = transform.Find("mebi").GetComponent<PlayerAnimation>();
@@ -34,10 +36,8 @@ public class PlayerMove : Singleton<PlayerMove>
         if (GameManager.GameState.Play != Singleton<GameManager>.Instance.gameState) return;
         CheckPanel();
         Move();
-        if(inputController.R3)
-        {
-            Singleton<ClearChecker>.Instance.DebugClear();
-        }
+        lastPosition = transform.position;
+        preState.state = PlayerState.PlayerStateEnum.Max;
     }
 
     private void CheckPanel()
@@ -45,7 +45,7 @@ public class PlayerMove : Singleton<PlayerMove>
         Ray ray = new Ray(transform.position + new Vector3(0, 0.1f, 0), -Vector3.up);
         RaycastHit hit;
         Debug.DrawRay(ray.origin, ray.direction * 0.1f, Color.red);
-        if (Physics.Raycast(ray, out hit, 0.1f))
+        if (Physics.Raycast(ray, out hit, 0.15f))
         {
             if (hit.collider.CompareTag("Panel"))
             {
@@ -61,6 +61,7 @@ public class PlayerMove : Singleton<PlayerMove>
     private void ChangePlayerState(PlayerState.PlayerStateEnum state)
     {
         if (state == playerState.state) return;
+        preState.state = playerState.state;
         playerState.state = state;
         switch (state)
         {
@@ -85,7 +86,7 @@ public class PlayerMove : Singleton<PlayerMove>
             {
                 Vector3 direction = Vector3.forward * move.y + Camera.main.transform.right * move.x;
                 agent.Move(direction * speed * Time.deltaTime);
-                
+
             }
             else
             {
@@ -98,7 +99,6 @@ public class PlayerMove : Singleton<PlayerMove>
 
         }
         LookDirection();
-        lastPosition = transform.position;
     }
 
     private void SetSlideDirection()
@@ -108,50 +108,81 @@ public class PlayerMove : Singleton<PlayerMove>
 
         if (Vec3Abs(transform.position, lastPosition) < 0.001f)
         {
-            playerState.state = PlayerState.PlayerStateEnum.Move;
             Vector3 move = inputController.MoveValue;
             move.z = move.y;
             move.y = 0;
-            if (move.x == 0 && move.y == 0)
+            if (move.x == 0 && move.z == 0)
             {
                 SlideParam.Direction = Vector2.zero;
-                lastPosition = transform.position;
-                return;
             }
             else
             {
+                //普通の床から滑る床に入ったときの判定
+                bool a = preState.state != PlayerState.PlayerStateEnum.Move;
+                //滑る床にいるときの判定
+                bool b = playerState.state == PlayerState.PlayerStateEnum.Slide && a;
                 if (Mathf.Abs(move.x) > Mathf.Abs(move.z))
                 {
-                    if (move.x > move.z)
+                    if (a || b)
                     {
-                        move.x = iceSpeed;
-                        move.z = 0;
+                        if (move.z > 0)
+                        {
+                            move.x = 0;
+                            move.z = iceSpeed;
+                        }
+                        else
+                        {
+                            move.x = 0;
+                            move.z = -iceSpeed;
+                        }
                     }
                     else
                     {
-                        move.x = -iceSpeed;
-                        move.z = 0;
+                        if (move.x > 0)
+                        {
+                            move.x = iceSpeed;
+                            move.z = 0;
+                        }
+                        else
+                        {
+                            move.x = -iceSpeed;
+                            move.z = 0;
+                        }
                     }
+
                 }
                 else
                 {
-                    if (move.x > move.z)
+                    if (a || b)
                     {
-                        move.x = 0;
-                        move.z = -iceSpeed;
+                        if (move.x > 0)
+                        {
+                            move.x = iceSpeed;
+                            move.z = 0;
+                        }
+                        else
+                        {
+                            move.x = -iceSpeed;
+                            move.z = 0;
+                        }
+
                     }
                     else
                     {
-                        move.x = 0;
-                        move.z = iceSpeed;
+                        if (move.z > 0)
+                        {
+                            move.x = 0;
+                            move.z = iceSpeed;
+                        }
+                        else
+                        {
+                            move.x = 0;
+                            move.z = -iceSpeed;
+                        }
                     }
                 }
                 SlideParam.Direction = move;
             }
-
-
-
-            lastPosition = transform.position;
         }
     }
 
@@ -171,39 +202,6 @@ public class PlayerMove : Singleton<PlayerMove>
         return (Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z)) / 3.0f;
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-
-    //    if (other.CompareTag("IceStopper"))
-    //    {
-    //        playerState.state = PlayerState.PlayerStateEnum.Move;
-    //        SlideParam.Direction = Vector3.zero;
-    //    }
-    //}
-
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    //if (other.CompareTag("Obstacle"))
-    //    //{
-    //    //    if (isMove) return;
-    //    //    playerState.state = PlayerState.PlayerStateEnum.Move;
-    //    //    SlideParam.Direction = Vector3.zero;
-    //    //}
-    //    //if (other.CompareTag("IcePanel"))
-    //    //{
-    //    //    if (!isMove) return;
-    //    //    other.GetComponent<IceFloor>().SetSlideDirection(gameObject);
-    //    //}
-    //    if (other.CompareTag("Panel"))
-    //    {
-    //        if (playerState.state == PlayerState.PlayerStateEnum.Slide)
-    //        {
-    //            playerState.state = PlayerState.PlayerStateEnum.Move;
-    //        }
-    //    }
-
-    //}
-
     public void SaveDirection()
     {
         saveDirection = SlideParam.Direction;
@@ -219,5 +217,10 @@ public class PlayerMove : Singleton<PlayerMove>
     public void ActivateAgent()
     {
         agent.enabled = true;
+    }
+
+    public void ClearRotation()
+    {
+        transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 }

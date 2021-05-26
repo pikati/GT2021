@@ -7,17 +7,19 @@ public class Goal : MonoBehaviour
     private bool isReach = false;
     private ClearCount clearCount;
     private GameObject emitter;
+    private GameObject memory;
     private bool isGoal = false;
 
     private void Start()
     {
         emitter = transform.GetChild(1).gameObject;
         emitter.SetActive(false);
+        memory = transform.Find("memori").gameObject;
     }
     private void Update()
     {
 
-        transform.Rotate(0, 120 * Time.deltaTime, 0);
+        memory.transform.Rotate(60 * Time.deltaTime, 120 * Time.deltaTime, 30 * Time.deltaTime);
         clearCount = GameObject.Find("GoalUI").GetComponent<ClearCount>();
     }
 
@@ -35,12 +37,7 @@ public class Goal : MonoBehaviour
             Singleton<SoundManager>.Instance.PlaySeByName("get");
             Destroy(gameObject, 5.0f);
             isGoal = true;
+            Singleton<NavMeshBaker>.Instance.Bake();
         }
-    }
-
-    private void OnDestroy()
-    {
-        if (Singleton<NavMeshBaker>.Instance == null) return;
-        Singleton<NavMeshBaker>.Instance.Bake();
     }
 }
