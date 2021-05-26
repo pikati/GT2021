@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 880b7ea349c5982469eec0c228582af2, type: 2}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42577648, g: 0.9196932, b: 0.40675905, a: 1}
+  m_IndirectSpecularColor: {r: 0.5992356, g: 0.8827377, b: 0.28583342, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -338,6 +338,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 23800000, guid: b7f1c04bcaa126d42846ab18bde0a9d5,
         type: 2}
+    - target: {fileID: 1185034667381618124, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: nextSceneName
+      value: Ama24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: topColor.b
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: topColor.g
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: topColor.r
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: bottomColor.b
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: bottomColor.g
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: bottomColor.r
+      value: 0.39215687
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3be5d6031511af645b18a63b70751ed9, type: 3}
 --- !u!1001 &306374446
