@@ -6,12 +6,14 @@ public class TitleManager : MonoBehaviour
 {
     public enum DispState
     {
+        Start,
         Title,
         Select,
         Option
     }
 
     private Fade fade;
+    private GameObject startObj;
     private GameObject titleObj;
     private GameObject selectObj;
     private GameObject optionObj;
@@ -24,11 +26,12 @@ public class TitleManager : MonoBehaviour
     {
         fade = Singleton<Fade>.Instance;
         sm = Singleton<SoundManager>.Instance;
+        startObj = GameObject.Find("StartUI");
         titleObj = GameObject.Find("TitleUI");
         selectObj = GameObject.Find("StageSelectUI");
         optionObj = GameObject.Find("OptionUI");
         cursorObj = GameObject.Find("SelectCursorUI");
-        ChangeDisp(DispState.Title);
+        ChangeDisp(DispState.Start);
         sm.StopBgm();
         sm.PlayBgmByName("title");
         if(isStage)
@@ -40,7 +43,14 @@ public class TitleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(DispState.Title != dispState)
+        if(DispState.Start == dispState)
+        {
+            if(Singleton<InputController>.Instance.A)
+            {
+                ChangeDisp(DispState.Title);
+            }
+        }
+        if(DispState.Title != dispState && DispState.Start != dispState)
         {
             if(Singleton<InputController>.Instance.B)
             {
@@ -55,7 +65,15 @@ public class TitleManager : MonoBehaviour
         dispState = state;
         switch (dispState)
         {
+            case DispState.Start:
+                startObj.SetActive(true);
+                titleObj.SetActive(false);
+                selectObj.SetActive(false);
+                optionObj.SetActive(false);
+                cursorObj.SetActive(false);
+                break;
             case DispState.Title:
+                startObj.SetActive(false);
                 titleObj.SetActive(true);
                 selectObj.SetActive(false);
                 optionObj.SetActive(false);
@@ -63,6 +81,7 @@ public class TitleManager : MonoBehaviour
                 titleObj.transform.GetChild(0).GetComponent<ButtonUIController>().ResetCursor();
                 break;
             case DispState.Select:
+                startObj.SetActive(false);
                 titleObj.SetActive(false);
                 selectObj.SetActive(true);
                 optionObj.SetActive(false);
@@ -70,6 +89,7 @@ public class TitleManager : MonoBehaviour
                 Singleton<StageIconController>.Instance.SetIcon();
                 break;
             case DispState.Option:
+                startObj.SetActive(false);
                 titleObj.SetActive(false);
                 selectObj.SetActive(false);
                 optionObj.SetActive(true);
