@@ -45,14 +45,6 @@ public class RotatePoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(Singleton<StageState>.Instance.NowStageState == StageState.StageStateEnum.Rotate)
-        //{
-        //    changeColor.GetFlag = IsActive;
-        //}
-        //else
-        //{
-        //    changeColor.GetFlag = false;
-        //}
         changeColor.GetFlag = OnPlayer;
         
         if (isRotate)
