@@ -16,7 +16,7 @@ public class GoalEmitter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localScale = Vector3.Lerp(transform.localScale, scale, Time.deltaTime * 2.5f);
+        transform.localScale = Vector3.Lerp(transform.localScale, scale, Time.deltaTime * 5f);
         if(Mathf.Abs(transform.localScale.y - scale.y) < 0.05f)
         {
             scale *= 0.1f;
