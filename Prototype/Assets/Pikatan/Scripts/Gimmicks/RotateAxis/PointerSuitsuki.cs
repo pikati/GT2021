@@ -10,7 +10,7 @@ public class PointerSuitsuki : MonoBehaviour
     void Start()
     {
         parentObj = transform.root.gameObject;
-        pac = transform.root.gameObject.GetComponent<PointerAnimationController>();
+        pac = transform.root.GetComponent<PointerAnimationController>();
     }
 
     private void OnTriggerEnter(Collider other)

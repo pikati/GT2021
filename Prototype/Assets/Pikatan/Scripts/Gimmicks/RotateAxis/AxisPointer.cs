@@ -43,10 +43,6 @@ public class AxisPointer : MonoBehaviour
         rb.velocity = direction * Time.deltaTime * speed;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision.gameObject.name);
-    }
 
     public void ActivatePointer()
     {
