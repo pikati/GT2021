@@ -11,7 +11,7 @@ public class ButtonUIController : MonoBehaviour
     private UnityEvent[] buttonEvent;
     private List<GameObject> cursors = new List<GameObject>();
     private InputController ic;
-    private bool isInput = false;
+    private bool isInput = true;
     private SoundManager sm;
     public int ButtonIdx { get; private set; } = 0;
     void Awake()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClearChecker : Singleton<ClearChecker>
 {
-    private int checkPointCount = 1;
+    public int checkPointCount = 1;
     public int ClearNum => checkPointCount;
     public bool IsClear { get; private set; } = false;
 
@@ -20,11 +20,12 @@ public class ClearChecker : Singleton<ClearChecker>
         Singleton<ClearCount>.Instance.UpdateClearNum();
         if(checkPointCount <= 0)
         {
-            Singleton<GameManager>.Instance.ChangeGameState(GameManager.GameState.Clear);
             Singleton<SoundManager>.Instance.StopBgm();
             Singleton<SoundManager>.Instance.PlayBgmByName("result");
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().ClearRotation();
             IsClear = true;
+            Singleton<GameManager>.Instance.ChangeGameState(GameManager.GameState.Clear);
+
         }
     }
 }
