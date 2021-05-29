@@ -52,6 +52,7 @@ public class ButtonUIController : MonoBehaviour
             {
                 isCahngeScene = true;
             }
+            ResetCursor();
         }
         else
         {
