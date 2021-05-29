@@ -14,7 +14,7 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Singleton<ClearChecker>.Instance.IsClear || Singleton<GameManager>.Instance.gameState == GameManager.GameState.Pause)
+        if(Singleton<ClearChecker>.Instance.IsClear || Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play)
         {
             anim.SetFloat("Move", 0);
         }

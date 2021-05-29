@@ -46,6 +46,8 @@ public class StageSelectUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isSelected) return;
+
         if (ic.MoveValue.x > 0.7f || ic.ArrowValue.x > 0)
         {
             if (isInput) return;
@@ -84,7 +86,6 @@ public class StageSelectUIController : MonoBehaviour
         }
         if (ic.A)
         {
-            if (isSelected) return;
             sm.PlaySeByName("decide");
             ChangeSecne(stageName.StageNames[index + page * 10]);
             isSelected = true;
