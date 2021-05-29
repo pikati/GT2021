@@ -27,6 +27,7 @@ public class StageSelectUIController : MonoBehaviour
     private RectTransform rt;
     private SoundManager sm;
     public int StageNum => stageNum;
+    public int Idx => index + page;
 
     // Start is called before the first frame update
     void Start()
