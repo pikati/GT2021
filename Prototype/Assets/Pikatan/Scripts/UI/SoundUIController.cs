@@ -24,7 +24,7 @@ public class SoundUIController : MonoBehaviour
     {
         sm = Singleton<SoundManager>.Instance;
         ic = Singleton<InputController>.Instance;
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             masterVolumeObjs[i] = masterVolumeObj.transform.GetChild(i).gameObject;
             bgmVolumeObjs[i] = bgmVolumeObj.transform.GetChild(i).gameObject;
@@ -43,67 +43,71 @@ public class SoundUIController : MonoBehaviour
         if (ic.MoveValue.x < -0.7f || ic.ArrowValue.x < 0)
         {
             if (isInput) return;
-            Singleton<SoundManager>.Instance.PlaySeByName("decide");
             isInput = true;
             if (bc.ButtonIdx == 0)
             {
                 sm.MasterVolumeProperty -= 0.1f;
                 sm.MasterLevel--;
-                if(sm.MasterLevel < 0)
+                if (sm.MasterLevel < 0)
                 {
                     sm.MasterLevel = 0;
                 }
+                Singleton<SoundManager>.Instance.PlaySeByName("decide");
             }
             else if (bc.ButtonIdx == 1)
             {
                 sm.BgmVolumeProperty -= 0.1f;
                 sm.BGMLevel--;
-                if(sm.BGMLevel < 0)
+                if (sm.BGMLevel < 0)
                 {
                     sm.BGMLevel = 0;
                 }
+                Singleton<SoundManager>.Instance.PlaySeByName("decide");
             }
             else if (bc.ButtonIdx == 2)
             {
                 sm.SeVolumeProperty -= 0.1f;
                 sm.SELevel--;
-                if(sm.SELevel < 0)
+                if (sm.SELevel < 0)
                 {
                     sm.SELevel = 0;
                 }
+                Singleton<SoundManager>.Instance.PlaySeByName("decide");
             }
         }
         else if (ic.MoveValue.x > 0.7f || ic.ArrowValue.x > 0)
         {
             if (isInput) return;
-            Singleton<SoundManager>.Instance.PlaySeByName("decide");
             isInput = true;
             if (bc.ButtonIdx == 0)
             {
                 sm.MasterVolumeProperty += 0.1f;
                 sm.MasterLevel++;
-                if(sm.MasterLevel > maxVolume)
+                if (sm.MasterLevel > maxVolume)
                 {
                     sm.MasterLevel = maxVolume;
                 }
+                Singleton<SoundManager>.Instance.PlaySeByName("decide");
             }
             else if (bc.ButtonIdx == 1)
             {
                 sm.BgmVolumeProperty += 0.1f;
                 sm.BGMLevel++;
-                if(sm.BGMLevel > maxVolume)
+                if (sm.BGMLevel > maxVolume)
                 {
                     sm.BGMLevel = maxVolume;
                 }
+                Singleton<SoundManager>.Instance.PlaySeByName("decide");
             }
             else if (bc.ButtonIdx == 2)
             {
                 sm.SeVolumeProperty += 0.1f;
                 sm.SELevel++;
-                if(sm.SELevel > maxVolume)
+                if (sm.SELevel > maxVolume)
                 {
                     sm.SELevel = maxVolume;
                 }
+                Singleton<SoundManager>.Instance.PlaySeByName("decide");
             }
         }
         else
@@ -114,11 +118,11 @@ public class SoundUIController : MonoBehaviour
 
     private void DispVolume()
     {
-        for(int i = 0; i < sm.MasterLevel; i++)
+        for (int i = 0; i < sm.MasterLevel; i++)
         {
             masterVolumeObjs[i].SetActive(true);
         }
-        for(int i = sm.MasterLevel; i < maxVolume; i++)
+        for (int i = sm.MasterLevel; i < maxVolume; i++)
         {
             masterVolumeObjs[i].SetActive(false);
         }

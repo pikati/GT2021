@@ -13,7 +13,6 @@ public class GameManager : Singleton<GameManager>
         Clear
     }
 
-    [SerializeField]
     private int stageID;
     private GameObject clearText;
     private GameObject pauseUI;
@@ -27,6 +26,7 @@ public class GameManager : Singleton<GameManager>
         Singleton<Fade>.Instance.FadeOut();
         sm = Singleton<SoundManager>.Instance;
         sm.PlayBgmByName("game");
+        stageID = GameObject.Find("StageNumController").GetComponent<StageNumController>().StageNum - 1;
         clearText = GameObject.Find("ClearUI");
         pauseUI = GameObject.Find("PauseUI");
         optionUI = GameObject.Find("OptionUI");
@@ -72,11 +72,6 @@ public class GameManager : Singleton<GameManager>
         if(gameState == GameState.Pause || gameState == GameState.Option)
         {
             clearCount.ChangeState(ClearCount.ImageState.Visible);
-        }
-        if (Singleton<InputController>.Instance.Y)
-        {
-            Singleton<ClearChecker>.Instance.checkPointCount = 0;
-            Singleton<ClearChecker>.Instance.ReachChechkPoint();
         }
     }
 

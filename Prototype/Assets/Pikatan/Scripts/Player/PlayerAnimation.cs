@@ -14,7 +14,7 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Singleton<ClearChecker>.Instance.IsClear)
+        if(Singleton<ClearChecker>.Instance.IsClear || Singleton<GameManager>.Instance.gameState == GameManager.GameState.Pause)
         {
             anim.SetFloat("Move", 0);
         }
@@ -26,6 +26,7 @@ public class PlayerAnimation : MonoBehaviour
 
     public void Knee()
     {
+        if (MoveValue != 0) return; 
         anim.SetTrigger("Knee");
     }
 }
