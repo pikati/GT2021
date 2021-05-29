@@ -13,6 +13,11 @@ public class PointerAnimationController : MonoBehaviour
 
     public void FocusPointer()
     {
-        anim.SetTrigger("Focus");
+        anim.SetBool("IsFocus", true);
+    }
+
+    public void ExitPointer()
+    {
+        anim.SetBool("IsFocus", false);
     }
 }
