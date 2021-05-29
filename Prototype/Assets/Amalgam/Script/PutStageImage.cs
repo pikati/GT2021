@@ -7,34 +7,38 @@ public class PutStageImage : MonoBehaviour
 {
     [SerializeField]
     private Sprite[] StagePhotos;
-
     [SerializeField]
     private Image StageImage;
-
     [SerializeField]
-    public int Index { get; set; }
+    private StageSelectUIController Ssuc;
 
-    private int OldIndex;
+    //[SerializeField]
+    //public int Index { get; set; }
+
+    //private int OldIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         StageImage = GetComponent<Image>();
-        Index = OldIndex = 0;
+        //Index = OldIndex = 0;
+        Ssuc = GameObject.Find("StageButtons").GetComponent<StageSelectUIController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(OldIndex != Index)
-        {
-            if(Index > StagePhotos.Length)
-            {
-                Index = OldIndex;
-            }
+        StageImage.sprite = StagePhotos[Ssuc.Idx];
 
-            StageImage.sprite = StagePhotos[Index];
-            OldIndex = Index;
-        }
+        //if (OldIndex != Index)
+        //{
+        //    if(Index > StagePhotos.Length)
+        //    {
+        //        Index = OldIndex;
+        //    }
+
+        //    StageImage.sprite = StagePhotos[Index];
+        //    OldIndex = Index;
+        //}
     }
 }
