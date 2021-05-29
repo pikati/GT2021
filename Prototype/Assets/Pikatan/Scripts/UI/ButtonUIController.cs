@@ -93,12 +93,6 @@ public class ButtonUIController : MonoBehaviour
 
     public void ResetCursor()
     {
-        ButtonIdx = 0;
-        EnableCursor(0);
-        for (int i = 1; i < buttonNum; i++)
-        {
-            DisableCursor(i);
-        }
         isCahngeScene = false;
     }
 }
