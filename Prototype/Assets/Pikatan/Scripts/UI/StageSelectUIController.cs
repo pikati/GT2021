@@ -26,6 +26,7 @@ public class StageSelectUIController : MonoBehaviour
     private bool isChangePage = false;
     private RectTransform rt;
     private SoundManager sm;
+    private bool isSelected = false;
     public int StageNum => stageNum;
     public int Idx => index + page * 10;
 
@@ -83,8 +84,10 @@ public class StageSelectUIController : MonoBehaviour
         }
         if (ic.A)
         {
+            if (isSelected) return;
             sm.PlaySeByName("decide");
             ChangeSecne(stageName.StageNames[index + page * 10]);
+            isSelected = true;
         }
         MovePage();
     }

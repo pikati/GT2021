@@ -58,6 +58,7 @@ public class PointerSuitsuki : MonoBehaviour
                 {
                     sprite.SetActive(true);
                 }
+                pac.FocusPointer();
             }
         }
     }

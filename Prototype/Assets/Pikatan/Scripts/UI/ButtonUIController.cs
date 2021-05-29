@@ -48,7 +48,10 @@ public class ButtonUIController : MonoBehaviour
             if (isInput) return;
             isInput = true;
             buttonEvent[ButtonIdx].Invoke();
-            isCahngeScene = true;
+            if(ButtonIdx == 1 || ButtonIdx == 3)
+            {
+                isCahngeScene = true;
+            }
         }
         else
         {
