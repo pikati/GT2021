@@ -73,11 +73,6 @@ public class GameManager : Singleton<GameManager>
         {
             clearCount.ChangeState(ClearCount.ImageState.Visible);
         }
-        if (Singleton<InputController>.Instance.Y)
-        {
-            Singleton<ClearChecker>.Instance.checkPointCount = 0;
-            Singleton<ClearChecker>.Instance.ReachChechkPoint();
-        }
     }
 
     public void ChangeGameState(GameState state)

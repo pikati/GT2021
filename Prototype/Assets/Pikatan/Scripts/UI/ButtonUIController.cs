@@ -13,6 +13,7 @@ public class ButtonUIController : MonoBehaviour
     private InputController ic;
     private bool isInput = true;
     private SoundManager sm;
+    private bool isCahngeScene = false;
     public int ButtonIdx { get; private set; } = 0;
     void Awake()
     {
@@ -31,6 +32,7 @@ public class ButtonUIController : MonoBehaviour
 
     void Update()
     {
+        if (isCahngeScene) return;
         if(ic.MoveValue.y > 0.7f || ic.ArrowValue.y > 0)
         {
             if (isInput) return;
@@ -46,6 +48,7 @@ public class ButtonUIController : MonoBehaviour
             if (isInput) return;
             isInput = true;
             buttonEvent[ButtonIdx].Invoke();
+            isCahngeScene = true;
         }
         else
         {

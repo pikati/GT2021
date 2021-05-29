@@ -148,14 +148,12 @@ public class StageSelectUIController : MonoBehaviour
         {
             diff += -2000.0f;
             isChangePage = true;
+            sm.PlaySeByName("cursor");
         }
         else if(page < prePage)
         {
             diff += 2000.0f;
             isChangePage = true;
-        }
-        else
-        {
             sm.PlaySeByName("cursor");
         }
         if (index + page * 10 >= stageNum)
