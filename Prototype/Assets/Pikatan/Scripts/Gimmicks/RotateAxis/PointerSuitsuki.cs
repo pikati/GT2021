@@ -54,6 +54,11 @@ public class PointerSuitsuki : MonoBehaviour
                 {
                     crossSprite.SetActive(false);
                 }
+                if(!sprite.activeSelf)
+                {
+                    sprite.SetActive(true);
+                }
+                pac.FocusPointer();
             }
         }
     }
