@@ -21,6 +21,7 @@ public class TitleManager : MonoBehaviour
     private DispState dispState;
     private SoundManager sm;
     private bool isStage = false;
+    private bool isStartFade = false;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class TitleManager : MonoBehaviour
     {
         if(DispState.Start == dispState)
         {
+            if (!isStartFade) return;
             if (fade.isFading) return;
             if(Singleton<InputController>.Instance.A)
             {
@@ -103,6 +105,7 @@ public class TitleManager : MonoBehaviour
 
     private void FadeIn()
     {
+        isStartFade = true;
         fade.FadeOut();
     }
 
