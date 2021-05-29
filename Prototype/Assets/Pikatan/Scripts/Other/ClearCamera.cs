@@ -5,7 +5,6 @@ using UnityEngine;
 public class ClearCamera : MonoBehaviour
 { 
     private float moveSpeed;
-    [SerializeField]
     private float rotSpeed;
     private GameObject camObj;
     private Vector3 targetRot = new Vector3(0, 0, 0);
@@ -25,7 +24,7 @@ public class ClearCamera : MonoBehaviour
             if(!isCalc)
             {
                 moveSpeed = Mathf.Abs(camObj.transform.position.magnitude - Camera.main.transform.position.magnitude) * 2;
-                rotSpeed = Mathf.Abs(camObj.transform.eulerAngles.magnitude - Camera.main.transform.eulerAngles.magnitude) * 2;
+                rotSpeed = moveSpeed * 12;
                 isCalc = true;
             }
             frontViewCamera.SetActive(false);
