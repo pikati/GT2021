@@ -25,6 +25,7 @@ public class StageClearManager : Singleton<StageClearManager>
 
     public void PlayStage(int n)
     {
+        if (clearStates[n] == ClearState.Clear) return;
         clearStates[n] = ClearState.Play;
     }
 
