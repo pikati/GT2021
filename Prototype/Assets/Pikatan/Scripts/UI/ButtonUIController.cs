@@ -98,5 +98,6 @@ public class ButtonUIController : MonoBehaviour
         {
             DisableCursor(i);
         }
+        isCahngeScene = false;
     }
 }
