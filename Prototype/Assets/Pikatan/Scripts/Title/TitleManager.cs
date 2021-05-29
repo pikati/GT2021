@@ -34,6 +34,7 @@ public class TitleManager : MonoBehaviour
         ChangeDisp(DispState.Start);
         sm.StopBgm();
         sm.PlayBgmByName("title");
+        Invoke("FadeIn", 1.0f);
         if(isStage)
         {
             ChangeDisp(DispState.Select);
@@ -45,10 +46,10 @@ public class TitleManager : MonoBehaviour
     {
         if(DispState.Start == dispState)
         {
+            if (fade.isFading) return;
             if(Singleton<InputController>.Instance.A)
             {
                 ChangeDisp(DispState.Title);
-                sm.PlaySeByName("decide");
             }
         }
         if(DispState.Title != dispState && DispState.Start != dispState)
@@ -98,6 +99,11 @@ public class TitleManager : MonoBehaviour
                 optionObj.GetComponent<ButtonUIController>().ResetCursor();
                 break;
         }
+    }
+
+    private void FadeIn()
+    {
+        fade.FadeOut();
     }
 
     public void DispStageSelect()
