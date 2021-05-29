@@ -27,17 +27,16 @@ public class StageName
         StageNames[16] = "6";
         StageNames[17] = "9";
         StageNames[18] = "John19";
-        StageNames[19] = "john15";
+        StageNames[19] = "John15";
         StageNames[20] = "Ama07";
         StageNames[21] = "Ama21";
         StageNames[22] = "Ama04";
         StageNames[23] = "Ama06";
         StageNames[24] = "Ama08";
         StageNames[25] = "John09";
-        //ここまで
-        StageNames[26] = "Ama18";
-        StageNames[27] = "Ama19";
-        StageNames[28] = "Ama21";
-        StageNames[29] = "John01";
+        StageNames[26] = "John05";
+        StageNames[27] = "Ama06";
+        StageNames[28] = "Ama08";
+        StageNames[29] = "john09";
     }
 }
