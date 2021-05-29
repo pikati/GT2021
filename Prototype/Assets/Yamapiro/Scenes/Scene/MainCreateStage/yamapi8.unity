@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 880b7ea349c5982469eec0c228582af2, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5053f7871fa5cf7488361b2c98cda684, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6372782, g: 0.59822804, b: 0.59822804, a: 1}
+  m_IndirectSpecularColor: {r: 0.62949216, g: 0.59050083, b: 0.59050083, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -584,6 +584,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3288554131298358369, guid: 73ec2e015b6519045ae9a0ac644404ee,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3288554131298358370, guid: 73ec2e015b6519045ae9a0ac644404ee,
         type: 3}
       propertyPath: m_RootOrder
@@ -2079,16 +2084,16 @@ Transform:
   - {fileID: 905385673663585558}
   - {fileID: 196156221}
   - {fileID: 1193368266}
+  - {fileID: 973871955}
   - {fileID: 2143006529}
   - {fileID: 442417910}
   - {fileID: 1220101188}
-  - {fileID: 973871955}
+  - {fileID: 169597950}
   - {fileID: 914835670}
   - {fileID: 290004539}
   - {fileID: 1126163270}
   - {fileID: 1385151122}
   - {fileID: 1306892687}
-  - {fileID: 169597950}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3737,8 +3742,8 @@ Transform:
   - {fileID: 172335650}
   - {fileID: 1350279778}
   - {fileID: 1007783279}
-  - {fileID: 532401862}
   - {fileID: 948316922}
+  - {fileID: 532401862}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5662,15 +5667,15 @@ Transform:
   - {fileID: 1830035141}
   - {fileID: 1213341730}
   - {fileID: 2001402573}
+  - {fileID: 1768095369}
   - {fileID: 1888296864}
   - {fileID: 700113383}
-  - {fileID: 1768095369}
+  - {fileID: 2079418051}
   - {fileID: 1677623187}
   - {fileID: 74809978}
   - {fileID: 2067018681}
   - {fileID: 1929622577}
   - {fileID: 1453108922}
-  - {fileID: 2079418051}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6826,8 +6831,8 @@ Transform:
   - {fileID: 7272798628483222850}
   - {fileID: 7272798628957211231}
   - {fileID: 7272798628164861151}
-  - {fileID: 1277286036}
   - {fileID: 1692411355}
+  - {fileID: 1277286036}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
