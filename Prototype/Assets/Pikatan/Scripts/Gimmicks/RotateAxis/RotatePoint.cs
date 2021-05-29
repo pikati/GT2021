@@ -28,6 +28,7 @@ public class RotatePoint : MonoBehaviour
     private float[] angles = new float[3];
     private ChangeColor changeColor;
     private AreaChilder[] areaChilders = new AreaChilder[2];
+    private PointerSuitsuki obj;
 
 
     public bool OnPlayer { get; set; } = false;
@@ -38,7 +39,7 @@ public class RotatePoint : MonoBehaviour
         changeColor =GetComponentInChildren<ChangeColor>();
         areaChilders[0] = transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<AreaChilder>();
         areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
-
+        obj = GameObject.Find("SuitsukiObj").GetComponent<PointerSuitsuki>();
     }
 
 
@@ -170,6 +171,7 @@ public class RotatePoint : MonoBehaviour
         if(other.CompareTag("AxisPointer"))
         {
             Singleton<RotatePointSelector>.Instance.SetSelectAxis(gameObject);
+            obj.SetSelectObject(this);
             IsActive = true;
         }
     }

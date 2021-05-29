@@ -53,4 +53,9 @@ public class RotatePointSelector : Singleton<RotatePointSelector>
     {
         selectObject = obj;
     }
+
+    public GameObject GetSelectObject()
+    {
+        return selectObject;
+    }
 }

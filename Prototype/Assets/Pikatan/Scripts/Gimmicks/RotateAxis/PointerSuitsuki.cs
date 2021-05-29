@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class PointerSuitsuki : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject sprite;
+    [SerializeField]
+    private GameObject crossSprite;
     private GameObject parentObj;
     private PointerAnimationController pac;
-    // Start is called before the first frame update
+    private RotatePoint rp;
+    
     void Start()
     {
         parentObj = transform.root.gameObject;
         pac = transform.root.GetComponent<PointerAnimationController>();
+        sprite.SetActive(false);
+        crossSprite.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +30,7 @@ public class PointerSuitsuki : MonoBehaviour
             pos.z = Mathf.Lerp(parentObj.transform.position.z, other.transform.position.z, 0.1f);
             parentObj.transform.position = pos;
             pac.FocusPointer();
+            sprite.SetActive(true);
         }
     }
 
@@ -38,7 +46,30 @@ public class PointerSuitsuki : MonoBehaviour
                 pos.y = Mathf.Lerp(parentObj.transform.position.y, other.transform.position.y, 0.1f);
                 pos.z = Mathf.Lerp(parentObj.transform.position.z, other.transform.position.z, 0.1f);
                 parentObj.transform.position = pos;
+                if (rp.OnPlayer)
+                {
+                    crossSprite.SetActive(true);
+                }
+                else
+                {
+                    crossSprite.SetActive(false);
+                }
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("RotatePoint"))
+        {
+            sprite.SetActive(false);
+            crossSprite.SetActive(false);
+            pac.ExitPointer();
+        }
+    }
+
+    public void SetSelectObject(RotatePoint point)
+    {
+        rp = point;
     }
 }
