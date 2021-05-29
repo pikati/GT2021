@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6219854, g: 0.5830897, b: 0.5830897, a: 1}
+  m_IndirectSpecularColor: {r: 0.674178, g: 0.63503855, b: 0.674178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9083,10 +9083,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1185034666545209335, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
+      propertyPath: m_TileSize
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185034666545209335, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.033333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185034666545209335, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: 785a163c8498f954dbcf23c2d6c1c506,
         type: 2}
+    - target: {fileID: 1185034666545209335, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: m_OverrideTileSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185034666545209335, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: m_OverrideVoxelSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1185034667381618124, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: nextSceneName
