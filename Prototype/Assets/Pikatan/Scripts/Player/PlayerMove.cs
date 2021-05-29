@@ -108,83 +108,53 @@ public class PlayerMove : Singleton<PlayerMove>
 
         if (Vec3Abs(transform.position, lastPosition) < 0.001f)
         {
+            playerState.state = PlayerState.PlayerStateEnum.Move;
             Vector3 move = inputController.MoveValue;
             move.z = move.y;
             move.y = 0;
             if (move.x == 0 && move.z == 0)
             {
                 SlideParam.Direction = Vector2.zero;
+                lastPosition = transform.position;
+                return;
             }
             else
             {
-                //普通の床から滑る床に入ったときの判定
-                bool a = preState.state != PlayerState.PlayerStateEnum.Move;
-                //滑る床にいるときの判定
-                bool b = playerState.state == PlayerState.PlayerStateEnum.Slide && a;
                 if (Mathf.Abs(move.x) > Mathf.Abs(move.z))
                 {
-                    if (a || b)
+                    if (move.x > move.z)
                     {
-                        if (move.z > 0)
-                        {
-                            move.x = 0;
-                            move.z = iceSpeed;
-                        }
-                        else
-                        {
-                            move.x = 0;
-                            move.z = -iceSpeed;
-                        }
+                        move.x = iceSpeed;
+                        move.z = 0;
                     }
                     else
                     {
-                        if (move.x > 0)
-                        {
-                            move.x = iceSpeed;
-                            move.z = 0;
-                        }
-                        else
-                        {
-                            move.x = -iceSpeed;
-                            move.z = 0;
-                        }
+                        move.x = -iceSpeed;
+                        move.z = 0;
                     }
-
                 }
                 else
                 {
-                    if (a || b)
+                    if (move.x > move.z)
                     {
-                        if (move.x > 0)
-                        {
-                            move.x = iceSpeed;
-                            move.z = 0;
-                        }
-                        else
-                        {
-                            move.x = -iceSpeed;
-                            move.z = 0;
-                        }
-
+                        move.x = 0;
+                        move.z = -iceSpeed;
                     }
                     else
                     {
-                        if (move.z > 0)
-                        {
-                            move.x = 0;
-                            move.z = iceSpeed;
-                        }
-                        else
-                        {
-                            move.x = 0;
-                            move.z = -iceSpeed;
-                        }
+                        move.x = 0;
+                        move.z = iceSpeed;
                     }
                 }
                 SlideParam.Direction = move;
             }
+
+
+
+            lastPosition = transform.position;
         }
     }
+
 
     private void LookDirection()
     {
