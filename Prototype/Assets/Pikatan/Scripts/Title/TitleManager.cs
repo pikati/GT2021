@@ -52,6 +52,7 @@ public class TitleManager : MonoBehaviour
             if(Singleton<InputController>.Instance.A)
             {
                 ChangeDisp(DispState.Title);
+                sm.PlaySeByName("decide");
             }
         }
         if(DispState.Title != dispState && DispState.Start != dispState)

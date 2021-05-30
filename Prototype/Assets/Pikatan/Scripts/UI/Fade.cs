@@ -39,7 +39,6 @@ public class Fade : Singleton<Fade>
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isFadeOut);
         isFading = isFadeIn || isFadeOut;
         if (isFadeIn) UpdateFadeIn();
         else if (isFadeOut) UpdateFadeOut();
