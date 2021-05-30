@@ -34,10 +34,14 @@ public class TitleManager : MonoBehaviour
         cursorObj = GameObject.Find("SelectCursorUI");
         ChangeDisp(DispState.Start);
         sm.StopBgm();
-        Invoke("FadeIn", 1.0f);
         if (isStage)
         {
             ChangeDisp(DispState.Select);
+            FadeOut();
+        }
+        else
+        {
+            Invoke("FadeOut", 1.0f);
         }
     }
 
@@ -103,7 +107,7 @@ public class TitleManager : MonoBehaviour
         }
     }
 
-    private void FadeIn()
+    private void FadeOut()
     {
         sm.PlayBgmByName("title");
         isStartFade = true;
