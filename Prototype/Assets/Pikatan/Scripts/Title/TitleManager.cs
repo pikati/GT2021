@@ -34,29 +34,33 @@ public class TitleManager : MonoBehaviour
         cursorObj = GameObject.Find("SelectCursorUI");
         ChangeDisp(DispState.Start);
         sm.StopBgm();
-        sm.PlayBgmByName("title");
-        Invoke("FadeIn", 1.0f);
-        if(isStage)
+        if (isStage)
         {
             ChangeDisp(DispState.Select);
+            FadeOut();
+        }
+        else
+        {
+            Invoke("FadeOut", 1.0f);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(DispState.Start == dispState)
+        if (DispState.Start == dispState)
         {
             if (!isStartFade) return;
             if (fade.isFading) return;
-            if(Singleton<InputController>.Instance.A)
+            if (Singleton<InputController>.Instance.A)
             {
                 ChangeDisp(DispState.Title);
+                sm.PlaySeByName("decide");
             }
         }
-        if(DispState.Title != dispState && DispState.Start != dispState)
+        if (DispState.Title != dispState && DispState.Start != dispState)
         {
-            if(Singleton<InputController>.Instance.B)
+            if (Singleton<InputController>.Instance.B)
             {
                 ChangeDisp(DispState.Title);
                 sm.PlaySeByName("cancel");
@@ -103,8 +107,9 @@ public class TitleManager : MonoBehaviour
         }
     }
 
-    private void FadeIn()
+    private void FadeOut()
     {
+        sm.PlayBgmByName("title");
         isStartFade = true;
         fade.FadeOut();
     }

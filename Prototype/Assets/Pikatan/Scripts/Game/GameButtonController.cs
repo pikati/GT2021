@@ -9,7 +9,6 @@ public class GameButtonController : MonoBehaviour
     public void Resume()
     {
         Singleton<GameManager>.Instance.ChangeGameState(GameManager.GameState.Play);
-        Singleton<SoundManager>.Instance.PlaySeByName("decide");
     }
 
     public void Retry()
@@ -32,6 +31,7 @@ public class GameButtonController : MonoBehaviour
 
     public void Next()
     {
+        Singleton<SoundManager>.Instance.PlaySeByName("decide");
         Singleton<SceneChanger>.Instance.SceneChange();
     }
 }
