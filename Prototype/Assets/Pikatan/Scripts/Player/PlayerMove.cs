@@ -120,9 +120,10 @@ public class PlayerMove : Singleton<PlayerMove>
             }
             else
             {
+                playerState.state = PlayerState.PlayerStateEnum.Slide;
                 if (Mathf.Abs(move.x) > Mathf.Abs(move.z))
                 {
-                    if (move.x > move.z)
+                    if (move.x > 0)
                     {
                         move.x = iceSpeed;
                         move.z = 0;
@@ -135,15 +136,15 @@ public class PlayerMove : Singleton<PlayerMove>
                 }
                 else
                 {
-                    if (move.x > move.z)
+                    if (move.z > 0)
                     {
                         move.x = 0;
-                        move.z = -iceSpeed;
+                        move.z = iceSpeed;
                     }
                     else
                     {
                         move.x = 0;
-                        move.z = iceSpeed;
+                        move.z = -iceSpeed;
                     }
                 }
                 SlideParam.Direction = move;
