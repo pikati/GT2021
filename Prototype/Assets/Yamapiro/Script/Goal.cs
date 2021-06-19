@@ -31,7 +31,8 @@ public class Goal : MonoBehaviour
         {
             isReach = true;
             Singleton<ClearChecker>.Instance.ReachChechkPoint();
-            clearCount.ChangeState(ClearCount.ImageState.Visible);
+            //常時出し続ける仕様変更のため
+            //clearCount.ChangeState(ClearCount.ImageState.Visible);
             transform.GetChild(0).gameObject.SetActive(false);
             emitter.SetActive(true);
             Singleton<SoundManager>.Instance.PlaySeByName("get");

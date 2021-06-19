@@ -69,10 +69,11 @@ public class GameManager : Singleton<GameManager>
             Singleton<SceneChanger>.Instance.ReloadScene();
         }
 
-        if(gameState == GameState.Pause || gameState == GameState.Option)
-        {
-            clearCount.ChangeState(ClearCount.ImageState.Visible);
-        }
+        //常時出し続ける仕様変更のため
+        //if(gameState == GameState.Pause || gameState == GameState.Option)
+        //{
+        //    clearCount.ChangeState(ClearCount.ImageState.Visible);
+        //}
     }
 
     public void ChangeGameState(GameState state)
