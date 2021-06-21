@@ -6,6 +6,7 @@ public class Goal : MonoBehaviour
 {
     private bool isReach = false;
     private ClearCount clearCount;
+    [SerializeField]
     private GameObject emitter;
     private GameObject memory;
     private bool isGoal = false;
@@ -14,7 +15,7 @@ public class Goal : MonoBehaviour
     {
         emitter = transform.GetChild(1).gameObject;
         emitter.SetActive(false);
-        memory = transform.Find("memori").gameObject;
+        memory = transform.Find("memori-kai").gameObject;
     }
     private void Update()
     {
