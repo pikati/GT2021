@@ -6,11 +6,13 @@ public class PlayerAnimation : MonoBehaviour
 {
     private Animator anim;
     public float MoveValue { get; set; }
+    private float animRand = 0;
     private PlayerMove playerMove;
     void Start()
     {
         anim = GetComponent<Animator>();
         playerMove = GetComponent<PlayerMove>();
+        animRand = Random.Range(0f, 1f);
     }
 
     // Update is called once per frame
@@ -18,6 +20,14 @@ public class PlayerAnimation : MonoBehaviour
     {
         if(Singleton<ClearChecker>.Instance.IsClear || Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play)
         {
+            if(animRand < 0.5)
+            {
+                anim.SetTrigger("Hand");
+            }
+            else
+            {
+                anim.SetTrigger("Banzai");
+            }
             anim.SetFloat("Move", 0);
         }
         else
