@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: be476d5a657faa447a70c963013331cd
+guid: 27eb25ffb5496754dbbc452e2d56024a
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -7,17 +7,14 @@ ModelImporter:
       74: 4781951162920444690
     second: Walk
   - first:
-      74: -1832359559977442656
-    second: Kenn
+      74: 6946789266386492081
+    second: Knee
   - first:
       74: -6684015078380512896
     second: Hand
   - first:
       74: 771879384405730491
     second: Banzai
-  - first:
-      74: -400239268021840549
-    second: Idol
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -76,7 +73,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Kenn
+      name: Knee
       takeName: Armature|ArmatureAction
       internalID: 0
       firstFrame: 71
@@ -108,16 +105,16 @@ ModelImporter:
       name: Hand
       takeName: Armature|ArmatureAction
       internalID: 0
-      firstFrame: 111
+      firstFrame: 101
       lastFrame: 120
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 0.98
+      cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -137,15 +134,15 @@ ModelImporter:
       name: Banzai
       takeName: Armature|ArmatureAction
       internalID: 0
-      firstFrame: 131
-      lastFrame: 150
+      firstFrame: 121
+      lastFrame: 140
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -162,36 +159,7 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Idol
-      takeName: Armature|ArmatureAction
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 0
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

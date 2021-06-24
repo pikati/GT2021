@@ -27,7 +27,7 @@ public class PlayerMove : Singleton<PlayerMove>
         preState = new PlayerState();
         rb = GetComponent<Rigidbody>();
         SlideParam = new SlideParam();
-        playerAnimation = transform.Find("mebi").GetComponent<PlayerAnimation>();
+        playerAnimation = transform.Find("MEBIZO").GetComponent<PlayerAnimation>();
         agent.enabled = false;
     }
 

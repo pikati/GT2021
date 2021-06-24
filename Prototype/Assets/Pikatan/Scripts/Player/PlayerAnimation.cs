@@ -22,13 +22,12 @@ public class PlayerAnimation : MonoBehaviour
         {
             if(animRand < 0.5)
             {
-                anim.SetTrigger("Hand");
+                anim.SetBool("Hand", true);
             }
             else
             {
                 anim.SetTrigger("Banzai");
             }
-            anim.SetFloat("Move", 0);
         }
         else
         {

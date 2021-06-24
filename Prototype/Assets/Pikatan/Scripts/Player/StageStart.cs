@@ -28,7 +28,7 @@ public class StageStart : Singleton<StageStart>
             player.GetComponent<PlayerMove>().ActivateAgent();
             GameObject.FindGameObjectWithTag("AxisPointer").GetComponent<AxisPointer>().ActivatePointer();
             Singleton<SoundManager>.Instance.PlaySeByName("endRotate");
-            GameObject.Find("mebi").GetComponent<PlayerAnimation>().Knee();
+            GameObject.Find("MEBIZO").GetComponent<PlayerAnimation>().Knee();
         }
     }
 }
