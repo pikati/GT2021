@@ -23,7 +23,9 @@ public class Goal : MonoBehaviour
     private GoalChild goalChild1;
     private GoalChild goalChild2;
 
-    private GameTimer spinFrameCnt;
+    private GameTimer spinTimer;
+    [SerializeField]
+    private float timer;
 
     private void Start()
     {
@@ -34,7 +36,7 @@ public class Goal : MonoBehaviour
         goalChild2 = transform.Find("Col2").GetComponent<GoalChild>();
 
         memoryState = MEMORY_STATE.WAIT;
-        spinFrameCnt = new GameTimer(1.5f);
+        spinTimer = new GameTimer(timer);
     }
     private void Update()
     {
@@ -46,17 +48,17 @@ public class Goal : MonoBehaviour
         //回転
         else if(memoryState == MEMORY_STATE.SPIN)
         {
-            if(!spinFrameCnt.IsTimeUp)
+            if(!spinTimer.IsTimeUp)
             {
-                memory.transform.Rotate(0.0f, 100000.0f * Time.deltaTime, 0.0f);
-                memory.transform.position += new Vector3(0.0f, 0.4f, 0.0f);
+                memory.transform.Rotate(0.0f, 500000.0f * Time.deltaTime, 0.0f);
+                memory.transform.position += new Vector3(0.0f, 0.5f, 0.0f);
             }
             else
             {
                 ChangeState(MEMORY_STATE.END);
             }
 
-            spinFrameCnt.UpdateTimer();
+            spinTimer.UpdateTimer();
         }
 
         clearCount = GameObject.Find("GoalUI").GetComponent<ClearCount>();
@@ -86,7 +88,7 @@ public class Goal : MonoBehaviour
         goalChild1.gameObject.SetActive(false);
         goalChild2.gameObject.SetActive(false);
         Destroy(gameObject);
-        Singleton<NavMeshBaker>.Instance.Bake();
+        Invoke("Singleton<NavMeshBaker>.Instance.Bake()", 0.1f);
     }
 
     private void ChangeState(MEMORY_STATE next)
