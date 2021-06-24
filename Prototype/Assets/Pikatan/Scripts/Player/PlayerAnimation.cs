@@ -28,6 +28,7 @@ public class PlayerAnimation : MonoBehaviour
             {
                 anim.SetTrigger("Banzai");
             }
+            anim.SetFloat("Move", 0);
         }
         else
         {

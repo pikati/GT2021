@@ -23,6 +23,7 @@ public class TitleManager : MonoBehaviour
     private bool isStage = false;
     private bool isStartFade = false;
 
+    public DispState UIDispState => dispState;
     void Start()
     {
         fade = Singleton<Fade>.Instance;
