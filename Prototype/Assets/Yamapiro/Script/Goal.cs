@@ -54,8 +54,8 @@ public class Goal : MonoBehaviour
             if(!spinTimer.IsTimeUp)
             {
                 memory.transform.Rotate(0.0f, 500000.0f * Time.deltaTime, 0.0f);
-                memory.transform.position += new Vector3(0.0f, 0.5f * Time.deltaTime, 0.0f);
-                particle.transform.position += new Vector3(0.0f, 0.5f * Time.deltaTime, 0.0f);
+                memory.transform.position += new Vector3(0.0f, 10.0f * Time.deltaTime, 0.0f);
+                particle.transform.position += new Vector3(0.0f, 10.0f * Time.deltaTime, 0.0f);
             }
             else
             {
@@ -85,12 +85,12 @@ public class Goal : MonoBehaviour
     private void GoalFnac()
     {
         isReach = true;
-        Singleton<ClearChecker>.Instance.ReachChechkPoint();    //ここでUI出してる
-        //常時出し続ける仕様変更のため
-        //clearCount.ChangeState(ClearCount.ImageState.Visible);
         transform.GetChild(0).gameObject.SetActive(false);
         goalChild1.gameObject.SetActive(false);
         goalChild2.gameObject.SetActive(false);
+        Singleton<ClearChecker>.Instance.ReachChechkPoint();    //ここでUI出してる
+        //常時出し続ける仕様変更のため
+        //clearCount.ChangeState(ClearCount.ImageState.Visible);
         Destroy(gameObject);
         Invoke("Singleton<NavMeshBaker>.Instance.Bake()", 0.1f);
     }
