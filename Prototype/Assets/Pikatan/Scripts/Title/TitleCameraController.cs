@@ -8,6 +8,8 @@ public class TitleCameraController : MonoBehaviour
     private Vector3 titlePos;
     [SerializeField]
     private Vector3 selectPos;
+    [SerializeField]
+    private float speed = 1.0f;
     private TitleManager tm;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class TitleCameraController : MonoBehaviour
 
     private void UpdateCam()
     {
+        if (!tm.IsStartFade) return;
         switch (tm.UIDispState)
         {
             case TitleManager.DispState.Start:
@@ -38,6 +41,6 @@ public class TitleCameraController : MonoBehaviour
 
     private void MoveCam(Vector3 target)
     {
-
+        transform.position = Vector3.Lerp(transform.position, target, speed * Time.deltaTime);
     }
 }
