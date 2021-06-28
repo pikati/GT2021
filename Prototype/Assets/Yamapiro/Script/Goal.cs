@@ -27,11 +27,14 @@ public class Goal : MonoBehaviour
     [SerializeField]
     private float timer;
 
+    private GameObject particle;
+
     private void Start()
     {
         emitter = transform.GetChild(1).gameObject;
         emitter.SetActive(false);
-        memory = transform.Find("memori-kai").gameObject;
+        memory = transform.Find("memor_kai2").gameObject;
+        particle = transform.Find("GoalParticle").gameObject;
         goalChild1 = transform.Find("Col1").GetComponent<GoalChild>();
         goalChild2 = transform.Find("Col2").GetComponent<GoalChild>();
 
@@ -51,7 +54,8 @@ public class Goal : MonoBehaviour
             if(!spinTimer.IsTimeUp)
             {
                 memory.transform.Rotate(0.0f, 500000.0f * Time.deltaTime, 0.0f);
-                memory.transform.position += new Vector3(0.0f, 0.5f, 0.0f);
+                memory.transform.position += new Vector3(0.0f, 0.5f * Time.deltaTime, 0.0f);
+                particle.transform.position += new Vector3(0.0f, 0.5f * Time.deltaTime, 0.0f);
             }
             else
             {
@@ -104,6 +108,7 @@ public class Goal : MonoBehaviour
             Singleton<SoundManager>.Instance.PlaySeByName("get");
             isGoal = true;
             memory.transform.Rotate(0.0f, 0.0f, 0.0f);
+            particle.GetComponent<ParticleSystem>().Play();
         }
         else if (next == MEMORY_STATE.END)
         {
