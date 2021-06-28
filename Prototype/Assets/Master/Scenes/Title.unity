@@ -636,12 +636,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43736191}
   m_CullTransparentMesh: 0
---- !u!1 &49997091 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 27eb25ffb5496754dbbc452e2d56024a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105479473031717491}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &49997092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27eb25ffb5496754dbbc452e2d56024a,
@@ -9743,6 +9737,7 @@ GameObject:
   - component: {fileID: 886769436}
   - component: {fileID: 886769435}
   - component: {fileID: 886769434}
+  - component: {fileID: 886769438}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -9869,12 +9864,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886769433}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 7.29, y: 10.41, z: 8.43}
+  m_LocalPosition: {x: 7, y: 10, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &886769438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886769433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d59434c6045c0c47938fff58802fed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titlePos: {x: 7, y: 10, z: 8}
+  selectPos: {x: 7, y: 10, z: -12}
+  speed: 1
 --- !u!1 &910300910
 GameObject:
   m_ObjectHideFlags: 0
@@ -25110,7 +25120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5182630193316963812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.55, y: 8.29, z: 5.85}
+  m_LocalPosition: {x: 6.18, y: 7.9, z: 5.47}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4021623793688706632}
@@ -25331,19 +25341,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5146032641026984870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5182630193316963812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9403a5d0a97979349a3d11c1d1a79efe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!1 &5182630193316963812
 GameObject:
   m_ObjectHideFlags: 0
@@ -25353,7 +25350,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2937003421718935427}
-  - component: {fileID: 5146032641026984870}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -25367,18 +25363,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3463461365257063715}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6696639534315518160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49997091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f795acc0fcf6842915a79356137f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7105479473031717491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25463,22 +25447,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27eb25ffb5496754dbbc452e2d56024a, type: 3}
---- !u!95 &7968834168022337230
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49997091}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a57a8feb51b4a3943b21aced20c1d7a7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
