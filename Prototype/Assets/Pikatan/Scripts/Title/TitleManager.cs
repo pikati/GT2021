@@ -18,12 +18,11 @@ public class TitleManager : MonoBehaviour
     private GameObject selectObj;
     private GameObject optionObj;
     private GameObject cursorObj;
-    private DispState dispState;
     private SoundManager sm;
     private bool isStage = false;
-    private bool isStartFade = false;
+    public bool IsStartFade { get; private set; } = false;
 
-    public DispState UIDispState => dispState;
+    public DispState UIDispState { get; private set; }
     void Start()
     {
         fade = Singleton<Fade>.Instance;
@@ -49,9 +48,9 @@ public class TitleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DispState.Start == dispState)
+        if (DispState.Start == UIDispState)
         {
-            if (!isStartFade) return;
+            if (!IsStartFade) return;
             if (fade.isFading) return;
             if (Singleton<InputController>.Instance.A)
             {
@@ -59,7 +58,7 @@ public class TitleManager : MonoBehaviour
                 sm.PlaySeByName("decide");
             }
         }
-        if (DispState.Title != dispState && DispState.Start != dispState)
+        if (DispState.Title != UIDispState && DispState.Start != UIDispState)
         {
             if (Singleton<InputController>.Instance.B)
             {
@@ -71,8 +70,8 @@ public class TitleManager : MonoBehaviour
 
     private void ChangeDisp(DispState state)
     {
-        dispState = state;
-        switch (dispState)
+        UIDispState = state;
+        switch (UIDispState)
         {
             case DispState.Start:
                 startObj.SetActive(true);
@@ -111,7 +110,7 @@ public class TitleManager : MonoBehaviour
     private void FadeOut()
     {
         sm.PlayBgmByName("title");
-        isStartFade = true;
+        IsStartFade = true;
         fade.FadeOut();
     }
 
