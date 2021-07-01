@@ -9,8 +9,10 @@ public class StageSelectUIController : MonoBehaviour
     private int maxPage;
     [SerializeField]
     private float pageChangeSpeed;
+    //[SerializeField]
+    //private List<GameObject> cursors;
     [SerializeField]
-    private List<GameObject> cursors;
+    private RectTransform cursor;
     [SerializeField]
     private Animator LBAnim;
     [SerializeField]
@@ -27,20 +29,32 @@ public class StageSelectUIController : MonoBehaviour
     private RectTransform rt;
     private SoundManager sm;
     private bool isSelected = false;
+    private Vector3[] pos;
     public int StageNum => stageNum;
     public int Idx => index + page * 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 1; i < 10; i++)
-        {
-            DisableCursor(i);
-        }
+        //for (int i = 1; i < 10; i++)
+        //{
+        //    DisableCursor(i);
+        //}
         ic = Singleton<InputController>.Instance;
         stageName = new StageName();
         rt = GetComponent<RectTransform>();
         sm = Singleton<SoundManager>.Instance;
+        pos = new Vector3[10];
+        pos[0] = new Vector3(-900, -700 + 540, 0);
+        pos[1] = new Vector3(-550, -700 + 540, 0);
+        pos[2] = new Vector3(-200, -700 + 540, 0);
+        pos[3] = new Vector3(150, -700 + 540, 0);
+        pos[4] = new Vector3(500, -700 + 540, 0);
+        pos[5] = new Vector3(-900, -950 + 540, 0);
+        pos[6] = new Vector3(-550, -950 + 540, 0);
+        pos[7] = new Vector3(-200, -950 + 540, 0);
+        pos[8] = new Vector3(150, -950 + 540, 0);
+        pos[9] = new Vector3(500, -950 + 540, 0);
     }
 
     // Update is called once per frame
@@ -96,7 +110,7 @@ public class StageSelectUIController : MonoBehaviour
     private void ChangeCursor(int n)
     {
         isInput = true;
-        DisableCursor(index);
+        //DisableCursor(index);
         int tmp = index;
         index += n;
         if (index < 0)
@@ -131,7 +145,8 @@ public class StageSelectUIController : MonoBehaviour
         {
             sm.PlaySeByName("cursor");
         }
-        EnableCursor(index);
+        //EnableCursor(index);
+        MoveCursor(index);
     }
 
     private void ChangePage(int n)
@@ -162,9 +177,11 @@ public class StageSelectUIController : MonoBehaviour
         }
         if (index + page * 10 >= stageNum)
         {
-            DisableCursor(index);
+            //DisableCursor(index);
+            //index = 0;
+            //EnableCursor(index);
             index = 0;
-            EnableCursor(index);
+            MoveCursor(index);
         }
     }
 
@@ -180,25 +197,31 @@ public class StageSelectUIController : MonoBehaviour
         }
     }
 
-    private void EnableCursor(int index)
-    {
-        cursors[index].GetComponent<Image>().enabled = true;
-        cursors[index].GetComponent<CursorAnimation>().StartAniamtion();
-    }
+    //private void EnableCursor(int index)
+    //{
+    //    cursors[index].GetComponent<Image>().enabled = true;
+    //    cursors[index].GetComponent<CursorAnimation>().StartAniamtion();
+    //}
 
-    private void DisableCursor(int index)
+    //private void DisableCursor(int index)
+    //{
+    //    cursors[index].GetComponent<Image>().enabled = false;
+    //}
+
+    private void MoveCursor(int index)
     {
-        cursors[index].GetComponent<Image>().enabled = false;
+        cursor.localPosition = pos[index];
     }
 
     public void ResetCursor()
     {
         index = 0;
-        EnableCursor(0);
-        for (int i = 1; i < 10; i++)
-        {
-            DisableCursor(i);
-        }
+        MoveCursor(index);
+        //EnableCursor(0);
+        //for (int i = 1; i < 10; i++)
+        //{
+        //    DisableCursor(i);
+        //}
     }
 
     private void ChangeSecne(string sceneName)
