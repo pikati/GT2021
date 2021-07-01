@@ -29,6 +29,7 @@ public class RotatePoint : MonoBehaviour
     private ChangeColor changeColor;
     private AreaChilder[] areaChilders = new AreaChilder[2];
     private PointerSuitsuki obj;
+    private GameObject effect;
 
 
     public bool OnPlayer { get; set; } = false;
@@ -40,6 +41,7 @@ public class RotatePoint : MonoBehaviour
         areaChilders[0] = transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<AreaChilder>();
         areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
         obj = GameObject.Find("SuitsukiObj").GetComponent<PointerSuitsuki>();
+        effect = Resources.Load("SelectEffect") as GameObject;
     }
 
 
@@ -76,7 +78,8 @@ public class RotatePoint : MonoBehaviour
                 Singleton<RotatePointSelector>.Instance.IsRotating = false;
                 Singleton<PlayerMove>.Instance.LoadDirection();
                 Singleton<SoundManager>.Instance.PlaySeByName("endRotate");
-
+                GameObject efc = Instantiate(effect, transform.position, Quaternion.identity);
+                Destroy(efc, 1.0f);
             }
         }
     }
