@@ -8,7 +8,7 @@ public class PanelEffectEmiter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        effect = Resources.Load("SelectEffect") as GameObject;
+        Destroy(effect, 1.0f);
     }
 
     // Update is called once per frame
