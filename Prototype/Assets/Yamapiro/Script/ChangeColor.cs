@@ -49,7 +49,7 @@ public class ChangeColor : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("AxisPointer"))
         {
@@ -74,7 +74,6 @@ public class ChangeColor : MonoBehaviour
         }
         else
         {
-            if (AState == AxisState.OnPlayer) return;
             ChangeAxisState(AxisState.Non);
         }
         //a.SetActive(isFocus);
