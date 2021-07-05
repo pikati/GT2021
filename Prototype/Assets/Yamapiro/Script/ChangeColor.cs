@@ -17,8 +17,8 @@ public class ChangeColor : MonoBehaviour
     private Material defaultMat;
     private Material changeMat;
     private Material focusMat;
-    [SerializeField]
-    private GameObject a;
+    //[SerializeField]
+    //private GameObject a;
     
     void Start()
     {
@@ -77,7 +77,7 @@ public class ChangeColor : MonoBehaviour
             if (AState == AxisState.OnPlayer) return;
             ChangeAxisState(AxisState.Non);
         }
-        a.SetActive(isFocus);
+        //a.SetActive(isFocus);
     }
 
     public void ChangeAxisState(AxisState state)
