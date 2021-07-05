@@ -39,15 +39,6 @@ public class RotateDecide : MonoBehaviour
         }
 
         SearchAxis();
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (!other.CompareTag("Player"))
-        {
-            return;
-        }
-
         foreach (RotatePoint rp in RotatePointList)
         {
             if (rp != null)
@@ -59,6 +50,16 @@ public class RotateDecide : MonoBehaviour
                 Debug.Log("RotatePoint：nullです");
             }
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Player"))
+        {
+            return;
+        }
+
+        
     }
 
     private void OnTriggerExit(Collider other)
