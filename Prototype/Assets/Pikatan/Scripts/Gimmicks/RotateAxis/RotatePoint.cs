@@ -30,9 +30,28 @@ public class RotatePoint : MonoBehaviour
     private AreaChilder[] areaChilders = new AreaChilder[2];
     private PointerSuitsuki obj;
     private GameObject effect;
+    private bool onPlayer;
 
 
-    public bool OnPlayer { get; set; } = false;
+    public bool OnPlayer
+    {
+        get
+        {
+            return onPlayer;
+        }
+        set
+        {
+            onPlayer = value;
+            if (onPlayer)
+            {
+                changeColor.ChangeAxisState(ChangeColor.AxisState.OnPlayer);
+            }
+            else
+            {
+                changeColor.ChangeAxisState(ChangeColor.AxisState.Non);
+            }
+        }
+    }
 
     private void Start()
     {
@@ -48,8 +67,10 @@ public class RotatePoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        changeColor.GetFlag = OnPlayer;
-        
+        if (OnPlayer)
+        {
+            changeColor.ChangeAxisState(ChangeColor.AxisState.OnPlayer);
+        }
         if (isRotate)
         {
             float deg = rotateState == RotateState.NoRotate ? 180.0f : 0;

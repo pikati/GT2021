@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour
 {
-    //ROtatePointのupdateコメントしてるｐ
-    public bool GetFlag { get; set; }
+    public enum AxisState
+    {
+        Non,
+        Forcus,
+        OnPlayer
+    };
+
+    public AxisState AState { get; set; } = AxisState.Non;
     private bool isFocus = false;
     private Renderer defaultRenderer;
     private Material defaultMat;
@@ -21,22 +27,24 @@ public class ChangeColor : MonoBehaviour
         changeMat = new Material(defaultMat);
         changeMat.color = Color.red;
         focusMat = new Material(defaultMat);
-        focusMat.color = Color.yellow;
+        focusMat.color = Color.blue;
     }
 
     void Update()
     {
-        if (GetFlag == true)
+        switch (AState)
         {
-            defaultRenderer.material = changeMat;
-        }
-        else if (GetFlag == false)
-        {
-            if(isFocus)
-            {
+            case AxisState.OnPlayer:
+                defaultRenderer.material = changeMat;
+                break;
+            case AxisState.Non:
+                defaultRenderer.material = defaultMat;
+                break;
+            case AxisState.Forcus:
                 defaultRenderer.material = focusMat;
-            }
-            defaultRenderer.material = defaultMat;
+                break;
+            default:
+                break;
         }
     }
 
@@ -59,7 +67,21 @@ public class ChangeColor : MonoBehaviour
 
     private void ChangeState(bool state)
     {
-        isFocus = state;
+        if(state == true)
+        {
+            if (AState == AxisState.OnPlayer) return;
+            ChangeAxisState(AxisState.Forcus);
+        }
+        else
+        {
+            if (AState == AxisState.OnPlayer) return;
+            ChangeAxisState(AxisState.Non);
+        }
         a.SetActive(isFocus);
+    }
+
+    public void ChangeAxisState(AxisState state)
+    {
+        AState = state;
     }
 }
