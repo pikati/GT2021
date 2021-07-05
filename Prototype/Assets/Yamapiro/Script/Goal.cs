@@ -29,6 +29,14 @@ public class Goal : MonoBehaviour
 
     private GameObject particle;
 
+    //UIの場所に動かす
+    [SerializeField]
+    private Camera mainCamera;
+    [SerializeField]
+    private Vector3 startPoint;
+    [SerializeField]
+    private Vector3 endPoint;
+
     private void Start()
     {
         emitter = transform.GetChild(1).gameObject;
@@ -40,6 +48,10 @@ public class Goal : MonoBehaviour
 
         memoryState = MEMORY_STATE.WAIT;
         spinTimer = new GameTimer(timer);
+
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        startPoint = mainCamera.WorldToViewportPoint(memory.transform.position);
+        endPoint = new Vector3(0.0f, 1.0f, 5.0f);
     }
     private void Update()
     {
@@ -53,9 +65,14 @@ public class Goal : MonoBehaviour
         {
             if(!spinTimer.IsTimeUp)
             {
+                //memory.transform.position += new Vector3(0.0f, 10.0f * Time.deltaTime, 0.0f);
+                
+                Vector3 nowPos = Vector3.Lerp(startPoint, endPoint,spinTimer.TimeRate);
+
+                memory.transform.position = mainCamera.ViewportToWorldPoint(nowPos);
                 memory.transform.Rotate(0.0f, 500000.0f * Time.deltaTime, 0.0f);
-                memory.transform.position += new Vector3(0.0f, 10.0f * Time.deltaTime, 0.0f);
-                particle.transform.position += new Vector3(0.0f, 10.0f * Time.deltaTime, 0.0f);
+
+                particle.transform.position = memory.transform.position;
             }
             else
             {
@@ -88,6 +105,7 @@ public class Goal : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         goalChild1.gameObject.SetActive(false);
         goalChild2.gameObject.SetActive(false);
+        particle.gameObject.SetActive(false);
         Singleton<ClearChecker>.Instance.ReachChechkPoint();    //ここでUI出してる
         //常時出し続ける仕様変更のため
         //clearCount.ChangeState(ClearCount.ImageState.Visible);
