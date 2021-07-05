@@ -48,7 +48,10 @@ public class RotatePoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        changeColor.GetFlag = OnPlayer;
+        if(OnPlayer)
+        {
+            changeColor.AState = ChangeColor.AxisState.OnPlayer;
+        }
         
         if (isRotate)
         {
