@@ -24130,10 +24130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -25107,6 +25107,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 243306205}
     m_Modifications:
+    - target: {fileID: 867852532491886981, guid: 38699794f087b9b428b611e3d7e7ab4c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272713879481149771, guid: 38699794f087b9b428b611e3d7e7ab4c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8270963256061204961, guid: 38699794f087b9b428b611e3d7e7ab4c,
         type: 3}
       propertyPath: buttonEvent.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -43,6 +43,7 @@ public class SceneChanger : Singleton<SceneChanger>
     {
         
         GameObject.Find("TitleManager").GetComponent<TitleManager>().DispStageSelect();
+        Camera.main.GetComponent<TitleCameraController>().SetPosition(new Vector3(7, 10, 2));
         SceneManager.sceneLoaded -= StageSelect;
     }
 }

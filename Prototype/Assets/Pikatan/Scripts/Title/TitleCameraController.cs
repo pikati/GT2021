@@ -31,6 +31,9 @@ public class TitleCameraController : MonoBehaviour
             case TitleManager.DispState.Start:
                 MoveCam(titlePos);
                 break;
+            case TitleManager.DispState.Title:
+                MoveCam(titlePos);
+                break;
             case TitleManager.DispState.Select:
                 MoveCam(selectPos);
                 break;
@@ -42,5 +45,10 @@ public class TitleCameraController : MonoBehaviour
     private void MoveCam(Vector3 target)
     {
         transform.position = Vector3.Lerp(transform.position, target, speed * Time.deltaTime);
+    }
+
+    public void SetPosition(Vector3 pos)
+    {
+        transform.position = pos;
     }
 }
