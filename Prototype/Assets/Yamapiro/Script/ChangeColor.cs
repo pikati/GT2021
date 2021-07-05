@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour
 {
-    //ROtatePointのupdateコメントしてるｐ
     public enum AxisState
     {
         Non,
@@ -47,19 +46,6 @@ public class ChangeColor : MonoBehaviour
             default:
                 break;
         }
-
-        //if (GetFlag == true)
-        //{
-        //    defaultRenderer.material = changeMat;
-        //}
-        //else if (GetFlag == false)
-        //{
-        //    if(isFocus)
-        //    {
-        //        defaultRenderer.material = focusMat;
-        //    }
-        //    defaultRenderer.material = defaultMat;
-        //}
     }
 
 
@@ -88,6 +74,7 @@ public class ChangeColor : MonoBehaviour
         }
         else
         {
+            if (AState == AxisState.OnPlayer) return;
             ChangeAxisState(AxisState.Non);
         }
         a.SetActive(isFocus);

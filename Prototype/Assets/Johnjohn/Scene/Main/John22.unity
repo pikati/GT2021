@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
+  m_IndirectSpecularColor: {r: 0.6546491, g: 0.61551625, b: 0.61551625, a: 1}
+=======
   m_IndirectSpecularColor: {r: 0.6927554, g: 0.6927554, b: 0.65367293, a: 1}
+>>>>>>> a4e9b674d9930e4f3a278230ce01fc948e00a424
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1497,7 +1501,7 @@ PrefabInstance:
     - target: {fileID: 1185034667381618124, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: nextSceneName
-      value: yamapi7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
