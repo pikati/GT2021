@@ -22,6 +22,7 @@ public class AxisPointer : MonoBehaviour
     void Update()
     {
         if (!isGameStart) return;
+        if (GameManager.GameState.Play != Singleton<GameManager>.Instance.gameState) return;
         MovePointer();
     }
 
