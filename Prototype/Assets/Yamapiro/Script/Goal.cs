@@ -150,6 +150,7 @@ public class Goal : MonoBehaviour
         //y
         y = y * y * y * y;
 
+        //没
         //if (y < 0.5)
         //{
         //    y = 4 * y * y * y;

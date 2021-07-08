@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6582094, g: 0.6190806, b: 0.6190806, a: 1}
+  m_IndirectSpecularColor: {r: 0.68963736, g: 0.8152297, b: 0.8368551, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3525,12 +3525,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1722925987}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1722925990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2085296445026634405, guid: cac20077334fc7544a7dcbde16efaa47,
-    type: 3}
-  m_PrefabInstance: {fileID: 1722925987}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1722925991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3538,22 +3532,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722925989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 0
-  m_Area: 0
-  m_IgnoreFromBuild: 1
-  m_AffectedAgents: ffffffff
---- !u!114 &1722925992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722925990}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
@@ -3923,32 +3901,32 @@ PrefabInstance:
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: topColor.b
-      value: 0.8627451
+      value: 0.9433962
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: topColor.g
-      value: 0.8627451
+      value: 0.91396886
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: topColor.r
-      value: 0.9019608
+      value: 0.7609469
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: bottomColor.b
-      value: 0.39215687
+      value: 0.6698113
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: bottomColor.g
-      value: 0.39215687
+      value: 0.66016656
       objectReference: {fileID: 0}
     - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
         type: 3}
       propertyPath: bottomColor.r
-      value: 0.43137255
+      value: 0.57818615
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3be5d6031511af645b18a63b70751ed9, type: 3}
