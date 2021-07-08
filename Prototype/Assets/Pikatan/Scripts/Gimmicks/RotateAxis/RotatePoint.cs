@@ -60,7 +60,7 @@ public class RotatePoint : MonoBehaviour
         areaChilders[0] = transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<AreaChilder>();
         areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
         obj = GameObject.Find("SuitsukiObj").GetComponent<PointerSuitsuki>();
-        effect = Resources.Load("SelectEffect") as GameObject;
+        effect = Resources.Load("TurnBoardEffect") as GameObject;
     }
 
 
