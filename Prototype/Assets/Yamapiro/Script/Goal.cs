@@ -50,7 +50,7 @@ public class Goal : MonoBehaviour
         spinTimer = new GameTimer(timer);
 
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        endPoint = new Vector3(0.0f, 1.0f, 5.0f);
+        //endPoint = new Vector3(0.0f, 1.0f, 5.0f);
     }
     private void Update()
     {
@@ -65,8 +65,11 @@ public class Goal : MonoBehaviour
             if(!spinTimer.IsTimeUp)
             {
                 //memory.transform.position += new Vector3(0.0f, 10.0f * Time.deltaTime, 0.0f);
-                
-                Vector3 nowPos = Vector3.Lerp(startPoint, endPoint,spinTimer.TimeRate);
+
+                Vector2 rate = MemoryEasing(spinTimer.TimeRate);
+                Vector3 nowPos = new Vector3(Mathf.Lerp(startPoint.x, endPoint.x, rate.x),
+                                             Mathf.Lerp(startPoint.y, endPoint.y, rate.y),
+                                             Mathf.Lerp(startPoint.z, endPoint.z, rate.x));
 
                 memory.transform.position = mainCamera.ViewportToWorldPoint(nowPos);
                 memory.transform.Rotate(0.0f, 500000.0f * Time.deltaTime, 0.0f);
@@ -134,5 +137,28 @@ public class Goal : MonoBehaviour
             memoryState = MEMORY_STATE.END;
             GoalFnac();
         }
+    }
+
+    private Vector2 MemoryEasing(float rate)
+    {
+        float x = rate;
+        float y = rate;
+
+        //x
+        x = x * x;
+
+        //y
+        y = y * y * y * y;
+
+        //if (y < 0.5)
+        //{
+        //    y = 4 * y * y * y;
+        //}
+        //else
+        //{
+        //    y = 1 - Mathf.Pow(-2.0f * y + 2.0f, 3.0f) / 2;
+        //}
+
+        return new Vector2(x, y);
     }
 }
