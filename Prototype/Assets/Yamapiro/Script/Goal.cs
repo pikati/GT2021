@@ -126,6 +126,7 @@ public class Goal : MonoBehaviour
             isGoal = true;
             memory.transform.Rotate(0.0f, 0.0f, 0.0f);
             startPoint = mainCamera.WorldToViewportPoint(memory.transform.position);
+            endPoint = Singleton<ClearCount>.Instance.GetActiveIconPosition();
             particle.GetComponent<ParticleSystem>().Play();
         }
         else if (next == MEMORY_STATE.END)
