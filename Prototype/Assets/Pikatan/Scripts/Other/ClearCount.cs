@@ -21,6 +21,7 @@ public class ClearCount : Singleton<ClearCount>
     //private GameTimer timer;
     //private ImageState state = ImageState.Visible;
     private int clearNum;
+    private Vector3[] goalImagePosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,13 @@ public class ClearCount : Singleton<ClearCount>
         {
             goalImages[i].SetActive(false);
         }
+        goalImagePosition = new Vector3[5];
+        goalImagePosition[0] = new Vector3(0, 1, 5);
+        goalImagePosition[1] = new Vector3(0.08f, 1, 5);
+        goalImagePosition[2] = new Vector3(0.16f, 1, 5);
+        goalImagePosition[3] = new Vector3(0.24f, 1, 5);
+        goalImagePosition[4] = new Vector3(0.32f, 1, 5);
+
         //timer = new GameTimer(eraseTime);
     }
 
@@ -100,6 +108,6 @@ public class ClearCount : Singleton<ClearCount>
 
     public Vector3 GetActiveIconPosition()
     {
-        return goalImages[goalCount - 1].transform.position;
+        return goalImagePosition[goalCount];
     }
 }
