@@ -42,11 +42,11 @@ public class ClearCount : Singleton<ClearCount>
             goalImages[i].SetActive(false);
         }
         goalImagePosition = new Vector3[5];
-        goalImagePosition[0] = new Vector3(0, 1, 5);
-        goalImagePosition[1] = new Vector3(0.08f, 1, 5);
-        goalImagePosition[2] = new Vector3(0.16f, 1, 5);
-        goalImagePosition[3] = new Vector3(0.24f, 1, 5);
-        goalImagePosition[4] = new Vector3(0.32f, 1, 5);
+        goalImagePosition[0] = new Vector3(0.07f, 0.9f, 5);
+        goalImagePosition[1] = new Vector3(0.14f, 0.9f, 5);
+        goalImagePosition[2] = new Vector3(0.21f, 0.9f, 5);
+        goalImagePosition[3] = new Vector3(0.28f, 0.9f, 5);
+        goalImagePosition[4] = new Vector3(0.35f, 0.9f, 5);
 
         //timer = new GameTimer(eraseTime);
     }
