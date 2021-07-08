@@ -50,7 +50,7 @@ public class Goal : MonoBehaviour
         spinTimer = new GameTimer(timer);
 
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        endPoint = new Vector3(0.0f, 1.0f, 5.0f);
+        //endPoint = new Vector3(0.0f, 1.0f, 5.0f);
     }
     private void Update()
     {

@@ -62,4 +62,25 @@ public class SoundTest : MonoBehaviour
             }
         }
     }
+
+    private Vector3 MemoryEasing(Vector3 vec)
+    {
+        float x = vec.x;
+        float y = vec.y;
+
+        //EaseInQuartでx
+        x = x * x * x * x;
+
+        //EaseInOutCubicでy
+        if (y < 0.5)
+        {
+            y = 4 * y * y * y;
+        }
+        else
+        {
+            y = 1 - Mathf.Pow(-2.0f * y + 2.0f, 3.0f) / 2;
+        }
+
+        return new Vector3(x, y, vec.z);
+    }
 }
