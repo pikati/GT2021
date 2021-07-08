@@ -97,4 +97,9 @@ public class ClearCount : Singleton<ClearCount>
         //ゴールの画像オブジェの子供にあるMaskオブジェを取得しそれを非表示に
         goalImages[goalCount++].transform.GetChild(1).gameObject.SetActive(false);
     }
+
+    public Vector3 GetActiveIconPosition()
+    {
+        return goalImages[goalCount - 1].transform.position;
+    }
 }

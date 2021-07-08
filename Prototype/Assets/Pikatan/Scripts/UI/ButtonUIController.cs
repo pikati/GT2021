@@ -58,6 +58,8 @@ public class ButtonUIController : MonoBehaviour
         {
             isInput = false;
         }
+        Debug.Log("MoveValue" + ic.MoveValue);
+        Debug.Log("ArrowValue" + ic.ArrowValue);
     }
 
     private void ChangeCursor(int n)

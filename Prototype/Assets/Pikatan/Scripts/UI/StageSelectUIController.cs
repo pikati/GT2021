@@ -27,7 +27,6 @@ public class StageSelectUIController : MonoBehaviour
     private float diff = 0;
     private bool isChangePage = false;
     private RectTransform rt;
-    private SoundManager sm;
     private bool isSelected = false;
     private Vector3[] pos;
     public int StageNum => stageNum;
@@ -43,18 +42,7 @@ public class StageSelectUIController : MonoBehaviour
         ic = Singleton<InputController>.Instance;
         stageName = new StageName();
         rt = GetComponent<RectTransform>();
-        sm = Singleton<SoundManager>.Instance;
-        pos = new Vector3[10];
-        pos[0] = new Vector3(-900, -700 + 540, 0);
-        pos[1] = new Vector3(-550, -700 + 540, 0);
-        pos[2] = new Vector3(-200, -700 + 540, 0);
-        pos[3] = new Vector3(150, -700 + 540, 0);
-        pos[4] = new Vector3(500, -700 + 540, 0);
-        pos[5] = new Vector3(-900, -950 + 540, 0);
-        pos[6] = new Vector3(-550, -950 + 540, 0);
-        pos[7] = new Vector3(-200, -950 + 540, 0);
-        pos[8] = new Vector3(150, -950 + 540, 0);
-        pos[9] = new Vector3(500, -950 + 540, 0);
+        SetCursorPosition();
     }
 
     // Update is called once per frame
@@ -100,7 +88,7 @@ public class StageSelectUIController : MonoBehaviour
         }
         if (ic.A)
         {
-            sm.PlaySeByName("decide");
+            Singleton<SoundManager>.Instance.PlaySeByName("decide");
             ChangeSecne(stageName.StageNames[index + page * 10]);
             isSelected = true;
         }
@@ -110,7 +98,6 @@ public class StageSelectUIController : MonoBehaviour
     private void ChangeCursor(int n)
     {
         isInput = true;
-        //DisableCursor(index);
         int tmp = index;
         index += n;
         if (index < 0)
@@ -129,8 +116,12 @@ public class StageSelectUIController : MonoBehaviour
         {
             if (page < maxPage)
             {
-                index = 0;
+                index -= 10;
                 ChangePage(1);
+                if(index >= 10)
+                {
+                    ChangeCursor(0);
+                }
             }
             else
             {
@@ -143,7 +134,7 @@ public class StageSelectUIController : MonoBehaviour
         }
         else
         {
-            sm.PlaySeByName("cursor");
+            Singleton<SoundManager>.Instance.PlaySeByName("cursor");
         }
         //EnableCursor(index);
         MoveCursor(index);
@@ -167,13 +158,13 @@ public class StageSelectUIController : MonoBehaviour
         {
             diff += -2000.0f;
             isChangePage = true;
-            sm.PlaySeByName("cursor");
+            Singleton<SoundManager>.Instance.PlaySeByName("cursor");
         }
         else if(page < prePage)
         {
             diff += 2000.0f;
             isChangePage = true;
-            sm.PlaySeByName("cursor");
+            Singleton<SoundManager>.Instance.PlaySeByName("cursor");
         }
         if (index + page * 10 >= stageNum)
         {
@@ -210,7 +201,26 @@ public class StageSelectUIController : MonoBehaviour
 
     private void MoveCursor(int index)
     {
+        SetCursorPosition();
         cursor.localPosition = pos[index];
+    }
+
+    private void SetCursorPosition()
+    {
+        if(pos == null)
+        {
+            pos = new Vector3[10];
+            pos[0] = new Vector3(-900, -700 + 540, 0);
+            pos[1] = new Vector3(-550, -700 + 540, 0);
+            pos[2] = new Vector3(-200, -700 + 540, 0);
+            pos[3] = new Vector3(150, -700 + 540, 0);
+            pos[4] = new Vector3(500, -700 + 540, 0);
+            pos[5] = new Vector3(-900, -950 + 540, 0);
+            pos[6] = new Vector3(-550, -950 + 540, 0);
+            pos[7] = new Vector3(-200, -950 + 540, 0);
+            pos[8] = new Vector3(150, -950 + 540, 0);
+            pos[9] = new Vector3(500, -950 + 540, 0);
+        }
     }
 
     public void ResetCursor()
@@ -222,6 +232,11 @@ public class StageSelectUIController : MonoBehaviour
         //{
         //    DisableCursor(i);
         //}
+    }
+
+    public void SetStageIndex(int idx)
+    {
+        ChangeCursor(idx);
     }
 
     private void ChangeSecne(string sceneName)

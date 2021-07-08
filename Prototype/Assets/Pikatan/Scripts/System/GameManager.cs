@@ -27,6 +27,7 @@ public class GameManager : Singleton<GameManager>
         sm = Singleton<SoundManager>.Instance;
         sm.PlayBgmByName("game");
         stageID = GameObject.Find("StageNumController").GetComponent<StageNumController>().StageNum - 1;
+        Singleton<SceneChanger>.Instance.StageID = stageID;
         if(stageID == -1)
         {
             Debug.LogError("stageID is -1");

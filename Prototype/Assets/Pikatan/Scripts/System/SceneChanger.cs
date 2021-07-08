@@ -8,6 +8,7 @@ public class SceneChanger : Singleton<SceneChanger>
     [SerializeField]
     private string nextSceneName;
     private bool isChange = false;
+    public int StageID { get; set; }
 
     public void SceneChange()
     {
@@ -43,6 +44,7 @@ public class SceneChanger : Singleton<SceneChanger>
     {
         
         GameObject.Find("TitleManager").GetComponent<TitleManager>().DispStageSelect();
+        GameObject.Find("StageButtons").GetComponent<StageSelectUIController>().SetStageIndex(StageID);
         Camera.main.GetComponent<TitleCameraController>().SetPosition(new Vector3(7, 10, 2));
         SceneManager.sceneLoaded -= StageSelect;
     }
