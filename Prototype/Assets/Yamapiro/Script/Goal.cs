@@ -50,7 +50,6 @@ public class Goal : MonoBehaviour
         spinTimer = new GameTimer(timer);
 
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        startPoint = mainCamera.WorldToViewportPoint(memory.transform.position);
         endPoint = new Vector3(0.0f, 1.0f, 5.0f);
     }
     private void Update()
@@ -126,6 +125,7 @@ public class Goal : MonoBehaviour
             Singleton<SoundManager>.Instance.PlaySeByName("get");
             isGoal = true;
             memory.transform.Rotate(0.0f, 0.0f, 0.0f);
+            startPoint = mainCamera.WorldToViewportPoint(memory.transform.position);
             particle.GetComponent<ParticleSystem>().Play();
         }
         else if (next == MEMORY_STATE.END)
