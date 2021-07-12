@@ -31,7 +31,7 @@ public class RotatePoint : MonoBehaviour
     private PointerSuitsuki obj;
     private GameObject effect;
     private bool onPlayer;
-
+    public bool IsRotate => isRotate;
 
     public bool OnPlayer
     {

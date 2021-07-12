@@ -12,16 +12,12 @@ public class ElectricalController : MonoBehaviour
 
     private GameObject elecObj;
     private ElecState elecState;
+    private AxisState asc;
 
     void Start()
     {
         elecObj = transform.Find("ElecArea").gameObject;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        asc = GameObject.Find("AxisStateController").GetComponent<AxisState>();
     }
 
     private void ChangeState(ElecState state)
@@ -45,6 +41,7 @@ public class ElectricalController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (asc.IsRotate) return;
         if(other.CompareTag("Obstacle"))
         {
             ChangeState(ElecState.InActive);
@@ -53,6 +50,7 @@ public class ElectricalController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (asc.IsRotate) return;
         if (other.CompareTag("Obstacle"))
         {
             ChangeState(ElecState.InActive);
