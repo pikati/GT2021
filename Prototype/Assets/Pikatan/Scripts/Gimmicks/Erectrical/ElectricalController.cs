@@ -13,6 +13,7 @@ public class ElectricalController : MonoBehaviour
     private GameObject elecObj;
     private ElecState elecState;
     private AxisState asc;
+    private bool isActive = false;
 
     void Start()
     {
@@ -20,6 +21,13 @@ public class ElectricalController : MonoBehaviour
         asc = GameObject.Find("AxisStateController").GetComponent<AxisState>();
     }
 
+    private void Update()
+    {
+        if (!isActive) return;
+        if (asc.IsRotate) return;
+        ChangeState(ElecState.Active);
+        isActive = false;
+    }
     private void ChangeState(ElecState state)
     {
         if(state != elecState)
@@ -61,7 +69,7 @@ public class ElectricalController : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            ChangeState(ElecState.Active);
+            isActive = true;
         }
     }
 }
