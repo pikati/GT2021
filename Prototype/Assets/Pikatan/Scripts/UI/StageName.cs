@@ -26,17 +26,17 @@ public class StageName
         StageNames[15] = "yamapi8";
         StageNames[16] = "John29";
         StageNames[17] = "Ama28";
-        StageNames[18] = "5";
-        StageNames[19] = "John05";
+        StageNames[18] = "Ama29";
+        StageNames[19] = "John30";
         StageNames[20] = "Ama19";
-        StageNames[21] = "Ama09";
-        StageNames[22] = "yamapi7";
-        StageNames[23] = "John15";
-        StageNames[24] = "Ama07";
-        StageNames[25] = "yamapi2";
-        StageNames[26] = "9";
-        StageNames[27] = "Ama06";
-        StageNames[28] = "Ama04";
-        StageNames[29] = "Ama21";
+        StageNames[21] = "Ama30";
+        StageNames[22] = "9";
+        StageNames[23] = "yamapi2";
+        StageNames[24] = "John15";
+        StageNames[25] = "John05";
+        StageNames[26] = "yamapi7";
+        StageNames[27] = "Ama21";
+        StageNames[28] = "yamapi9";
+        StageNames[29] = "Ama04";
     }
 }
