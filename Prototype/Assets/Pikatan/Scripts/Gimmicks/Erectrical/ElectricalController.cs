@@ -14,11 +14,12 @@ public class ElectricalController : MonoBehaviour
     private ElecState elecState;
     private AxisStateController asc;
     private bool isActive = false;
-
+    private ElectricalBakeController ebc;
     void Start()
     {
         elecObj = transform.Find("ElecArea").gameObject;
         asc = GameObject.Find("AxisStateController").GetComponent<AxisStateController>();
+        ebc = GameObject.Find("ElectricalBakeController").GetComponent<ElectricalBakeController>();
     }
 
     private void Update()
@@ -36,12 +37,12 @@ public class ElectricalController : MonoBehaviour
             if (elecState == ElecState.Active)
             {
                 elecObj.SetActive(true);
-                Singleton<NavMeshBaker>.Instance.Bake();
+                ebc.Bake();
             }
             else
             {
                 elecObj.SetActive(false);
-                Singleton<NavMeshBaker>.Instance.Bake();
+                ebc.Bake();
             }
         }
         

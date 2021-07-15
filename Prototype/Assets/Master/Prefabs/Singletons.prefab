@@ -372,6 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2072962745528355266}
   - component: {fileID: 8799249582534769955}
+  - component: {fileID: 2869825887563563253}
   m_Layer: 0
   m_Name: AxisStateController
   m_TagString: Untagged
@@ -403,6 +404,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afa0dcef6fb762340b001c74e9840440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2869825887563563253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876304356972717284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da80d60fb9d423439471bab8b8bd3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7950960852982168442

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//電柱管理のために使ってる
 public class AxisStateController : MonoBehaviour
 {
     private RotatePoint[] rps;
