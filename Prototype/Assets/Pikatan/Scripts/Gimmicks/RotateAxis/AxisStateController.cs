@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AxisState : MonoBehaviour
+public class AxisStateController : MonoBehaviour
 {
     private RotatePoint[] rps;
     public bool IsRotate { get; private set; } = false;

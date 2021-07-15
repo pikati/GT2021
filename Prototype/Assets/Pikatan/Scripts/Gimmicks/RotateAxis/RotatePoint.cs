@@ -95,7 +95,7 @@ public class RotatePoint : MonoBehaviour
                 ang.z = deg;
                 transform.rotation = Quaternion.Euler(ang);
                 Bake();
-                Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.NoRotate;
+                Singleton<AxisState>.Instance.NowAxisState = AxisState.AxisStateEnum.NoRotate;
                 Singleton<RotatePointSelector>.Instance.IsRotating = false;
                 Singleton<PlayerMove>.Instance.LoadDirection();
                 Singleton<SoundManager>.Instance.PlaySeByName("endRotate");
@@ -109,7 +109,7 @@ public class RotatePoint : MonoBehaviour
     {
         if (!IsActive) return;
         if (OnPlayer) return;
-        if (Singleton<AxisStateController>.Instance.AxisState == AxisStateController.AxisStateEnum.Rotating) return;
+        if (Singleton<AxisState>.Instance.NowAxisState == AxisState.AxisStateEnum.Rotating) return;
         if (Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play) return;
         if (!Singleton<StageStart>.Instance.IsEnd) return;
 
@@ -181,7 +181,7 @@ public class RotatePoint : MonoBehaviour
     private void IsRotateTure()
     {
         isRotate = true;
-        Singleton<AxisStateController>.Instance.AxisState = AxisStateController.AxisStateEnum.Rotating;
+        Singleton<AxisState>.Instance.NowAxisState = AxisState.AxisStateEnum.Rotating;
         Invoke("Bake", 0.1f);
     }
 

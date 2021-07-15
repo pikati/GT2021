@@ -12,13 +12,13 @@ public class ElectricalController : MonoBehaviour
 
     private GameObject elecObj;
     private ElecState elecState;
-    private AxisState asc;
+    private AxisStateController asc;
     private bool isActive = false;
 
     void Start()
     {
         elecObj = transform.Find("ElecArea").gameObject;
-        asc = GameObject.Find("AxisStateController").GetComponent<AxisState>();
+        asc = GameObject.Find("AxisStateController").GetComponent<AxisStateController>();
     }
 
     private void Update()
