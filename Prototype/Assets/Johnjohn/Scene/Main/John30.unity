@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e50b902223e0ea147816f4bca6f57e17, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43846762, g: 0.48655343, b: 0.56682694, a: 1}
+  m_IndirectSpecularColor: {r: 0.79489607, g: 0.79489607, b: 0.6251839, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -911,6 +911,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 23800000, guid: ac46cb2cad125904ba63c1a35d6a91c0,
         type: 2}
+    - target: {fileID: 1185034667381618124, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: nextSceneName
+      value: Ama19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: topColor.b
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: topColor.g
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: topColor.r
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: bottomColor.b
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: bottomColor.g
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063178069753351455, guid: 3be5d6031511af645b18a63b70751ed9,
+        type: 3}
+      propertyPath: bottomColor.r
+      value: 0.67
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3be5d6031511af645b18a63b70751ed9, type: 3}
 --- !u!4 &955994176 stripped
@@ -1955,6 +1990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627720453554755554, guid: 3503e8db6543ab845ae4095e265d5139,
+        type: 3}
+      propertyPath: id
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6760983385110245212, guid: 3503e8db6543ab845ae4095e265d5139,
         type: 3}
