@@ -18,7 +18,7 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Singleton<ClearChecker>.Instance.IsClear && Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play)
+        if(Singleton<ClearChecker>.Instance.IsClear)
         {
             if(animRand < 0.5)
             {
@@ -28,6 +28,10 @@ public class PlayerAnimation : MonoBehaviour
             {
                 anim.SetTrigger("Banzai");
             }
+            anim.SetFloat("Move", 0);
+        }
+        else if (Singleton<GameManager>.Instance.gameState != GameManager.GameState.Play)
+        {
             anim.SetFloat("Move", 0);
         }
         else

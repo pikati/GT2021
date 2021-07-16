@@ -31,6 +31,7 @@ public class RotatePoint : MonoBehaviour
     private PointerSuitsuki obj;
     private GameObject effect;
     private bool onPlayer;
+    //private RotatePointController rpc;
     public bool IsRotate => isRotate;
 
     public bool OnPlayer
@@ -61,6 +62,7 @@ public class RotatePoint : MonoBehaviour
         areaChilders[1] = transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<AreaChilder>();
         obj = GameObject.Find("SuitsukiObj").GetComponent<PointerSuitsuki>();
         effect = Resources.Load("TurnBoardEffect") as GameObject;
+        //rpc = GameObject.Find("RotatePointController").GetComponent<RotatePointController>();
     }
 
 
@@ -114,12 +116,10 @@ public class RotatePoint : MonoBehaviour
         if (!Singleton<StageStart>.Instance.IsEnd) return;
 
         Singleton<SoundManager>.Instance.PlaySeByName("startRotate");
-        Invoke("IsRotateTure", 0.05f);
+        Invoke("IsRotateTure", 0.1f);
         SetRotateValue();
         areaChilders[0].IsActive = true;
         areaChilders[1].IsActive = true;
-        //Singleton<CameraRotater>.Instance.CameraRotate();
-       // Singleton<NavMeshDrawer>.Instance.DrawNwvMesh();
     }
 
     //初期化と回転フラグ立った時に呼べ
@@ -183,10 +183,12 @@ public class RotatePoint : MonoBehaviour
         isRotate = true;
         Singleton<AxisState>.Instance.NowAxisState = AxisState.AxisStateEnum.Rotating;
         Invoke("Bake", 0.1f);
+        //rpc.BakeInvoke();
     }
 
     private void Bake()
     {
+        //rpc.Bake();
         Singleton<NavMeshBaker>.Instance.Bake();
     }
 

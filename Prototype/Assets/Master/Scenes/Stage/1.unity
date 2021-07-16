@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.677684, g: 0.80154234, b: 0.8230874, a: 1}
+  m_IndirectSpecularColor: {r: 0.77237904, g: 0.77237904, b: 0.60447764, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2634,7 +2634,6 @@ GameObject:
   m_Component:
   - component: {fileID: 950480185}
   - component: {fileID: 950480186}
-  - component: {fileID: 950480187}
   m_Layer: 0
   m_Name: StageStart
   m_TagString: Untagged
@@ -2666,18 +2665,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e3fefc6fe3b4a448adccf5976a38d2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &950480187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950480184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c8fc38c02cb0242b04137627b52006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &958498374
