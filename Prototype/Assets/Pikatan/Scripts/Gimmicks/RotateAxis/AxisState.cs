@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AxisStateController : Singleton<AxisStateController>
+public class AxisState : Singleton<AxisState>
 {
     public enum AxisStateEnum
     {
@@ -10,5 +10,5 @@ public class AxisStateController : Singleton<AxisStateController>
         Rotating
     }
 
-    public AxisStateEnum AxisState { get; set; } = AxisStateEnum.NoRotate;
+    public AxisStateEnum NowAxisState { get; set; } = AxisStateEnum.NoRotate;
 }

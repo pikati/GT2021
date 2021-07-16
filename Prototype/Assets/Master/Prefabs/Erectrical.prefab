@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!208 &8755660076551782713
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622189419794971536}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.1710002, y: 5.281, z: 3.167}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.004, y: 0.49, z: -0.003}
+  m_TimeToStationary: 0.5
+--- !u!208 &4901855109274736799
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009638180530926567}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.1710002, y: 5.281, z: 3.167}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.004, y: 0.49, z: -0.003}
+  m_TimeToStationary: 0.5
 --- !u!1 &8743122330003367538
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +441,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3803691566328575599}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5009638180530926567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: ed8784c04af425e45b457d2bf97737e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3803691566328575599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8786197188717641240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -496,6 +534,12 @@ PrefabInstance:
 --- !u!4 &9107526082041584115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ed8784c04af425e45b457d2bf97737e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8786197188717641240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &622189419794971536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: ed8784c04af425e45b457d2bf97737e1,
     type: 3}
   m_PrefabInstance: {fileID: 8786197188717641240}
   m_PrefabAsset: {fileID: 0}
